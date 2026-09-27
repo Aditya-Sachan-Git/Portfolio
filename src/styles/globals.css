@@ -1,0 +1,421 @@
+@import 'tailwindcss';
+
+/* ============================================
+   DESIGN SYSTEM — CSS Custom Properties
+   ============================================ */
+
+:root {
+  /* ── Colors ── */
+  --color-surface-primary: #050505;
+  --color-surface-elevated: #0E0E0E;
+  --color-surface-subtle: #1A1A1A;
+  --color-surface-border: #222222;
+
+  --color-text-primary: #F0EBE0;
+  --color-text-secondary: #8A8A8A;
+  --color-text-muted: #4A4A4A;
+
+  --color-accent: #3B5CFF;
+  --color-accent-hover: #5070FF;
+  --color-accent-glow: rgba(59, 92, 255, 0.15);
+  --color-accent-subtle: rgba(59, 92, 255, 0.08);
+
+  /* ── Typography ── */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --text-display: clamp(4rem, 11vw, 13rem);
+  --text-h1: clamp(2.5rem, 5vw, 5rem);
+  --text-h2: clamp(1.75rem, 3.5vw, 3rem);
+  --text-h3: clamp(1.25rem, 2vw, 1.75rem);
+  --text-body: 1rem;
+  --text-body-lg: 1.125rem;
+  --text-small: 0.875rem;
+  --text-caption: 0.75rem;
+
+  --leading-tight: 0.9;
+  --leading-snug: 1.1;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.8;
+
+  --tracking-tighter: -0.04em;
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.1em;
+
+  /* ── Spacing ── */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-24: 6rem;     /* 96px */
+  --space-32: 8rem;     /* 128px */
+  --space-48: 12rem;    /* 192px */
+  --space-64: 16rem;    /* 256px */
+
+  /* ── Layout ── */
+  --max-width: 1440px;
+  --content-padding: var(--space-6);
+  --grid-columns: 12;
+  --grid-gap: var(--space-6);
+  --nav-height: 4.5rem;
+
+  /* ── Animation ── */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 200ms;
+  --duration-normal: 400ms;
+  --duration-slow: 800ms;
+  --duration-slower: 1200ms;
+
+  /* ── Z-index scale ── */
+  --z-base: 0;
+  --z-above: 10;
+  --z-nav: 100;
+  --z-overlay: 200;
+  --z-modal: 300;
+  --z-cursor: 400;
+}
+
+/* ── Global reset & base ── */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: auto; /* Lenis handles smooth scrolling */
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-primary);
+  overflow-x: hidden;
+}
+
+/* Lenis smooth scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* ── Selection ── */
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-surface-primary);
+}
+
+/* ── Focus ── */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ── Links ── */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ── Images ── */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-subtle);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Responsive content padding ── */
+@media (min-width: 768px) {
+  :root {
+    --content-padding: var(--space-12);
+    --grid-gap: var(--space-8);
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --content-padding: var(--space-16);
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --content-padding: var(--space-24);
+  }
+}
+
+/* ── Hero CTA styles ── */
+
+.hero-cta-primary {
+  border: 1px solid var(--color-text-secondary);
+  color: var(--color-text-primary);
+  background-color: transparent;
+  transition: all var(--duration-normal) var(--ease-out-expo);
+}
+
+.hero-cta-primary:hover {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+  color: var(--color-surface-primary);
+}
+
+.hero-cta-secondary {
+  color: var(--color-text-secondary);
+  transition: color var(--duration-normal) var(--ease-out-expo);
+}
+
+.hero-cta-secondary:hover {
+  color: var(--color-accent);
+}
+
+/* ── Hero scroll indicator ── */
+
+@keyframes hero-scroll {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(6px);
+  }
+}
+
+.animate-hero-scroll {
+  animation: hero-scroll 2s ease-in-out infinite;
+}
+
+/* ── Work section CTAs ── */
+
+.work-cta {
+  color: var(--color-text-secondary);
+  transition: color var(--duration-normal) var(--ease-out-expo);
+}
+
+.work-cta:hover {
+  color: var(--color-accent);
+}
+
+.work-cta:hover .work-cta-arrow {
+  transform: translateX(4px);
+}
+
+.work-cta-arrow {
+  display: inline-block;
+  transition: transform var(--duration-normal) var(--ease-out-expo);
+}
+
+/* ── FedLLM architecture visual ── */
+
+.fedllm-visual {
+  transition: transform var(--duration-slow) var(--ease-out-expo),
+              border-color var(--duration-normal) var(--ease-out-expo);
+}
+
+.fedllm-visual:hover {
+  transform: scale(1.01);
+  border-color: var(--color-text-muted);
+}
+
+.fedllm-node {
+  transition: border-color var(--duration-normal) var(--ease-out-expo),
+              background-color var(--duration-normal) var(--ease-out-expo);
+}
+
+.fedllm-visual:hover .fedllm-node-primary {
+  border-color: var(--color-accent-hover);
+}
+
+.fedllm-connection {
+  opacity: 0.4;
+  transition: opacity var(--duration-normal) var(--ease-out-expo);
+}
+
+.fedllm-visual:hover .fedllm-connection {
+  opacity: 0.7;
+}
+
+.fedllm-dot {
+  transition: background-color var(--duration-normal) var(--ease-out-expo),
+              box-shadow var(--duration-normal) var(--ease-out-expo);
+}
+
+.fedllm-visual:hover .fedllm-dot-accent {
+  background-color: var(--color-accent);
+  box-shadow: 0 0 8px var(--color-accent-glow);
+}
+
+/* ── Healthcare visual ── */
+
+.healthcare-visual {
+  transition: transform var(--duration-slow) var(--ease-out-expo),
+              border-color var(--duration-normal) var(--ease-out-expo);
+}
+
+.healthcare-visual:hover {
+  transform: scale(1.01);
+  border-color: var(--color-text-muted);
+}
+
+/* ── Research Section ── */
+
+.research-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-surface-border);
+  transition: all var(--duration-normal) var(--ease-out-expo);
+}
+
+.research-item:hover .research-outline {
+  -webkit-text-stroke-color: var(--color-text-primary);
+  color: rgba(240, 235, 224, 0.03); /* Extremely subtle fill */
+}
+
+.research-solid {
+  color: var(--color-surface-border);
+  transition: color var(--duration-normal) var(--ease-out-expo);
+}
+
+.research-item:hover .research-solid {
+  color: var(--color-text-primary);
+}
+
+.research-accent {
+  color: var(--color-text-secondary);
+  transition: all var(--duration-normal) var(--ease-out-expo);
+}
+
+.research-item:hover .research-accent {
+  color: var(--color-accent);
+  text-shadow: 0 0 12px var(--color-accent-glow);
+}
+
+.fedllm-indicator {
+  opacity: 0;
+  transition: all var(--duration-normal) var(--ease-out-expo);
+}
+
+.research-item:hover .fedllm-indicator {
+  opacity: 1;
+}
+
+.indicator-line {
+  transition: background-color var(--duration-normal) var(--ease-out-expo);
+}
+
+.research-item:hover .indicator-line {
+  background-color: var(--color-accent);
+}
+
+.indicator-text {
+  transition: color var(--duration-normal) var(--ease-out-expo);
+}
+
+.research-item:hover .indicator-text {
+  color: var(--color-text-primary);
+}
+
+/* ── Contact section links ── */
+
+.contact-link {
+  color: var(--color-text-secondary);
+  transition: color var(--duration-normal) var(--ease-out-expo);
+}
+
+.contact-link:hover,
+.contact-link:focus-visible {
+  color: var(--color-text-primary);
+}
+
+.contact-link-rule {
+  transition: background-color var(--duration-normal) var(--ease-out-expo),
+              width var(--duration-normal) var(--ease-out-expo);
+}
+
+.contact-link:hover .contact-link-rule,
+.contact-link:focus-visible .contact-link-rule {
+  background-color: var(--color-accent);
+  width: 100%;
+}
+
+.contact-link-arrow {
+  display: inline-block;
+  transition: transform var(--duration-normal) var(--ease-out-expo),
+              color var(--duration-normal) var(--ease-out-expo);
+}
+
+.contact-link:hover .contact-link-arrow,
+.contact-link:focus-visible .contact-link-arrow {
+  transform: translateX(6px);
+  color: var(--color-accent);
+}
+
+/* ── Footer ── */
+
+.footer-top-link {
+  color: var(--color-text-muted);
+  transition: color var(--duration-normal) var(--ease-out-expo);
+}
+
+.footer-top-link:hover,
+.footer-top-link:focus-visible {
+  color: var(--color-accent);
+}

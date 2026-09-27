@@ -1,0 +1,31 @@
+{
+  "name": "aditya-sachan-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b --noEmit"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "gsap": "^3.12.7",
+    "framer-motion": "^12.12.2",
+    "lenis": "^1.3.3",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0",
+    "tailwindcss": "^4.1.10",
+    "@tailwindcss/vite": "^4.1.10"
+  }
+}
