@@ -20,12 +20,10 @@ export function Footer() {
               {personal.name.full}
             </span>
             <span
-              className="block text-[11px] md:text-xs uppercase tracking-[0.16em] leading-relaxed"
+              className="block text-xs md:text-[13px] uppercase tracking-[0.16em]"
               style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
             >
-              AI / ML RESEARCHER
-              <br />
-              SOFTWARE ENGINEER
+              AI / ML RESEARCHER &nbsp;·&nbsp; SOFTWARE ENGINEER
             </span>
           </div>
 
@@ -63,12 +61,12 @@ export function Footer() {
         </div>
 
         {/* Lower metadata area: Copyright (Left) & Back to top (Right) */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 text-[11px] md:text-xs tracking-wider" style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}>
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 text-xs md:text-[13px] tracking-wider" style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}>
           <span>&copy; {new Date().getFullYear()} {personal.name.full}</span>
 
           <button
             onClick={handleBackToTop}
-            className="group inline-flex items-center gap-2 text-[11px] md:text-xs uppercase tracking-[0.16em] text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors cursor-pointer outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] py-1"
+            className="group inline-flex items-center gap-2 text-xs md:text-[13px] uppercase tracking-[0.16em] text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors cursor-pointer outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] py-1"
             aria-label="Back to top of page"
           >
             <span className="inline-block transition-transform duration-300 group-hover:-translate-y-0.5" aria-hidden="true">

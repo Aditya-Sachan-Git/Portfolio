@@ -55,7 +55,7 @@ export function EducationSection() {
         {/* ── Header ── */}
         <div className="mb-16 md:mb-24 lg:mb-32">
           <span
-            className="edu-label mb-4 block text-[10px] md:text-[11px] uppercase tracking-[0.2em]"
+            className="edu-label mb-4 block text-xs md:text-[13px] uppercase tracking-[0.2em]"
             style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
           >
             06 / Education
@@ -104,7 +104,7 @@ export function EducationSection() {
                 {entry.degree}
               </span>
               <span
-                className="mt-1 block text-[11px] uppercase tracking-[0.1em]"
+                className="mt-1 block text-xs uppercase tracking-[0.1em]"
                 style={{
                   fontFamily: 'var(--font-mono)',
                   color: 'var(--color-text-muted)',
@@ -129,7 +129,7 @@ export function EducationSection() {
                 {entry.grade}
               </span>
               <span
-                className="mt-1 block text-[10px] uppercase tracking-[0.15em]"
+                className="mt-1 block text-xs uppercase tracking-[0.15em]"
                 style={{
                   fontFamily: 'var(--font-mono)',
                   color: 'var(--color-text-muted)',
@@ -161,7 +161,7 @@ export function EducationSection() {
                   {entry.institution}
                 </h3>
                 <span
-                  className="mt-1 block text-[10px] md:text-[11px] uppercase tracking-[0.08em]"
+                  className="mt-1 block text-xs md:text-[13px] uppercase tracking-[0.08em]"
                   style={{
                     fontFamily: 'var(--font-mono)',
                     color: 'var(--color-text-muted)',
@@ -194,7 +194,7 @@ export function EducationSection() {
             style={{ backgroundColor: 'var(--color-surface-border)' }}
           />
           <span
-            className="text-[8px] uppercase tracking-[0.15em]"
+            className="text-xs uppercase tracking-[0.15em]"
             style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
           >
             END / 06

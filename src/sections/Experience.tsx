@@ -74,7 +74,7 @@ export function ExperienceSection() {
         {/* ── Header ── */}
         <div className="mb-16 md:mb-24 lg:mb-32">
           <span
-            className="exp-label mb-4 block text-[10px] md:text-[11px] uppercase tracking-[0.2em]"
+            className="exp-label mb-4 block text-xs md:text-[13px] uppercase tracking-[0.2em]"
             style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
           >
             05 / Experience
@@ -146,7 +146,7 @@ export function ExperienceSection() {
                   }}
                 >
                   <span
-                    className="mt-1 shrink-0 text-[10px]"
+                    className="mt-1 shrink-0 text-xs"
                     style={{ color: 'var(--color-text-muted)' }}
                   >
                     —
@@ -163,7 +163,7 @@ export function ExperienceSection() {
                 style={{ backgroundColor: 'var(--color-surface-border)' }}
               />
               <span
-                className="text-[8px] uppercase tracking-[0.15em]"
+                className="text-xs uppercase tracking-[0.15em]"
                 style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
               >
                 END / 05
@@ -199,14 +199,14 @@ export function ExperienceSection() {
             {/* Period */}
             <div className="exp-period flex items-center gap-3 mb-6">
               <span
-                className="text-[11px] uppercase tracking-[0.1em]"
+                className="text-xs uppercase tracking-[0.1em]"
                 style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
               >
                 {entry.startMonth}
               </span>
               <div className="h-px w-6" style={{ backgroundColor: 'var(--color-surface-border)' }} />
               <span
-                className="text-[11px] uppercase tracking-[0.1em]"
+                className="text-xs uppercase tracking-[0.1em]"
                 style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
               >
                 {entry.endMonth}
@@ -218,7 +218,7 @@ export function ExperienceSection() {
               {entry.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="exp-tag inline-block border border-[var(--color-surface-border)] px-2.5 py-1 text-[9px] uppercase tracking-[0.06em]"
+                  className="exp-tag inline-block border border-[var(--color-surface-border)] px-2.5 py-1 text-xs uppercase tracking-[0.06em]"
                   style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
                 >
                   {tag}

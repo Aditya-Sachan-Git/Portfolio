@@ -64,13 +64,19 @@ export function Navbar() {
         }}
       >
         <div className="page-frame flex h-full items-center justify-between">
-          {/* Logo / Name */}
+          {/* Logo / Name — Personal Wordmark */}
           <a
             href="#"
-            className="text-sm font-medium tracking-[0.15em] uppercase"
+            className="group flex items-center gap-2 text-sm font-semibold tracking-[0.12em] uppercase transition-opacity hover:opacity-85 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)]"
             style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}
+            aria-label={`${personal.name.full} — Home`}
           >
-            {personal.name.full}
+            <span>{personal.name.full}</span>
+            <span
+              className="h-1.5 w-1.5 rounded-full inline-block"
+              style={{ backgroundColor: 'var(--color-accent)' }}
+              aria-hidden="true"
+            />
           </a>
 
           {/* Desktop nav links */}

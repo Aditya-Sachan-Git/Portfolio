@@ -59,7 +59,7 @@ export function About() {
         {/* ── Header ── */}
         <div className="mb-16 md:mb-24 lg:mb-32">
           <span
-            className="about-label mb-4 block text-[10px] md:text-[11px] uppercase tracking-[0.2em]"
+            className="about-label mb-4 block text-xs md:text-[13px] uppercase tracking-[0.2em]"
             style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
           >
             04 / About
@@ -77,7 +77,8 @@ export function About() {
             }}
           >
             <span className="font-light tracking-tight opacity-80 block text-[0.88em]">About</span>
-            <span className="font-medium tracking-tighter">Aditya</span>
+            <span className="font-medium tracking-tighter block">Aditya</span>
+            <span className="font-bold tracking-tighter">Sachan</span>
             <span style={{ color: 'var(--color-accent)' }}>.</span>
           </h2>
 
@@ -122,7 +123,7 @@ export function About() {
 
             {/* Coordinate detail */}
             <span
-              className="about-keyword mt-6 block text-[9px] uppercase tracking-[0.15em]"
+              className="about-keyword mt-6 block text-xs uppercase tracking-[0.15em]"
               style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
             >
               SYS / 004 · PROFILE
@@ -169,7 +170,7 @@ export function About() {
               ].map((area) => (
                 <span
                   key={area}
-                  className="inline-block border border-[var(--color-surface-border)] px-2.5 py-1 text-[9px] uppercase tracking-[0.05em]"
+                  className="inline-block border border-[var(--color-surface-border)] px-2.5 py-1 text-xs uppercase tracking-[0.05em]"
                   style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
                 >
                   {area}
@@ -185,7 +186,7 @@ export function About() {
         >
           <div className="h-px flex-1 max-w-24" style={{ backgroundColor: 'var(--color-surface-border)' }} />
           <span
-            className="text-[9px] uppercase tracking-[0.12em]"
+            className="text-xs uppercase tracking-[0.12em]"
             style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
           >
             VIT Chennai · B.Tech CS · 2027

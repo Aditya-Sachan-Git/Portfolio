@@ -105,7 +105,7 @@ export function Work() {
            ════════════════════════════════════════ */}
         <div className="work-header mb-16 md:mb-24 lg:mb-32">
           <span
-            className="work-section-label mb-4 block text-[10px] md:text-[11px] uppercase tracking-[0.2em]"
+            className="work-section-label mb-4 block text-xs md:text-[13px] uppercase tracking-[0.2em]"
             style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
           >
             02 / Selected Work
@@ -163,7 +163,7 @@ export function Work() {
                 style={{ backgroundColor: 'var(--color-surface-border)' }}
               />
               <span
-                className="block text-[10px] md:text-[11px] uppercase tracking-[0.15em]"
+                className="block text-xs md:text-[13px] uppercase tracking-[0.15em]"
                 style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
               >
                 {fedllm.category} · {fedllm.categoryLabel}
@@ -226,7 +226,7 @@ export function Work() {
               {/* Technologies */}
               <div className="fedllm-tech pt-2">
                 <span
-                  className="block text-[9px] uppercase tracking-[0.15em] mb-3"
+                  className="block text-xs uppercase tracking-[0.15em] mb-3"
                   style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
                 >
                   Technologies
@@ -235,7 +235,7 @@ export function Work() {
                   {fedllm.techStack.map((tech) => (
                     <span
                       key={tech}
-                      className="inline-block border border-[var(--color-surface-border)] px-2.5 py-1 text-[9px] md:text-[10px] uppercase tracking-[0.06em]"
+                      className="inline-block border border-[var(--color-surface-border)] px-2.5 py-1 text-xs uppercase tracking-[0.06em]"
                       style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-secondary)' }}
                     >
                       {tech}
@@ -294,7 +294,7 @@ export function Work() {
                 style={{ backgroundColor: 'var(--color-surface-border)' }}
               />
               <span
-                className="block text-[10px] md:text-[11px] uppercase tracking-[0.15em]"
+                className="block text-xs md:text-[13px] uppercase tracking-[0.15em]"
                 style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
               >
                 {healthcare.category} · {healthcare.categoryLabel}
@@ -349,7 +349,7 @@ export function Work() {
               {/* Technologies */}
               <div className="health-tech pt-2">
                 <span
-                  className="block text-[9px] uppercase tracking-[0.15em] mb-3"
+                  className="block text-xs uppercase tracking-[0.15em] mb-3"
                   style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
                 >
                   Technologies
@@ -358,7 +358,7 @@ export function Work() {
                   {healthcare.techStack.map((tech) => (
                     <span
                       key={tech}
-                      className="inline-block border border-[var(--color-surface-border)] px-2.5 py-1 text-[9px] md:text-[10px] uppercase tracking-[0.06em]"
+                      className="inline-block border border-[var(--color-surface-border)] px-2.5 py-1 text-xs uppercase tracking-[0.06em]"
                       style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-secondary)' }}
                     >
                       {tech}

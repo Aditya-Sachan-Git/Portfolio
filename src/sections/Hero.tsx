@@ -104,7 +104,7 @@ export function Hero() {
         <div className="page-frame flex items-center justify-between">
           {/* Top-right coordinate */}
           <span
-            className="hero-coord hidden text-[10px] uppercase tracking-[0.15em] md:block"
+            className="hero-coord hidden text-xs uppercase tracking-[0.15em] md:block"
             style={{
               fontFamily: 'var(--font-mono)',
               color: 'var(--color-text-muted)',
@@ -130,6 +130,40 @@ export function Hero() {
 
             {/* Div 1: Left Headline + Identity + CTAs */}
             <div className="relative z-[3] shrink-0">
+
+              {/* ── Primary Identity Wordmark (Bridge) ── */}
+              <div className="hero-name flex flex-col gap-1.5 mb-8 md:mb-10 lg:mb-12">
+                <div className="flex items-center gap-2.5">
+                  <div
+                    className="h-2 w-2 rounded-full shrink-0"
+                    style={{ backgroundColor: 'var(--color-accent)' }}
+                    aria-hidden="true"
+                  />
+                  <span
+                    className="font-bold uppercase tracking-[0.06em]"
+                    style={{
+                      fontFamily: 'var(--font-display)',
+                      fontSize: 'clamp(1.1rem, 1.5vw, 1.55rem)',
+                      color: 'var(--color-text-primary)',
+                      lineHeight: '1.2',
+                    }}
+                  >
+                    {personal.name.full}
+                  </span>
+                </div>
+                <div className="pl-4.5">
+                  <span
+                    className="text-xs md:text-[13px] uppercase tracking-[0.16em] font-medium block"
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      color: 'var(--color-text-secondary)',
+                    }}
+                  >
+                    AI / ML RESEARCHER &nbsp;·&nbsp; SOFTWARE ENGINEER
+                  </span>
+                </div>
+              </div>
+
               <h1>
                 {/* Line 1: I BUILD */}
                 <div
@@ -196,7 +230,7 @@ export function Hero() {
                   {personal.roles.map((role) => (
                     <span
                       key={role}
-                      className="text-[11px] font-medium uppercase tracking-[0.15em] md:text-xs"
+                      className="text-xs font-medium uppercase tracking-[0.15em] md:text-[13px]"
                       style={{
                         fontFamily: 'var(--font-body)',
                         color: 'var(--color-text-secondary)',
@@ -210,7 +244,7 @@ export function Hero() {
 
               {/* ── Keywords ─────────────────────── */}
               <p
-                className="hero-keywords relative z-[4] mt-3 text-[10px] tracking-[0.1em] md:mt-4 md:text-[11px]"
+                className="hero-keywords relative z-[4] mt-3 text-xs tracking-[0.1em] md:mt-4 md:text-[13px]"
                 style={{
                   fontFamily: 'var(--font-mono)',
                   color: 'var(--color-text-muted)',
@@ -223,7 +257,7 @@ export function Hero() {
               <div className="relative z-[4] mt-8 flex flex-wrap items-center gap-4 md:mt-10 md:gap-6">
                 <a
                   href="#work"
-                  className="hero-cta hero-cta-primary inline-flex items-center px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.15em] md:px-6 md:py-3 md:text-xs transition-all"
+                  className="hero-cta hero-cta-primary inline-flex items-center px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] md:px-6 md:py-3 md:text-sm transition-all"
                   style={{
                     fontFamily: 'var(--font-body)',
                     color: 'var(--color-text-primary)',
@@ -238,7 +272,7 @@ export function Hero() {
                   href={personal.resume}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hero-cta hero-cta-secondary inline-flex items-center text-[11px] font-medium uppercase tracking-[0.15em] md:text-xs"
+                  className="hero-cta hero-cta-secondary inline-flex items-center text-xs font-medium uppercase tracking-[0.15em] md:text-sm"
                   style={{ fontFamily: 'var(--font-body)' }}
                   aria-label="Download CV (opens in new tab)"
                 >
@@ -299,7 +333,7 @@ export function Hero() {
 
               {/* Coordinate marker near portrait */}
               <span
-                className="hero-coord absolute -bottom-6 right-0 hidden text-[10px] uppercase tracking-[0.15em] md:block"
+                className="hero-coord absolute -bottom-6 right-0 hidden text-xs uppercase tracking-[0.15em] md:block"
                 style={{
                   fontFamily: 'var(--font-mono)',
                   color: 'var(--color-text-muted)',
@@ -316,7 +350,7 @@ export function Hero() {
       {/* ── Scroll indicator ─────────────────── */}
       <div className="hero-scroll-indicator flex flex-col items-center gap-2 pb-6 md:pb-10">
         <span
-          className="text-[9px] uppercase tracking-[0.25em] md:text-[10px]"
+          className="text-xs uppercase tracking-[0.2em]"
           style={{
             fontFamily: 'var(--font-mono)',
             color: 'var(--color-text-muted)',

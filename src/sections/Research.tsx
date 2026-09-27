@@ -44,7 +44,7 @@ function ResearchItem({ config }: { config: LayoutConfig }) {
             }`}
           >
             <div className="h-px w-12 bg-[var(--color-surface-border)] indicator-line" />
-            <span className="text-[10px] uppercase tracking-widest font-mono text-[var(--color-text-muted)] indicator-text">
+            <span className="text-xs uppercase tracking-widest font-mono text-[var(--color-text-muted)] indicator-text">
               {indicatorPos === 'left' ? '(FEDLLM) SYS/001 ↲' : '↳ SYS/001 (FEDLLM)'}
             </span>
           </div>
@@ -63,7 +63,7 @@ function ResearchItem({ config }: { config: LayoutConfig }) {
           }`}
         >
           <div className="h-px w-4 bg-[var(--color-surface-border)] indicator-line" />
-          <span className="text-[8px] uppercase tracking-widest font-mono text-[var(--color-text-muted)] indicator-text">
+          <span className="text-xs uppercase tracking-widest font-mono text-[var(--color-text-muted)] indicator-text">
             ↳ FedLLM
           </span>
         </div>
@@ -175,14 +175,14 @@ export function Research() {
           <div className="max-w-xl">
             <div className="rs-header-el flex items-center gap-4 mb-4">
               <span
-                className="text-[10px] md:text-[11px] uppercase tracking-[0.2em]"
+                className="text-xs md:text-[13px] uppercase tracking-[0.2em]"
                 style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
               >
                 03 / Research
               </span>
               <div className="h-px w-12 bg-[var(--color-surface-border)]" />
               <span
-                className="text-[9px] uppercase tracking-[0.15em]"
+                className="text-xs uppercase tracking-[0.15em]"
                 style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
               >
                 FIELD / AI-ML
@@ -217,7 +217,7 @@ export function Research() {
 
           <div className="rs-header-el hidden lg:block pb-2">
             <span
-              className="text-[9px] uppercase tracking-[0.1em]"
+              className="text-xs uppercase tracking-[0.1em]"
               style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
             >
               SYSTEM / 003
