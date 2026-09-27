@@ -305,15 +305,13 @@ export function Work() {
             <div className="lg:col-span-8 lg:col-start-5 space-y-6 lg:ml-auto w-full">
               <div className="flex flex-col lg:items-end lg:text-right">
                 <h3
-                  className="health-title font-bold uppercase text-[clamp(2rem,5vw,4.5rem)] leading-[0.92] tracking-tighter"
+                  className="health-title font-bold uppercase text-[clamp(1.75rem,4vw,4rem)] leading-[0.95] tracking-tighter"
                   style={{
                     fontFamily: 'var(--font-display)',
                     color: 'var(--color-text-primary)',
                   }}
                 >
-                  AI-Powered
-                  <br />
-                  Multilingual
+                  AI-Powered Multilingual
                   <br />
                   Healthcare Assistant<span style={{ color: 'var(--color-accent)' }}>.</span>
                 </h3>
