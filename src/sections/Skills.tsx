@@ -85,16 +85,16 @@ function DesktopConstellation({
 
   const opacityMap: Record<NodeState, number> = {
     active: 1,
-    connected: 0.9,
-    dim: 0.1,
-    default: 0.55,
+    connected: 1,
+    dim: 0.15,
+    default: 0.88,
   }
 
   const lineOpacityMap: Record<NodeState, number> = {
-    active: 0.7,
-    connected: 0.6,
-    dim: 0.03,
-    default: 0.1,
+    active: 0.85,
+    connected: 0.85,
+    dim: 0.04,
+    default: 0.32,
   }
 
   const interactionProps = (id: string) => ({
@@ -126,7 +126,7 @@ function DesktopConstellation({
               x2={conn.x2}
               y2={conn.y2}
               stroke={state === 'connected' ? 'var(--color-accent)' : 'var(--color-surface-border)'}
-              strokeWidth={state === 'connected' ? '0.15' : '0.08'}
+              strokeWidth={state === 'connected' ? '0.22' : '0.12'}
               style={{
                 opacity: lineOpacityMap[state],
                 transition: 'opacity 0.3s ease, stroke 0.3s ease',
@@ -136,14 +136,14 @@ function DesktopConstellation({
         })}
       </svg>
 
-      {/* System nodes */}
+      {/* System nodes — Prominent Central Hubs */}
       {systemNodes.map((sys) => {
         const state = getNodeState(sys.id)
         const isAccent = state === 'active' || state === 'connected'
         return (
           <div
             key={sys.id}
-            className="skill-system-node absolute flex items-center gap-2 cursor-pointer outline-none"
+            className="skill-system-node absolute flex items-center gap-2.5 cursor-pointer outline-none z-10"
             style={{
               left: `${sys.x}%`,
               top: `${sys.y}%`,
@@ -151,26 +151,34 @@ function DesktopConstellation({
               opacity: opacityMap[state],
               transition: 'opacity 0.3s ease',
             }}
-            aria-label={`System: ${sys.label}`}
+            aria-label={`System Hub: ${sys.label}`}
             {...interactionProps(sys.id)}
           >
             <div
-              className="shrink-0 rounded-full"
+              className="shrink-0 rounded-full flex items-center justify-center transition-all duration-300"
               style={{
-                width: 8,
-                height: 8,
-                backgroundColor: isAccent ? 'var(--color-accent)' : 'var(--color-text-secondary)',
-                boxShadow: isAccent ? '0 0 10px var(--color-accent-glow)' : 'none',
-                transition: 'all 0.3s ease',
+                width: 14,
+                height: 14,
+                backgroundColor: isAccent ? 'var(--color-accent)' : 'var(--color-surface-elevated)',
+                border: isAccent ? '2px solid var(--color-accent)' : '2px solid var(--color-surface-border)',
+                boxShadow: isAccent ? '0 0 14px var(--color-accent-glow)' : 'none',
               }}
-            />
+            >
+              <div
+                className="rounded-full"
+                style={{
+                  width: 4,
+                  height: 4,
+                  backgroundColor: isAccent ? 'var(--color-surface-primary)' : 'var(--color-accent)',
+                }}
+              />
+            </div>
             <span
-              className="whitespace-nowrap font-bold uppercase"
+              className="whitespace-nowrap font-bold uppercase tracking-tight"
               style={{
                 fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(0.65rem, 1.2vw, 0.85rem)',
-                letterSpacing: 'var(--tracking-tight)',
-                color: isAccent ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
+                fontSize: 'clamp(0.95rem, 1.5vw, 1.25rem)',
+                color: isAccent ? 'var(--color-text-primary)' : 'var(--color-text-primary)',
                 transition: 'color 0.3s ease',
               }}
             >
@@ -220,14 +228,14 @@ function DesktopConstellation({
                 className="whitespace-nowrap"
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: 'clamp(0.5rem, 0.85vw, 0.7rem)',
+                  fontSize: 'clamp(0.7rem, 1.1vw, 0.92rem)',
                   letterSpacing: '0.04em',
                   textTransform: 'uppercase',
                   color: isAccent
-                    ? 'var(--color-accent)'
+                    ? 'var(--color-text-primary)'
                     : isHighlighted
                     ? 'var(--color-text-primary)'
-                    : 'var(--color-text-muted)',
+                    : 'var(--color-text-secondary)',
                   transition: 'color 0.3s ease',
                 }}
               >
@@ -241,7 +249,7 @@ function DesktopConstellation({
                 className="block mt-0.5"
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '0.5rem',
+                  fontSize: '0.7rem',
                   letterSpacing: '0.06em',
                   textTransform: 'uppercase',
                   color: 'var(--color-text-muted)',
@@ -259,13 +267,13 @@ function DesktopConstellation({
 
       {/* Decorative coordinate markers */}
       <span
-        className="skill-coord absolute top-3 right-4 text-[7px] tracking-wider"
+        className="skill-coord absolute top-3 right-4 text-[10px] tracking-wider"
         style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)', opacity: 0.3 }}
       >
         STACK / AI-ML
       </span>
       <span
-        className="skill-coord absolute bottom-3 left-4 text-[7px] tracking-wider"
+        className="skill-coord absolute bottom-3 left-4 text-[10px] tracking-wider"
         style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)', opacity: 0.3 }}
       >
         SYS / 007
@@ -447,13 +455,13 @@ export function Skills() {
     <section
       ref={sectionRef}
       id="skills"
-      className="relative py-24 md:py-32 lg:py-40 px-[var(--content-padding)]"
+      className="relative py-24 md:py-32 lg:py-40"
     >
-      <div className="mx-auto w-full max-w-[var(--max-width)]">
+      <div className="page-frame">
 
         {/* ── Header ── */}
-        <div className="mb-16 md:mb-24 lg:mb-32">
-          <div className="flex items-center justify-between mb-4">
+        <div className="mb-20 md:mb-28 lg:mb-32">
+          <div className="flex items-center justify-between mb-4 md:mb-6">
             <span
               className="skills-label text-[10px] md:text-[11px] uppercase tracking-[0.2em]"
               style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
@@ -472,23 +480,26 @@ export function Skills() {
             className="skills-heading font-bold uppercase"
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'var(--text-h1)',
-              lineHeight: 'var(--leading-tight)',
+              fontSize: 'clamp(2.8rem, 6.8vw, 6.2rem)',
+              lineHeight: '0.88',
+              letterSpacing: 'var(--tracking-tighter)',
               color: 'var(--color-text-primary)',
               clipPath: 'inset(0 0 0 0)',
             }}
           >
             Tools
             <br />
-            I Work With<span style={{ color: 'var(--color-accent)' }}>.</span>
+            I Work
+            <br />
+            With<span style={{ color: 'var(--color-accent)' }}>.</span>
           </h2>
 
           <p
-            className="skills-support mt-4 max-w-md text-[12px] md:text-[13px]"
+            className="skills-support mt-6 max-w-lg text-[13px] md:text-[14px]"
             style={{
               fontFamily: 'var(--font-body)',
               color: 'var(--color-text-secondary)',
-              lineHeight: 'var(--leading-normal)',
+              lineHeight: 'var(--leading-relaxed)',
             }}
           >
             Technologies and methods I use to build intelligent software systems.

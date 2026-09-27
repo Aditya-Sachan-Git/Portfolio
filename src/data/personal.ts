@@ -21,7 +21,7 @@ export const personal = {
     github: 'https://github.com/Aditya-Sachan-Git',
     linkedin: 'https://www.linkedin.com/in/aditya-sachan-7603b828b',
   },
-  resume: '/Aditya_Sachan_Resume_Updated.pdf',
+  resume: 'https://drive.google.com/file/d/1oR9BZ2YCKP3Kzt6yOI4PcpIOBKAeWCQm/view?usp=sharing',
   portrait: '/profilePic1.jpg',
 } as const
 

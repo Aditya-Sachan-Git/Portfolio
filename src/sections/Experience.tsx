@@ -67,9 +67,9 @@ export function ExperienceSection() {
     <section
       ref={sectionRef}
       id="experience"
-      className="relative py-24 md:py-32 lg:py-40 px-[var(--content-padding)]"
+      className="relative py-24 md:py-32 lg:py-40"
     >
-      <div className="mx-auto w-full max-w-[var(--max-width)]">
+      <div className="page-frame">
 
         {/* ── Header ── */}
         <div className="mb-16 md:mb-24 lg:mb-32">
@@ -94,22 +94,20 @@ export function ExperienceSection() {
           </h2>
         </div>
 
-        {/* ── Editorial Timeline ── */}
-        <div className="exp-timeline relative flex flex-col lg:grid lg:grid-cols-12 lg:gap-8">
+        {/* ── Editorial Timeline: 12-Column Balanced Architecture ── */}
+        <div className="exp-timeline relative flex flex-col lg:grid lg:grid-cols-12 lg:gap-8 items-start">
 
-          {/* Timeline spine — visible on all screens */}
-          <div className="absolute left-0 lg:left-[8.33%] top-0 bottom-0 flex flex-col items-center z-0">
-            {/* Spine line */}
+          {/* Timeline spine (mobile absolute line, desktop column line) */}
+          <div className="absolute left-0 lg:hidden top-0 bottom-0 flex flex-col items-center z-0">
             <div
               className="exp-spine w-px flex-1"
               style={{ backgroundColor: 'var(--color-surface-border)' }}
             />
           </div>
 
-          {/* Year marker */}
-          <div className="lg:col-span-1 relative z-10 mb-8 lg:mb-0">
-            <div className="exp-year flex items-center gap-3 lg:flex-col lg:items-start">
-              {/* Dot on spine */}
+          {/* Cols 1–2: Year marker + Desktop spine */}
+          <div className="order-1 lg:order-1 lg:col-span-2 relative z-10 mb-8 lg:mb-0 pl-6 lg:pl-0">
+            <div className="exp-year flex items-center gap-3 lg:gap-4">
               <div
                 className="h-2 w-2 rounded-full shrink-0"
                 style={{ backgroundColor: 'var(--color-accent)' }}
@@ -118,7 +116,7 @@ export function ExperienceSection() {
                 className="font-bold uppercase"
                 style={{
                   fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(2rem, 4vw, 3.5rem)',
+                  fontSize: 'clamp(2.5rem, 4.5vw, 4rem)',
                   lineHeight: '1',
                   color: 'var(--color-text-primary)',
                   letterSpacing: 'var(--tracking-tighter)',
@@ -127,12 +125,54 @@ export function ExperienceSection() {
                 {entry.year}
               </span>
             </div>
+            {/* Desktop spine rule beneath year */}
+            <div
+              className="exp-spine hidden lg:block mt-6 h-32 w-px ml-1"
+              style={{ backgroundColor: 'var(--color-surface-border)' }}
+            />
           </div>
 
-          {/* Content area */}
-          <div className="lg:col-span-10 lg:col-start-3 pl-6 lg:pl-0">
+          {/* Cols 3–8: Responsibilities (Middle) */}
+          <div className="order-3 lg:order-2 lg:col-span-6 pl-6 lg:pl-0 mb-8 lg:mb-0">
+            <ul className="exp-responsibilities space-y-3.5 w-full">
+              {entry.description.map((item, i) => (
+                <li
+                  key={i}
+                  className="exp-resp flex gap-3 text-[13px] md:text-[14px]"
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    color: 'var(--color-text-secondary)',
+                    lineHeight: 'var(--leading-relaxed)',
+                  }}
+                >
+                  <span
+                    className="mt-1 shrink-0 text-[10px]"
+                    style={{ color: 'var(--color-text-muted)' }}
+                  >
+                    —
+                  </span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
 
-            {/* Company + Role */}
+            {/* End marker */}
+            <div className="mt-10 flex items-center gap-4">
+              <div
+                className="h-px flex-1 max-w-32"
+                style={{ backgroundColor: 'var(--color-surface-border)' }}
+              />
+              <span
+                className="text-[8px] uppercase tracking-[0.15em]"
+                style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
+              >
+                END / 05
+              </span>
+            </div>
+          </div>
+
+          {/* Cols 9–12: Company + Role + Dates + Tags (Right End) */}
+          <div className="order-2 lg:order-3 lg:col-span-4 pl-6 lg:pl-0 lg:ml-auto w-full mb-8 lg:mb-0">
             <div className="exp-company mb-4">
               <h3
                 className="font-bold uppercase"
@@ -174,7 +214,7 @@ export function ExperienceSection() {
             </div>
 
             {/* Tags */}
-            <div className="exp-tags flex flex-wrap gap-2 mb-8">
+            <div className="exp-tags flex flex-wrap gap-2">
               {entry.tags.map((tag) => (
                 <span
                   key={tag}
@@ -185,50 +225,8 @@ export function ExperienceSection() {
                 </span>
               ))}
             </div>
-
-            {/* Separator */}
-            <div
-              className="h-px w-full max-w-xs mb-8"
-              style={{ backgroundColor: 'var(--color-surface-border)' }}
-            />
-
-            {/* Responsibilities */}
-            <ul className="exp-responsibilities space-y-3 max-w-xl">
-              {entry.description.map((item, i) => (
-                <li
-                  key={i}
-                  className="exp-resp flex gap-3 text-[13px] md:text-[14px]"
-                  style={{
-                    fontFamily: 'var(--font-body)',
-                    color: 'var(--color-text-secondary)',
-                    lineHeight: 'var(--leading-normal)',
-                  }}
-                >
-                  <span
-                    className="mt-1 shrink-0 text-[10px]"
-                    style={{ color: 'var(--color-text-muted)' }}
-                  >
-                    —
-                  </span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            {/* End marker */}
-            <div className="mt-10 flex items-center gap-4">
-              <div
-                className="h-px flex-1 max-w-32"
-                style={{ backgroundColor: 'var(--color-surface-border)' }}
-              />
-              <span
-                className="text-[8px] uppercase tracking-[0.15em]"
-                style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
-              >
-                END / 05
-              </span>
-            </div>
           </div>
+
         </div>
 
       </div>

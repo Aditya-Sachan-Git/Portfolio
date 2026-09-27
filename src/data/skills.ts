@@ -26,15 +26,15 @@ export const systemNodes: SystemNode[] = [
     id: 'fedllm',
     label: 'FedLLM',
     shortLabel: 'FedLLM',
-    x: 20,
+    x: 25,
     y: 32,
   },
   {
     id: 'healthcare',
     label: 'AI-Powered Multilingual Healthcare Assistant',
     shortLabel: 'Healthcare Assistant',
-    x: 72,
-    y: 28,
+    x: 70,
+    y: 30,
   },
   {
     id: 'srf',
@@ -49,36 +49,36 @@ export const systemNodes: SystemNode[] = [
 
 export const techNodes: TechNode[] = [
   // Languages
-  { id: 'python',  label: 'Python',  category: 'Languages', x: 40, y: 18, connections: ['fedllm', 'healthcare'] },
-  { id: 'java',    label: 'Java',    category: 'Languages', x: 58, y: 10, connections: [] },
-  { id: 'c',       label: 'C',       category: 'Languages', x: 66, y: 8,  connections: [] },
-  { id: 'cpp',     label: 'C++',     category: 'Languages', x: 74, y: 11, connections: [] },
+  { id: 'python',  label: 'Python',  category: 'Languages', x: 38, y: 18, connections: ['fedllm', 'healthcare'] },
+  { id: 'java',    label: 'Java',    category: 'Languages', x: 54, y: 11, connections: [] },
+  { id: 'c',       label: 'C',       category: 'Languages', x: 62, y: 9,  connections: [] },
+  { id: 'cpp',     label: 'C++',     category: 'Languages', x: 68, y: 14, connections: [] },
 
   // AI / Machine Learning
-  { id: 'llm-apps',   label: 'LLM Applications',       category: 'AI / ML', x: 36, y: 46, connections: ['fedllm', 'healthcare'] },
-  { id: 'prompt-eng', label: 'Prompt Engineering',      category: 'AI / ML', x: 8,  y: 55, connections: ['fedllm'] },
-  { id: 'nlp',        label: 'NLP',                     category: 'AI / ML', x: 84, y: 16, connections: ['healthcare'] },
-  { id: 'ml',         label: 'Machine Learning',        category: 'AI / ML', x: 42, y: 6,  connections: ['fedllm', 'healthcare'] },
-  { id: 'tsf',        label: 'Time-Series Forecasting', category: 'AI / ML', x: 12, y: 66, connections: ['fedllm'] },
+  { id: 'llm-apps',   label: 'LLM Applications',       category: 'AI / ML', x: 36, y: 44, connections: ['fedllm', 'healthcare'] },
+  { id: 'prompt-eng', label: 'Prompt Engineering',      category: 'AI / ML', x: 15, y: 50, connections: ['fedllm'] },
+  { id: 'nlp',        label: 'NLP',                     category: 'AI / ML', x: 78, y: 18, connections: ['healthcare'] },
+  { id: 'ml',         label: 'Machine Learning',        category: 'AI / ML', x: 44, y: 8,  connections: ['fedllm', 'healthcare'] },
+  { id: 'tsf',        label: 'Time-Series Forecasting', category: 'AI / ML', x: 18, y: 64, connections: ['fedllm'] },
 
   // Frameworks
-  { id: 'flask', label: 'Flask', category: 'Frameworks', x: 90, y: 55, connections: [] },
-  { id: 'html5', label: 'HTML5', category: 'Frameworks', x: 88, y: 63, connections: [] },
-  { id: 'css3',  label: 'CSS3',  category: 'Frameworks', x: 86, y: 71, connections: [] },
+  { id: 'flask', label: 'Flask', category: 'Frameworks', x: 80, y: 52, connections: [] },
+  { id: 'html5', label: 'HTML5', category: 'Frameworks', x: 80, y: 62, connections: [] },
+  { id: 'css3',  label: 'CSS3',  category: 'Frameworks', x: 78, y: 72, connections: [] },
 
   // Developer Tools
-  { id: 'github',       label: 'GitHub',       category: 'Dev Tools', x: 28, y: 50, connections: ['fedllm'] },
-  { id: 'vscode',       label: 'VS Code',      category: 'Dev Tools', x: 22, y: 82, connections: [] },
-  { id: 'antigravity',  label: 'Antigravity',  category: 'Dev Tools', x: 6,  y: 22, connections: ['fedllm'] },
+  { id: 'github',       label: 'GitHub',       category: 'Dev Tools', x: 28, y: 46, connections: ['fedllm'] },
+  { id: 'vscode',       label: 'VS Code',      category: 'Dev Tools', x: 20, y: 78, connections: [] },
+  { id: 'antigravity',  label: 'Antigravity',  category: 'Dev Tools', x: 14, y: 22, connections: ['fedllm'] },
 
   // Databases
-  { id: 'mongodb', label: 'MongoDB Atlas', category: 'Databases', x: 88, y: 40, connections: ['healthcare'] },
-  { id: 'sqlite',  label: 'SQLite',        category: 'Databases', x: 82, y: 82, connections: [] },
+  { id: 'mongodb', label: 'MongoDB Atlas', category: 'Databases', x: 80, y: 38, connections: ['healthcare'] },
+  { id: 'sqlite',  label: 'SQLite',        category: 'Databases', x: 76, y: 82, connections: [] },
 
   // BI / Analytics
-  { id: 'dashboard', label: 'Dashboard Development', category: 'BI / Analytics', x: 28, y: 86, connections: ['srf'] },
-  { id: 'dataviz',   label: 'Data Visualization',   category: 'BI / Analytics', x: 48, y: 90, connections: ['srf'] },
-  { id: 'bi',        label: 'Business Intelligence', category: 'BI / Analytics', x: 68, y: 86, connections: ['srf'] },
+  { id: 'dashboard', label: 'Dashboard Development', category: 'BI / Analytics', x: 28, y: 84, connections: ['srf'] },
+  { id: 'dataviz',   label: 'Data Visualization',   category: 'BI / Analytics', x: 48, y: 88, connections: ['srf'] },
+  { id: 'bi',        label: 'Business Intelligence', category: 'BI / Analytics', x: 64, y: 84, connections: ['srf'] },
 ]
 
 /* ── Connection computation ── */

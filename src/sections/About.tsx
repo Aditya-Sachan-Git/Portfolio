@@ -52,9 +52,9 @@ export function About() {
     <section
       ref={sectionRef}
       id="about"
-      className="relative py-24 md:py-32 lg:py-40 px-[var(--content-padding)]"
+      className="relative py-24 md:py-32 lg:py-40"
     >
-      <div className="mx-auto w-full max-w-[var(--max-width)]">
+      <div className="page-frame">
 
         {/* ── Header ── */}
         <div className="mb-16 md:mb-24 lg:mb-32">
@@ -66,18 +66,19 @@ export function About() {
           </span>
 
           <h2
-            className="about-heading font-bold uppercase"
+            className="about-heading uppercase"
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'var(--text-h1)',
-              lineHeight: 'var(--leading-tight)',
+              fontSize: 'clamp(2.2rem, 4.5vw, 4.2rem)',
+              lineHeight: '0.95',
+              letterSpacing: '-0.02em',
               color: 'var(--color-text-primary)',
               clipPath: 'inset(0 0 0 0)',
             }}
           >
-            About
-            <br />
-            Aditya<span style={{ color: 'var(--color-accent)' }}>.</span>
+            <span className="font-light tracking-tight opacity-80 block text-[0.88em]">About</span>
+            <span className="font-medium tracking-tighter">Aditya</span>
+            <span style={{ color: 'var(--color-accent)' }}>.</span>
           </h2>
 
           <div
@@ -87,9 +88,9 @@ export function About() {
         </div>
 
         {/* ── Editorial composition: Keywords + Bio ── */}
-        <div className="flex flex-col lg:grid lg:grid-cols-12 lg:gap-12 gap-12 lg:items-start">
+        <div className="flex flex-col lg:grid lg:grid-cols-12 lg:gap-8 gap-12 lg:items-start">
 
-          {/* Left / Center: Large editorial keywords */}
+          {/* Left / Center: Editorial keywords */}
           <div className="about-keywords lg:col-span-5">
             {[
               { text: 'AI / ML', outline: false },
@@ -101,17 +102,17 @@ export function About() {
                 className="about-keyword block font-bold uppercase"
                 style={{
                   fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(2.5rem, 7vw, 6rem)',
-                  lineHeight: '0.9',
-                  letterSpacing: 'var(--tracking-tighter)',
+                  fontSize: 'clamp(2rem, 4.5vw, 4rem)',
+                  lineHeight: '1.05',
+                  letterSpacing: 'var(--tracking-tight)',
                   marginBottom: 'var(--space-2)',
                   ...(kw.outline
                     ? {
                         color: 'transparent',
-                        WebkitTextStroke: '1px var(--color-surface-border)',
+                        WebkitTextStroke: '1.5px var(--color-text-secondary)',
                       }
                     : {
-                        color: 'var(--color-surface-subtle)',
+                        color: kw.text === 'AI / ML' ? 'var(--color-accent)' : 'var(--color-text-secondary)',
                       }),
                 }}
               >
@@ -129,12 +130,12 @@ export function About() {
           </div>
 
           {/* Right: Biography */}
-          <div className="about-bio-wrap lg:col-span-5 lg:col-start-8 space-y-6">
+          <div className="about-bio-wrap lg:col-span-7 lg:col-start-6 space-y-6">
             <p
-              className="about-bio text-[14px] md:text-[15px]"
+              className="about-bio text-[15px] md:text-[16px]"
               style={{
                 fontFamily: 'var(--font-body)',
-                color: 'var(--color-text-secondary)',
+                color: 'var(--color-text-primary)',
                 lineHeight: 'var(--leading-relaxed)',
               }}
             >

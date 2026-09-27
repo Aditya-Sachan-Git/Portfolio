@@ -6,19 +6,22 @@
 
 :root {
   /* ── Colors ── */
-  --color-surface-primary: #050505;
-  --color-surface-elevated: #0E0E0E;
-  --color-surface-subtle: #1A1A1A;
-  --color-surface-border: #222222;
+  --color-surface-primary: #080A0F;
+  --color-surface-elevated: #11151C;
+  --color-surface-subtle: #151A22;
+  --color-surface-border: #232730;
 
-  --color-text-primary: #F0EBE0;
-  --color-text-secondary: #8A8A8A;
-  --color-text-muted: #4A4A4A;
+  --color-text-primary: #F3EEE5;
+  --color-text-secondary: #A7A8AD;
+  --color-text-muted: #6A6C73;
+  --color-text-decorative: #1A1D24;
 
-  --color-accent: #3B5CFF;
-  --color-accent-hover: #5070FF;
-  --color-accent-glow: rgba(59, 92, 255, 0.15);
-  --color-accent-subtle: rgba(59, 92, 255, 0.08);
+  --color-accent: #5268FF;
+  --color-accent-hover: #7284FF;
+  --color-accent-glow: rgba(82, 104, 255, 0.15);
+  --color-accent-subtle: rgba(82, 104, 255, 0.08);
+  
+  --color-accent-warm: #DDA56A;
 
   /* ── Typography ── */
   --font-display: 'Space Grotesk', system-ui, sans-serif;
@@ -60,8 +63,9 @@
   --space-64: 16rem;    /* 256px */
 
   /* ── Layout ── */
-  --max-width: 1440px;
-  --content-padding: var(--space-6);
+  --page-gutter: clamp(1.25rem, 4vw, 5rem);
+  --max-width: 1800px;
+  --content-padding: var(--page-gutter);
   --grid-columns: 12;
   --grid-gap: var(--space-6);
   --nav-height: 4.5rem;
@@ -82,6 +86,13 @@
   --z-overlay: 200;
   --z-modal: 300;
   --z-cursor: 400;
+}
+
+/* ── Unified Editorial Content Frame ── */
+.page-frame {
+  width: 100%;
+  max-width: min(calc(100% - (2 * var(--page-gutter))), 1800px);
+  margin-inline: auto;
 }
 
 /* ── Global reset & base ── */
@@ -183,39 +194,30 @@ img {
   }
 }
 
-/* ── Responsive content padding ── */
+/* Responsive grid gap */
 @media (min-width: 768px) {
   :root {
-    --content-padding: var(--space-12);
     --grid-gap: var(--space-8);
-  }
-}
-
-@media (min-width: 1024px) {
-  :root {
-    --content-padding: var(--space-16);
-  }
-}
-
-@media (min-width: 1440px) {
-  :root {
-    --content-padding: var(--space-24);
   }
 }
 
 /* ── Hero CTA styles ── */
 
 .hero-cta-primary {
-  border: 1px solid var(--color-text-secondary);
-  color: var(--color-text-primary);
-  background-color: transparent;
+  border: 1px solid var(--color-surface-border);
+  color: var(--color-text-primary) !important;
+  background-color: var(--color-surface-elevated);
   transition: all var(--duration-normal) var(--ease-out-expo);
 }
 
 .hero-cta-primary:hover {
   border-color: var(--color-accent);
   background-color: var(--color-accent);
-  color: var(--color-surface-primary);
+  color: var(--color-surface-primary) !important;
+}
+
+.hero-cta-primary:hover span {
+  color: var(--color-surface-primary) !important;
 }
 
 .hero-cta-secondary {
@@ -264,158 +266,96 @@ img {
   transition: transform var(--duration-normal) var(--ease-out-expo);
 }
 
-/* ── FedLLM architecture visual ── */
+/* ── Work section CTAs ── */
 
-.fedllm-visual {
-  transition: transform var(--duration-slow) var(--ease-out-expo),
-              border-color var(--duration-normal) var(--ease-out-expo);
+/* ── Research Section (Scroll Focus Glow Animation) ── */
+
+@keyframes research-accent-glow {
+  0%, 100% {
+    text-shadow: 0 0 16px var(--color-accent-glow), 0 0 32px var(--color-accent-glow);
+  }
+  50% {
+    text-shadow: 0 0 24px var(--color-accent-glow), 0 0 48px rgba(82, 104, 255, 0.6);
+  }
 }
 
-.fedllm-visual:hover {
-  transform: scale(1.01);
-  border-color: var(--color-text-muted);
+@keyframes research-solid-glow {
+  0%, 100% {
+    text-shadow: 0 0 16px rgba(243, 238, 229, 0.3), 0 0 32px rgba(243, 238, 229, 0.15);
+  }
+  50% {
+    text-shadow: 0 0 26px rgba(243, 238, 229, 0.5), 0 0 50px rgba(243, 238, 229, 0.25);
+  }
 }
 
-.fedllm-node {
-  transition: border-color var(--duration-normal) var(--ease-out-expo),
-              background-color var(--duration-normal) var(--ease-out-expo);
+@keyframes research-outline-glow {
+  0%, 100% {
+    text-shadow: 0 0 14px rgba(243, 238, 229, 0.25);
+    -webkit-text-stroke-color: var(--color-text-primary);
+  }
+  50% {
+    text-shadow: 0 0 24px rgba(243, 238, 229, 0.45);
+    -webkit-text-stroke-color: #ffffff;
+  }
 }
-
-.fedllm-visual:hover .fedllm-node-primary {
-  border-color: var(--color-accent-hover);
-}
-
-.fedllm-connection {
-  opacity: 0.4;
-  transition: opacity var(--duration-normal) var(--ease-out-expo);
-}
-
-.fedllm-visual:hover .fedllm-connection {
-  opacity: 0.7;
-}
-
-.fedllm-dot {
-  transition: background-color var(--duration-normal) var(--ease-out-expo),
-              box-shadow var(--duration-normal) var(--ease-out-expo);
-}
-
-.fedllm-visual:hover .fedllm-dot-accent {
-  background-color: var(--color-accent);
-  box-shadow: 0 0 8px var(--color-accent-glow);
-}
-
-/* ── Healthcare visual ── */
-
-.healthcare-visual {
-  transition: transform var(--duration-slow) var(--ease-out-expo),
-              border-color var(--duration-normal) var(--ease-out-expo);
-}
-
-.healthcare-visual:hover {
-  transform: scale(1.01);
-  border-color: var(--color-text-muted);
-}
-
-/* ── Research Section ── */
 
 .research-outline {
   color: transparent;
   -webkit-text-stroke: 1px var(--color-surface-border);
-  transition: all var(--duration-normal) var(--ease-out-expo);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.research-item:hover .research-outline {
-  -webkit-text-stroke-color: var(--color-text-primary);
-  color: rgba(240, 235, 224, 0.03); /* Extremely subtle fill */
+.research-item.is-focused .research-outline {
+  color: rgba(243, 238, 229, 0.05);
+  animation: research-outline-glow 3s ease-in-out infinite;
 }
 
 .research-solid {
-  color: var(--color-surface-border);
-  transition: color var(--duration-normal) var(--ease-out-expo);
+  color: var(--color-text-secondary);
+  opacity: 0.45;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.research-item:hover .research-solid {
+.research-item.is-focused .research-solid {
   color: var(--color-text-primary);
+  opacity: 1;
+  animation: research-solid-glow 3s ease-in-out infinite;
 }
 
 .research-accent {
   color: var(--color-text-secondary);
-  transition: all var(--duration-normal) var(--ease-out-expo);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.research-item:hover .research-accent {
+.research-item.is-focused .research-accent {
   color: var(--color-accent);
-  text-shadow: 0 0 12px var(--color-accent-glow);
+  animation: research-accent-glow 3s ease-in-out infinite;
 }
 
-.fedllm-indicator {
+.fedllm-indicator,
+.fedllm-indicator-mobile {
   opacity: 0;
-  transition: all var(--duration-normal) var(--ease-out-expo);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.research-item:hover .fedllm-indicator {
+.research-item.is-focused .fedllm-indicator,
+.research-item.is-focused .fedllm-indicator-mobile {
   opacity: 1;
 }
 
 .indicator-line {
-  transition: background-color var(--duration-normal) var(--ease-out-expo);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.research-item:hover .indicator-line {
+.research-item.is-focused .indicator-line {
   background-color: var(--color-accent);
+  box-shadow: 0 0 8px var(--color-accent-glow);
 }
 
 .indicator-text {
-  transition: color var(--duration-normal) var(--ease-out-expo);
+  transition: color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.research-item:hover .indicator-text {
+.research-item.is-focused .indicator-text {
   color: var(--color-text-primary);
-}
-
-/* ── Contact section links ── */
-
-.contact-link {
-  color: var(--color-text-secondary);
-  transition: color var(--duration-normal) var(--ease-out-expo);
-}
-
-.contact-link:hover,
-.contact-link:focus-visible {
-  color: var(--color-text-primary);
-}
-
-.contact-link-rule {
-  transition: background-color var(--duration-normal) var(--ease-out-expo),
-              width var(--duration-normal) var(--ease-out-expo);
-}
-
-.contact-link:hover .contact-link-rule,
-.contact-link:focus-visible .contact-link-rule {
-  background-color: var(--color-accent);
-  width: 100%;
-}
-
-.contact-link-arrow {
-  display: inline-block;
-  transition: transform var(--duration-normal) var(--ease-out-expo),
-              color var(--duration-normal) var(--ease-out-expo);
-}
-
-.contact-link:hover .contact-link-arrow,
-.contact-link:focus-visible .contact-link-arrow {
-  transform: translateX(6px);
-  color: var(--color-accent);
-}
-
-/* ── Footer ── */
-
-.footer-top-link {
-  color: var(--color-text-muted);
-  transition: color var(--duration-normal) var(--ease-out-expo);
-}
-
-.footer-top-link:hover,
-.footer-top-link:focus-visible {
-  color: var(--color-accent);
 }

@@ -96,25 +96,12 @@ export function Hero() {
     <section
       ref={sectionRef}
       id="hero"
-      className="relative flex min-h-screen flex-col"
+      className="relative flex min-h-screen flex-col justify-between"
       style={{ paddingTop: 'var(--nav-height)' }}
     >
       {/* ── Top metadata bar ─────────────────── */}
-      <div className="px-[var(--content-padding)] pt-6 md:pt-10 lg:pt-14">
-        <div className="mx-auto flex max-w-[var(--max-width)] items-center justify-between">
-          {/* Name label */}
-          <div className="hero-name flex items-center gap-4">
-            <span
-              className="text-[11px] font-medium uppercase tracking-[0.2em] md:text-xs"
-              style={{
-                fontFamily: 'var(--font-display)',
-                color: 'var(--color-text-secondary)',
-              }}
-            >
-              {personal.name.full}
-            </span>
-          </div>
-
+      <div className="pt-6 md:pt-10 lg:pt-14">
+        <div className="page-frame flex items-center justify-between">
           {/* Top-right coordinate */}
           <span
             className="hero-coord hidden text-[10px] uppercase tracking-[0.15em] md:block"
@@ -128,7 +115,7 @@ export function Hero() {
         </div>
 
         {/* Thin decorative rule */}
-        <div className="mx-auto max-w-[var(--max-width)]">
+        <div className="page-frame">
           <div
             className="hero-rule mt-4 h-px"
             style={{ backgroundColor: 'var(--color-surface-border)' }}
@@ -137,201 +124,194 @@ export function Hero() {
       </div>
 
       {/* ── Main composition ─────────────────── */}
-      <div className="flex flex-1 items-center px-[var(--content-padding)]">
-        <div className="mx-auto w-full max-w-[var(--max-width)]">
+      <div className="flex flex-1 items-center py-10 md:py-16">
+        <div className="page-frame">
+          <div className="relative w-full flex flex-col lg:flex-row lg:items-center justify-start gap-24 lg:gap-36 xl:gap-48">
 
-          {/* Headline + Portrait ─────────────── */}
-          <div className="relative py-6 md:py-0">
+            {/* Div 1: Left Headline + Identity + CTAs */}
+            <div className="relative z-[3] shrink-0">
+              <h1>
+                {/* Line 1: I BUILD */}
+                <div
+                  className="hero-line-1 relative z-[3] md:z-[1]"
+                  style={{ clipPath: 'inset(0 0 0 0)' }}
+                >
+                  <span
+                    className="block font-bold uppercase"
+                    style={{
+                      fontFamily: 'var(--font-display)',
+                      fontSize: 'clamp(2rem, 5.5vw, 6rem)',
+                      lineHeight: '1.1',
+                      letterSpacing: 'var(--tracking-tight)',
+                      color: 'var(--color-text-primary)',
+                    }}
+                  >
+                    I Build
+                  </span>
+                </div>
 
-            <h1>
-            {/* Line 1: I BUILD */}
-            <div
-              className="hero-line-1 relative z-[3] md:z-[1]"
-              style={{ clipPath: 'inset(0 0 0 0)' }}
-            >
-              <span
-                className="block font-bold uppercase"
+                {/* Line 2: INTELLIGENT */}
+                <div
+                  className="hero-line-2 relative z-[3] -mt-1 md:-mt-2"
+                  style={{ clipPath: 'inset(0 0 0 0)' }}
+                >
+                  <span
+                    className="block font-bold uppercase"
+                    style={{
+                      fontFamily: 'var(--font-display)',
+                      fontSize: 'clamp(2.8rem, 8.5vw, 10rem)',
+                      lineHeight: '0.85',
+                      letterSpacing: 'var(--tracking-tighter)',
+                      color: 'var(--color-text-primary)',
+                    }}
+                  >
+                    Intelligent
+                  </span>
+                </div>
+
+                {/* Line 3: SYSTEMS. */}
+                <div
+                  className="hero-line-3 relative z-[3] md:z-[1] mt-1 md:mt-0"
+                  style={{ clipPath: 'inset(0 0 0 0)' }}
+                >
+                  <span
+                    className="block font-bold uppercase"
+                    style={{
+                      fontFamily: 'var(--font-display)',
+                      fontSize: 'clamp(2rem, 5.5vw, 6rem)',
+                      lineHeight: '1.1',
+                      letterSpacing: 'var(--tracking-tight)',
+                      color: 'var(--color-text-primary)',
+                    }}
+                  >
+                    Systems
+                    <span style={{ color: 'var(--color-accent)' }}>.</span>
+                  </span>
+                </div>
+              </h1>
+
+              {/* ── Identity ─────────────────────── */}
+              <div className="hero-identity relative z-[4] mt-8 md:mt-10 lg:mt-12">
+                <div className="flex flex-col gap-0.5">
+                  {personal.roles.map((role) => (
+                    <span
+                      key={role}
+                      className="text-[11px] font-medium uppercase tracking-[0.15em] md:text-xs"
+                      style={{
+                        fontFamily: 'var(--font-body)',
+                        color: 'var(--color-text-secondary)',
+                      }}
+                    >
+                      {role}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* ── Keywords ─────────────────────── */}
+              <p
+                className="hero-keywords relative z-[4] mt-3 text-[10px] tracking-[0.1em] md:mt-4 md:text-[11px]"
                 style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(2rem, 5.5vw, 7rem)',
-                  lineHeight: '1.1',
-                  letterSpacing: 'var(--tracking-tight)',
-                  color: 'var(--color-text-primary)',
+                  fontFamily: 'var(--font-mono)',
+                  color: 'var(--color-text-muted)',
                 }}
               >
-                I Build
-              </span>
-            </div>
+                LLMs · Machine Learning · Federated Learning · Explainable AI
+              </p>
 
-            {/* Line 2: INTELLIGENT — the dominant visual element */}
-            <div
-              className="hero-line-2 relative z-[3] -mt-1 md:-mt-2"
-              style={{ clipPath: 'inset(0 0 0 0)' }}
-            >
-              <span
-                className="block font-bold uppercase"
-                style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(2.8rem, 10.5vw, 12rem)',
-                  lineHeight: '0.85',
-                  letterSpacing: 'var(--tracking-tighter)',
-                  color: 'var(--color-text-primary)',
-                }}
-              >
-                Intelligent
-              </span>
-            </div>
-
-            {/* Line 3: SYSTEMS. — accent-colored period */}
-            <div
-              className="hero-line-3 relative z-[3] md:z-[1] mt-1 md:mt-0"
-              style={{ clipPath: 'inset(0 0 0 0)' }}
-            >
-              <span
-                className="block font-bold uppercase"
-                style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(2rem, 5.5vw, 7rem)',
-                  lineHeight: '1.1',
-                  letterSpacing: 'var(--tracking-tight)',
-                  color: 'var(--color-text-primary)',
-                }}
-              >
-                Systems
-                <span style={{ color: 'var(--color-accent)' }}>.</span>
-              </span>
-            </div>
-            </h1>
-
-            {/* ── Portrait ──────────────────────
-                 z-2 sits between z-1 text (behind)
-                 and z-3 "INTELLIGENT" (in front),
-                 creating editorial depth layering.
-                 On mobile, all text is z-3 so text
-                 is always readable.
-                 ─────────────────────────────── */}
-            <div
-              className="hero-portrait absolute z-[2] overflow-hidden
-                right-0 top-[20%] w-[44%]
-                md:right-0 md:top-[5%] md:w-[38%]
-                lg:right-[2%] lg:top-[-8%] lg:w-[33%]
-                xl:right-[4%] xl:top-[-12%] xl:w-[29%]"
-              style={{ clipPath: 'inset(0 0 0 0)' }}
-            >
-              {/* Thin accent line — left edge */}
-              <div
-                className="absolute left-0 top-0 bottom-0 z-[1] w-[2px]"
-                style={{
-                  backgroundColor: 'var(--color-accent)',
-                  opacity: 0.5,
-                }}
-              />
-
-              {/* Portrait image with editorial monochrome treatment */}
-              <img
-                src={personal.portrait}
-                alt={`Portrait of ${personal.name.full}`}
-                className="hero-portrait-img w-full object-cover object-top"
-                width={600}
-                height={800}
-                fetchPriority="high"
-                style={{
-                  aspectRatio: '3 / 4',
-                  filter: 'grayscale(1) sepia(0.1) contrast(1.08) brightness(0.82)',
-                }}
-              />
-
-              {/* Bottom fade — blends portrait into the dark background */}
-              <div
-                className="pointer-events-none absolute inset-0"
-                style={{
-                  background:
-                    'linear-gradient(to bottom, transparent 50%, var(--color-surface-primary) 100%)',
-                  opacity: 0.6,
-                }}
-              />
-            </div>
-
-            {/* Coordinate marker near portrait */}
-            <span
-              className="hero-coord absolute z-[4] hidden text-[10px] uppercase tracking-[0.15em] md:block
-                right-0 bottom-[-12%]
-                lg:right-[2%] lg:bottom-[-15%]"
-              style={{
-                fontFamily: 'var(--font-mono)',
-                color: 'var(--color-text-muted)',
-              }}
-            >
-              SYSTEM / 001
-            </span>
-          </div>
-
-          {/* ── Identity ─────────────────────── */}
-          <div className="hero-identity relative z-[4] mt-8 md:mt-12 lg:mt-16">
-            <div className="flex flex-col gap-0.5">
-              {personal.roles.map((role) => (
-                <span
-                  key={role}
-                  className="text-[11px] font-medium uppercase tracking-[0.15em] md:text-xs"
+              {/* ── CTAs ─────────────────────────── */}
+              <div className="relative z-[4] mt-8 flex flex-wrap items-center gap-4 md:mt-10 md:gap-6">
+                <a
+                  href="#work"
+                  className="hero-cta hero-cta-primary inline-flex items-center px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.15em] md:px-6 md:py-3 md:text-xs transition-all"
                   style={{
                     fontFamily: 'var(--font-body)',
-                    color: 'var(--color-text-secondary)',
+                    color: 'var(--color-text-primary)',
+                    backgroundColor: 'var(--color-surface-elevated)',
+                    border: '1px solid var(--color-surface-border)',
                   }}
                 >
-                  {role}
-                </span>
-              ))}
+                  <span style={{ color: 'var(--color-text-primary)' }}>View My Work</span>
+                  <span aria-hidden="true" style={{ color: 'var(--color-accent)' }}>&#8195;→</span>
+                </a>
+                <a
+                  href={personal.resume}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hero-cta hero-cta-secondary inline-flex items-center text-[11px] font-medium uppercase tracking-[0.15em] md:text-xs"
+                  style={{ fontFamily: 'var(--font-body)' }}
+                  aria-label="Download CV (opens in new tab)"
+                >
+                  Download CV<span aria-hidden="true">&#8195;→</span>
+                </a>
+              </div>
             </div>
-          </div>
 
-          {/* ── Keywords ─────────────────────── */}
-          <p
-            className="hero-keywords relative z-[4] mt-3 text-[10px] tracking-[0.1em] md:mt-4 md:text-[11px]"
-            style={{
-              fontFamily: 'var(--font-mono)',
-              color: 'var(--color-text-muted)',
-            }}
-          >
-            LLMs · Machine Learning · Federated Learning · Explainable AI
-          </p>
+            {/* Div 2: Right Portrait */}
+            <div className="relative mt-12 lg:mt-0 shrink-0 flex items-center">
+              <div
+                className="hero-portrait relative z-[2] overflow-hidden w-[70vw] sm:w-[50vw] md:w-[380px] lg:w-[340px] xl:w-[380px] max-w-[400px]"
+                style={{ clipPath: 'inset(0 0 0 0)' }}
+              >
+                {/* Thin accent line — left edge */}
+                <div
+                  className="absolute left-0 top-0 bottom-0 z-[1] w-px"
+                  style={{
+                    backgroundColor: 'var(--color-accent)',
+                    opacity: 1.0,
+                  }}
+                />
 
-          {/* ── CTAs ─────────────────────────── */}
-          <div className="relative z-[4] mt-8 flex flex-wrap items-center gap-4 md:mt-10 md:gap-6">
-            <a
-              href="#work"
-              className="hero-cta hero-cta-primary inline-flex items-center px-5 py-2.5 text-[11px] font-medium uppercase tracking-[0.15em] md:px-6 md:py-3 md:text-xs"
-              style={{ fontFamily: 'var(--font-body)' }}
-            >
-              View My Work<span aria-hidden="true">&#8195;→</span>
-            </a>
-            <a
-              href={personal.resume}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hero-cta hero-cta-secondary inline-flex items-center text-[11px] font-medium uppercase tracking-[0.15em] md:text-xs"
-              style={{ fontFamily: 'var(--font-body)' }}
-              aria-label="Download CV (opens in new tab)"
-            >
-              Download CV<span aria-hidden="true">&#8195;→</span>
-            </a>
+                {/* Portrait image with natural but desaturated editorial treatment */}
+                <img
+                  src={personal.portrait}
+                  alt={`Portrait of ${personal.name.full}`}
+                  className="hero-portrait-img w-full object-cover"
+                  width={600}
+                  height={800}
+                  fetchPriority="high"
+                  style={{
+                    aspectRatio: '3 / 4',
+                    objectPosition: 'center 20%',
+                    transform: 'scale(1.15)',
+                    filter: 'saturate(0.85) contrast(1.05) brightness(0.95)',
+                  }}
+                />
+
+                {/* Top fade — subtle edge blend */}
+                <div
+                  className="pointer-events-none absolute inset-0 z-[2]"
+                  style={{
+                    background:
+                      'linear-gradient(to bottom, var(--color-surface-primary) 0%, transparent 10%)',
+                  }}
+                />
+
+                {/* Bottom fade — aggressive blend into background */}
+                <div
+                  className="pointer-events-none absolute inset-0 z-[2]"
+                  style={{
+                    background:
+                      'linear-gradient(to bottom, transparent 40%, var(--color-surface-primary) 100%)',
+                  }}
+                />
+              </div>
+
+              {/* Coordinate marker near portrait */}
+              <span
+                className="hero-coord absolute -bottom-6 right-0 hidden text-[10px] uppercase tracking-[0.15em] md:block"
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  color: 'var(--color-text-muted)',
+                }}
+              >
+                SYSTEM / 001
+              </span>
+            </div>
+
           </div>
         </div>
       </div>
-
-      {/* ── Side coordinate (vertical text, xl+ only) ── */}
-      <span
-        className="hero-coord absolute left-4 top-1/2 hidden xl:block"
-        style={{
-          fontFamily: 'var(--font-mono)',
-          fontSize: '10px',
-          letterSpacing: '0.15em',
-          color: 'var(--color-text-muted)',
-          writingMode: 'vertical-rl',
-          transform: 'translateY(-50%) rotate(180deg)',
-        }}
-      >
-        N 20° 35′
-      </span>
 
       {/* ── Scroll indicator ─────────────────── */}
       <div className="hero-scroll-indicator flex flex-col items-center gap-2 pb-6 md:pb-10">

@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react'
-import { gsap } from '@/lib/gsap'
+import { gsap, ScrollTrigger } from '@/lib/gsap'
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion'
 import { researchTopics, type ResearchTopic } from '@/data/research'
 
@@ -21,7 +21,7 @@ function ResearchItem({ config }: { config: LayoutConfig }) {
     'research-solid'
 
   return (
-    <div className={`research-item group w-full ${align}`}>
+    <div className={`research-item w-full ${align}`}>
       <div className="relative inline-block text-left max-w-full">
         <h3
           className={`font-bold uppercase leading-[0.85] tracking-tighter break-words ${sizeClasses} ${typeClass}`}
@@ -54,7 +54,7 @@ function ResearchItem({ config }: { config: LayoutConfig }) {
       {/* Mobile Indicator */}
       {topic.connectsToFedLLM && (
         <div
-          className={`md:hidden mt-2 flex items-center gap-2 ${
+          className={`fedllm-indicator-mobile md:hidden mt-2 flex items-center gap-2 ${
             align.includes('text-right')
               ? 'justify-end'
               : align.includes('text-center')
@@ -96,6 +96,51 @@ export function Research() {
           { opacity: 0, y: 30, duration: 0.8, stagger: 0.15, ease: 'power3.out' },
           0.4
         )
+
+      // Per-topic scroll-based emphasis — spotlight effect
+      const items = sectionRef.current!.querySelectorAll('.research-item-anim')
+      items.forEach((item) => {
+        gsap.fromTo(
+          item,
+          { opacity: 0.3 },
+          {
+            opacity: 1,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: item,
+              start: 'top 85%',
+              end: 'top 40%',
+              scrub: true,
+            },
+          }
+        )
+        // Fade back out as it leaves
+        gsap.fromTo(
+          item,
+          { opacity: 1 },
+          {
+            opacity: 0.3,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: item,
+              start: 'bottom 40%',
+              end: 'bottom 15%',
+              scrub: true,
+            },
+          }
+        )
+      })
+
+      // Per-topic scroll-focus text glow animation
+      const researchItems = sectionRef.current!.querySelectorAll('.research-item')
+      researchItems.forEach((item) => {
+        ScrollTrigger.create({
+          trigger: item,
+          start: 'top 72%',
+          end: 'bottom 28%',
+          toggleClass: 'is-focused',
+        })
+      })
     }, sectionRef)
 
     return () => ctx.revert()
@@ -114,7 +159,7 @@ export function Research() {
     <section
       ref={sectionRef}
       id="research"
-      className="relative py-24 md:py-32 lg:py-40 px-[var(--content-padding)] overflow-hidden"
+      className="relative py-24 md:py-32 lg:py-40 overflow-hidden"
     >
       {/* Grid Lines Background */}
       <div className="absolute inset-0 pointer-events-none z-0">
@@ -124,7 +169,7 @@ export function Research() {
         <div className="rs-grid-line-h absolute left-0 right-0 top-[75%] h-px bg-[var(--color-surface-border)] opacity-30" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-[var(--max-width)]">
+      <div className="relative z-10 page-frame">
         {/* Header */}
         <div className="mb-16 md:mb-24 lg:mb-32 flex flex-col lg:flex-row lg:items-end justify-between gap-8">
           <div className="max-w-xl">

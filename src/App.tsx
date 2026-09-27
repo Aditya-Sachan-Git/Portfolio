@@ -49,7 +49,7 @@ export function App() {
       <ScrollProgress />
       <Navbar />
 
-      <main>
+      <main className="flex flex-col gap-20 md:gap-28 lg:gap-36">
         <Hero />
         <Work />
         <Research />

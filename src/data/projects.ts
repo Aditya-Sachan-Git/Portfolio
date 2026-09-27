@@ -43,6 +43,7 @@ export const projects: Project[] = [
       'Generated dynamic Dijkstra routes from predicted traffic speeds.',
     ],
     links: {
+      github: 'https://github.com/Aditya-Sachan-Git/FedLLM-for-Explainable-Traffic-Prediction.git',
       caseStudy: '#fedllm',
     },
     featured: true,
@@ -64,7 +65,9 @@ export const projects: Project[] = [
       'MongoDB storage and retrieval.',
       'AI-assisted healthcare information.',
     ],
-    links: {},
+    links: {
+      github: 'https://github.com/Aditya-Sachan-Git/AI-Powered_Multilingual_Healthcare_Assistant.git',
+    },
     featured: true,
   },
 ]

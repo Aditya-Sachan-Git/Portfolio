@@ -7,63 +7,37 @@ export function Footer() {
   }
 
   return (
-    <footer
-      className="px-[var(--content-padding)] py-10 md:py-14"
-      style={{ borderTop: '1px solid var(--color-surface-border)' }}
-    >
-      <div className="mx-auto max-w-[var(--max-width)]">
-
-        {/* ── Top row: Name + Back to top ── */}
-        <div className="flex items-start justify-between mb-6 md:mb-8">
-          <div>
+    <footer className="pb-16 md:pb-24 pt-8 md:pt-12">
+      <div className="page-frame">
+        {/* Upper row: Identity (Left) & Social Links (Right) */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start mb-12 md:mb-16">
+          {/* Left: Identity (Cols 1–6) */}
+          <div className="md:col-span-6 space-y-2">
             <span
-              className="block font-bold uppercase text-[13px] md:text-[14px] tracking-[0.06em]"
+              className="block font-bold uppercase text-base md:text-lg tracking-wider"
               style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}
             >
               {personal.name.full}
             </span>
             <span
-              className="mt-1 block text-[10px] uppercase tracking-[0.1em]"
+              className="block text-[11px] md:text-xs uppercase tracking-[0.16em] leading-relaxed"
               style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
             >
-              {personal.roles.join(' · ')}
+              AI / ML RESEARCHER
+              <br />
+              SOFTWARE ENGINEER
             </span>
           </div>
 
-          <button
-            onClick={handleBackToTop}
-            className="footer-top-link flex items-center gap-2 outline-none cursor-pointer"
-            aria-label="Back to top"
-          >
-            <span
-              className="text-[10px] uppercase tracking-[0.12em]"
-              style={{ fontFamily: 'var(--font-mono)' }}
-            >
-              ↑ Back to top
-            </span>
-          </button>
-        </div>
-
-        {/* ── Separator ── */}
-        <div className="h-px mb-6 md:mb-8" style={{ backgroundColor: 'var(--color-surface-border)' }} />
-
-        {/* ── Bottom row: Copyright + Social links ── */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <span
-            className="text-[10px] tracking-wide"
-            style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
-          >
-            &copy; {new Date().getFullYear()} {personal.name.full}
-          </span>
-
-          <div className="flex items-center gap-5">
+          {/* Right: Simple vertical text links (Cols 7–12, aligned right on desktop) */}
+          <div className="md:col-span-6 flex flex-col md:items-end space-y-2.5">
             <a
               href={personal.social.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="footer-top-link text-[10px] uppercase tracking-[0.12em] outline-none"
-              style={{ fontFamily: 'var(--font-mono)' }}
-              aria-label="GitHub (opens in new tab)"
+              className="text-xs md:text-[13px] tracking-wider uppercase transition-colors hover:text-[var(--color-text-primary)] focus-visible:outline-none focus-visible:text-[var(--color-accent)]"
+              style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-secondary)' }}
+              aria-label="GitHub profile (opens in new tab)"
             >
               GitHub
             </a>
@@ -71,15 +45,38 @@ export function Footer() {
               href={personal.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="footer-top-link text-[10px] uppercase tracking-[0.12em] outline-none"
-              style={{ fontFamily: 'var(--font-mono)' }}
-              aria-label="LinkedIn (opens in new tab)"
+              className="text-xs md:text-[13px] tracking-wider uppercase transition-colors hover:text-[var(--color-text-primary)] focus-visible:outline-none focus-visible:text-[var(--color-accent)]"
+              style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-secondary)' }}
+              aria-label="LinkedIn profile (opens in new tab)"
             >
               LinkedIn
+            </a>
+            <a
+              href={`mailto:${personal.contact.email}`}
+              className="text-xs md:text-[13px] tracking-wider uppercase transition-colors hover:text-[var(--color-text-primary)] focus-visible:outline-none focus-visible:text-[var(--color-accent)]"
+              style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-secondary)' }}
+              aria-label="Send email to Aditya Sachan"
+            >
+              Email
             </a>
           </div>
         </div>
 
+        {/* Lower metadata area: Copyright (Left) & Back to top (Right) */}
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 text-[11px] md:text-xs tracking-wider" style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}>
+          <span>&copy; {new Date().getFullYear()} {personal.name.full}</span>
+
+          <button
+            onClick={handleBackToTop}
+            className="group inline-flex items-center gap-2 text-[11px] md:text-xs uppercase tracking-[0.16em] text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors cursor-pointer outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] py-1"
+            aria-label="Back to top of page"
+          >
+            <span className="inline-block transition-transform duration-300 group-hover:-translate-y-0.5" aria-hidden="true">
+              ↑
+            </span>
+            <span>BACK TO TOP</span>
+          </button>
+        </div>
       </div>
     </footer>
   )

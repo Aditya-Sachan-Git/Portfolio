@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { cn } from '@/lib/utils'
 import { personal, navLinks } from '@/data/personal'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
   const isMobile = useMediaQuery('(max-width: 767px)')
 
   useEffect(() => {
@@ -15,6 +15,27 @@ export function Navbar() {
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // IntersectionObserver for active section detection
+  useEffect(() => {
+    const sectionIds = navLinks.map((l) => l.href.replace('#', ''))
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id)
+          }
+        }
+      },
+      { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+    )
+
+    for (const id of sectionIds) {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    }
+    return () => observer.disconnect()
   }, [])
 
   // Lock body scroll when mobile menu is open
@@ -32,10 +53,7 @@ export function Navbar() {
   return (
     <>
       <nav
-        className={cn(
-          'fixed top-0 left-0 right-0 transition-all',
-          'px-[var(--content-padding)]'
-        )}
+        className="fixed top-0 left-0 right-0 w-full transition-all"
         style={{
           height: 'var(--nav-height)',
           zIndex: 'var(--z-nav)',
@@ -45,7 +63,7 @@ export function Navbar() {
           transitionTimingFunction: 'var(--ease-out-expo)',
         }}
       >
-        <div className="mx-auto flex h-full max-w-[var(--max-width)] items-center justify-between">
+        <div className="page-frame flex h-full items-center justify-between">
           {/* Logo / Name */}
           <a
             href="#"
@@ -58,25 +76,45 @@ export function Navbar() {
           {/* Desktop nav links */}
           {!isMobile && (
             <div className="flex items-center gap-6">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="group relative text-xs font-medium uppercase tracking-[0.1em] transition-colors"
-                  style={{
-                    fontFamily: 'var(--font-body)',
-                    color: 'var(--color-text-secondary)',
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-text-primary)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--color-text-secondary)')}
-                >
-                  {link.label}
-                  <span
-                    className="absolute -bottom-1 left-1/2 h-px w-0 -translate-x-1/2 transition-all duration-300 group-hover:w-full"
-                    style={{ backgroundColor: 'var(--color-accent)' }}
-                  />
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = activeSection === link.href.replace('#', '')
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="group relative text-xs font-medium uppercase tracking-[0.1em] transition-colors"
+                    style={{
+                      fontFamily: 'var(--font-body)',
+                      color: isActive
+                        ? 'var(--color-text-primary)'
+                        : 'var(--color-text-secondary)',
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--color-text-primary)')}
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.color = isActive
+                        ? 'var(--color-text-primary)'
+                        : 'var(--color-text-secondary)')
+                    }
+                  >
+                    {link.label}
+                    {/* Active dot indicator */}
+                    <span
+                      className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 rounded-full transition-all duration-300"
+                      style={{
+                        width: isActive ? '3px' : '0px',
+                        height: isActive ? '3px' : '0px',
+                        backgroundColor: 'var(--color-accent)',
+                        opacity: isActive ? 1 : 0,
+                      }}
+                    />
+                    {/* Hover underline */}
+                    <span
+                      className="absolute -bottom-1 left-1/2 h-px w-0 -translate-x-1/2 transition-all duration-300 group-hover:w-full"
+                      style={{ backgroundColor: 'var(--color-accent)' }}
+                    />
+                  </a>
+                )
+              })}
             </div>
           )}
 
@@ -138,7 +176,9 @@ export function Navbar() {
                   className="text-3xl font-semibold uppercase tracking-[0.1em]"
                   style={{
                     fontFamily: 'var(--font-display)',
-                    color: 'var(--color-text-primary)',
+                    color: activeSection === link.href.replace('#', '')
+                      ? 'var(--color-text-primary)'
+                      : 'var(--color-text-secondary)',
                   }}
                 >
                   {link.label}
