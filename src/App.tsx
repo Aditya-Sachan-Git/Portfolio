@@ -11,6 +11,7 @@ import { Research } from '@/sections/Research'
 import { About } from '@/sections/About'
 import { ExperienceSection } from '@/sections/Experience'
 import { Skills } from '@/sections/Skills'
+import { CodingProfiles } from '@/sections/CodingProfiles'
 import { Contact } from '@/sections/Contact'
 
 export function App() {
@@ -55,6 +56,7 @@ export function App() {
         <About />
         <ExperienceSection />
         <Skills />
+        <CodingProfiles />
         <Contact />
       </main>
 

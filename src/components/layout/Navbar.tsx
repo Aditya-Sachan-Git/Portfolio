@@ -81,14 +81,14 @@ export function Navbar() {
 
           {/* Desktop nav links */}
           {!isMobile && (
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-3 md:gap-3.5 lg:gap-6">
               {navLinks.map((link) => {
                 const isActive = activeSection === link.href.replace('#', '')
                 return (
                   <a
                     key={link.href}
                     href={link.href}
-                    className="group relative text-sm font-medium uppercase tracking-[0.1em] transition-colors"
+                    className="group relative text-sm font-medium uppercase tracking-[0.08em] lg:tracking-[0.1em] transition-colors whitespace-nowrap"
                     style={{
                       fontFamily: 'var(--font-body)',
                       color: isActive
@@ -102,7 +102,13 @@ export function Navbar() {
                         : 'var(--color-text-secondary)')
                     }
                   >
-                    {link.label}
+                    {link.href === '#coding-profiles' ? (
+                      <>
+                        <span className="hidden lg:inline">Coding </span>Profiles
+                      </>
+                    ) : (
+                      link.label
+                    )}
                     {/* Active dot indicator */}
                     <span
                       className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 rounded-full transition-all duration-300"

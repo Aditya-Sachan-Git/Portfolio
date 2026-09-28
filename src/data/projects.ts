@@ -23,7 +23,7 @@ export const projects: Project[] = [
     title: 'FedLLM',
     fullTitle: 'Federated Large Language Model for Explainable Traffic Prediction',
     description:
-      'A privacy-preserving federated LLM framework for 15–60 minute traffic prediction using QLoRA and Qwen2.5.',
+      'A privacy-preserving federated LLM framework for 15–60 minute traffic prediction.',
     techStack: [
       'Federated Learning',
       'QLoRA',
@@ -36,11 +36,11 @@ export const projects: Project[] = [
     category: 'AI / ML',
     categoryLabel: 'FEDERATED SYSTEMS',
     details: [
-      'Developed a privacy-preserving federated LLM for 15–60 minute traffic prediction.',
+      'Applied data-to-text prompt engineering.',
       'Used QLoRA and Qwen2.5.',
-      'Implemented FedCSS aggregation using traffic volume, temporal variance, sensor reliability, and spatial coverage.',
+      'Implemented FedCSS aggregation.',
       'Generated flow-theory explanations.',
-      'Generated dynamic Dijkstra routes from predicted traffic speeds.',
+      'Generated dynamic Dijkstra routes.',
     ],
     links: {
       github: 'https://github.com/Aditya-Sachan-Git/FedLLM-for-Explainable-Traffic-Prediction.git',

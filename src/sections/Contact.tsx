@@ -104,7 +104,7 @@ export function Contact() {
           className="ct-label mb-6 md:mb-8 block text-sm md:text-[15px] uppercase tracking-[0.2em]"
           style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
         >
-          07 / Contact
+          08 / Contact
         </span>
 
         {/* ── Headlines: Asymmetric 12-Column Composition ── */}
