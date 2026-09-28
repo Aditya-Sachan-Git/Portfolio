@@ -32,7 +32,7 @@ export const systemNodes: SystemNode[] = [
   {
     id: 'healthcare',
     label: 'AI-Powered Multilingual Healthcare Assistant',
-    shortLabel: 'Healthcare Assistant',
+    shortLabel: 'MediLingo Pro',
     x: 70,
     y: 30,
   },

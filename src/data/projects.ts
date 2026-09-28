@@ -51,7 +51,7 @@ export const projects: Project[] = [
   {
     id: 'healthcare-assistant',
     number: '02',
-    title: 'Healthcare Assistant',
+    title: 'MediLingo Pro',
     fullTitle: 'AI-Powered Multilingual Healthcare Assistant',
     description:
       'An AI healthcare assistant supporting multilingual voice/text interaction and NLP-based processing.',

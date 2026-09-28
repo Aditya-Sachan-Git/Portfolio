@@ -70,20 +70,16 @@ export function Work() {
       const healthTl = gsap.timeline({
         scrollTrigger: {
           trigger: '.health-project',
-          start: 'top 82%',
+          start: 'top 80%',
           toggleActions: 'play none none none',
         },
       })
       healthTl
-        .from('.health-meta', { opacity: 0, y: 15, duration: 0.5 })
-        .from('.health-title', {
-          clipPath: 'inset(0 100% 0 0)',
-          duration: 0.9,
-          ease: 'power4.out',
-        }, 0.2)
-        .from('.health-desc', { opacity: 0, y: 12, duration: 0.5, stagger: 0.1 }, 0.4)
-        .from('.health-tech', { opacity: 0, y: 10, duration: 0.4 }, 0.55)
-        .from('.health-cta', { opacity: 0, y: 10, duration: 0.4 }, 0.65)
+        .from('.health-meta', { opacity: 0, y: 20, duration: 0.5 })
+        .from('.health-title', { opacity: 0, y: 20, duration: 0.6 }, 0.2)
+        .from('.health-desc', { opacity: 0, y: 15, duration: 0.5, stagger: 0.1 }, 0.35)
+        .from('.health-tech', { opacity: 0, y: 15, duration: 0.5 }, 0.5)
+        .from('.health-cta', { opacity: 0, y: 12, duration: 0.5 }, 0.6)
     }, sectionRef)
 
     return () => ctx.revert()
@@ -271,12 +267,12 @@ export function Work() {
             Separator
            ════════════════════════════════════════ */}
         <div
-          className="work-separator my-16 md:my-24 lg:my-32 h-px"
+          className="work-separator my-24 md:my-36 lg:my-48 h-px"
           style={{ backgroundColor: 'var(--color-surface-border)' }}
         />
 
         {/* ════════════════════════════════════════
-            Project 02 — Healthcare Assistant
+            Project 02 — MediLingo Pro
            ════════════════════════════════════════ */}
         <article id="healthcare-assistant" className="health-project">
           <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-8 items-start">
@@ -305,16 +301,24 @@ export function Work() {
             <div className="lg:col-span-8 lg:col-start-5 space-y-6 lg:ml-auto w-full">
               <div className="flex flex-col lg:items-end lg:text-right">
                 <h3
-                  className="health-title font-bold uppercase text-[clamp(1.75rem,4vw,4rem)] leading-[0.95] tracking-tighter"
+                  className="health-title font-bold uppercase text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.9] tracking-tighter"
                   style={{
                     fontFamily: 'var(--font-display)',
                     color: 'var(--color-text-primary)',
                   }}
                 >
-                  AI-Powered Multilingual
-                  <br />
-                  Healthcare Assistant<span style={{ color: 'var(--color-accent)' }}>.</span>
+                  {healthcare.title}<span style={{ color: 'var(--color-accent)' }}>.</span>
                 </h3>
+                <p
+                  className="health-desc mt-3 text-base md:text-[17px] uppercase tracking-[0.08em]"
+                  style={{
+                    fontFamily: 'var(--font-mono)',
+                    color: 'var(--color-text-muted)',
+                    lineHeight: '1.4',
+                  }}
+                >
+                  {healthcare.fullTitle}
+                </p>
               </div>
 
               <p
@@ -375,7 +379,7 @@ export function Work() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 text-base md:text-[17px] uppercase tracking-[0.16em] font-medium group transition-colors"
                   style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-primary)' }}
-                  aria-label="View Healthcare Assistant repository on GitHub (opens in new tab)"
+                  aria-label="View MediLingo Pro repository on GitHub (opens in new tab)"
                 >
                   <span className="group-hover:text-[var(--color-accent)] transition-colors">
                     View on GitHub
