@@ -2,6 +2,7 @@ import { useRef, useEffect } from 'react'
 import { gsap } from '@/lib/gsap'
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion'
 import { projects } from '@/data/projects'
+import { personal } from '@/data/personal'
 
 export function Work() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -38,6 +39,7 @@ export function Work() {
           transformOrigin: 'left center',
           duration: 0.8,
         }, 0.4)
+        .from('.work-github-cta', { opacity: 0, y: 15, duration: 0.5 }, 0.5)
 
       /* ── FedLLM project reveal ── */
       const fedllmProjectTl = gsap.timeline({
@@ -100,44 +102,80 @@ export function Work() {
             Section Header
            ════════════════════════════════════════ */}
         <div className="work-header mb-16 md:mb-24 lg:mb-32">
-          <span
-            className="work-section-label mb-4 block text-base uppercase tracking-[0.2em]"
-            style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
-          >
-            02 / Selected Work
-          </span>
+          <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-8 items-start">
 
-          <h2
-            className="work-heading font-bold uppercase"
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: 'var(--text-h1)',
-              lineHeight: 'var(--leading-tight)',
-              color: 'var(--color-text-primary)',
-              clipPath: 'inset(0 0 0 0)',
-            }}
-          >
-            Selected
-            <br />
-            Work
-            <span style={{ color: 'var(--color-accent)' }}>.</span>
-          </h2>
+            {/* Left side (Cols 1–7): Section Label + Heading + Support copy + Rule */}
+            <div className="lg:col-span-7">
+              <span
+                className="work-section-label mb-4 block text-base uppercase tracking-[0.2em]"
+                style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
+              >
+                02 / Selected Work
+              </span>
 
-          <p
-            className="work-support mt-4 max-w-md text-base"
-            style={{
-              fontFamily: 'var(--font-body)',
-              color: 'var(--color-text-secondary)',
-              lineHeight: 'var(--leading-normal)',
-            }}
-          >
-            Selected systems, experiments and applications.
-          </p>
+              <h2
+                className="work-heading font-bold uppercase"
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: 'var(--text-h1)',
+                  lineHeight: 'var(--leading-tight)',
+                  color: 'var(--color-text-primary)',
+                  clipPath: 'inset(0 0 0 0)',
+                }}
+              >
+                Selected
+                <br />
+                Work
+                <span style={{ color: 'var(--color-accent)' }}>.</span>
+              </h2>
 
-          <div
-            className="work-header-rule mt-6 h-px w-16"
-            style={{ backgroundColor: 'var(--color-surface-border)' }}
-          />
+              <p
+                className="work-support mt-4 max-w-md text-base"
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: 'var(--leading-normal)',
+                }}
+              >
+                Selected systems, experiments and applications.
+              </p>
+
+              <div
+                className="work-header-rule mt-6 h-px w-16"
+                style={{ backgroundColor: 'var(--color-surface-border)' }}
+              />
+            </div>
+
+            {/* Right side (Cols 9–12): GitHub CTA */}
+            <div className="work-github-cta mt-8 lg:mt-0 lg:col-span-4 lg:col-start-9 flex flex-col lg:items-end lg:text-right">
+              <span
+                className="text-base font-normal tracking-wide"
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  color: 'var(--color-text-secondary)',
+                }}
+              >
+                Many more projects on
+              </span>
+              <a
+                href={personal.social.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 mt-1 text-base md:text-lg font-medium text-[var(--color-text-primary)] hover:text-white transition-colors outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] focus-visible:rounded"
+                style={{ fontFamily: 'var(--font-body)' }}
+                aria-label="View Aditya Sachan's GitHub profile"
+              >
+                <span>my GitHub</span>
+                <span
+                  className="inline-block transition-transform duration-300 group-hover:translate-x-1.5 text-[var(--color-accent)]"
+                  aria-hidden="true"
+                >
+                  →
+                </span>
+              </a>
+            </div>
+
+          </div>
         </div>
 
         {/* ════════════════════════════════════════
