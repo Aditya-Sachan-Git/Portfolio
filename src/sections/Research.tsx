@@ -153,6 +153,9 @@ export function Research() {
     { topic: researchTopics[3], type: 'solid', align: 'text-left md:pl-[15%]', sizeClasses: 'text-[clamp(2rem,6vw,5.5rem)]', indicatorPos: 'right' },
     { topic: researchTopics[4], type: 'outline', align: 'text-right', sizeClasses: 'text-[clamp(2.5rem,8vw,7rem)]', indicatorPos: 'left' },
     { topic: researchTopics[5], type: 'solid', align: 'text-center md:pr-[15%]', sizeClasses: 'text-[clamp(1.5rem,4vw,3.5rem)]', indicatorPos: 'right', multiline: true },
+    { topic: researchTopics[6], type: 'outline', align: 'text-left md:pl-[8%]', sizeClasses: 'text-[clamp(2rem,6vw,5.5rem)]', indicatorPos: 'right' },
+    { topic: researchTopics[7], type: 'accent', align: 'text-right md:pr-[10%]', sizeClasses: 'text-[clamp(2.2rem,6.5vw,6rem)]', indicatorPos: 'left' },
+    { topic: researchTopics[8], type: 'solid', align: 'text-center md:pl-[5%]', sizeClasses: 'text-[clamp(1.8rem,5vw,4.5rem)]', indicatorPos: 'right', multiline: true },
   ]
 
   return (
@@ -238,7 +241,7 @@ export function Research() {
             <div className="w-full md:w-1/2">
               <ResearchItem
                 config={{
-                  topic: researchTopics[6], // NLP
+                  topic: researchTopics[9], // NLP
                   type: 'accent',
                   align: 'text-left',
                   sizeClasses: 'text-[clamp(1.5rem,4vw,3.5rem)]',
@@ -249,7 +252,7 @@ export function Research() {
             <div className="w-full md:w-1/2">
               <ResearchItem
                 config={{
-                  topic: researchTopics[7], // ML
+                  topic: researchTopics[10], // ML
                   type: 'solid',
                   align: 'text-left md:text-right',
                   sizeClasses: 'text-[clamp(2rem,6vw,5.5rem)]',

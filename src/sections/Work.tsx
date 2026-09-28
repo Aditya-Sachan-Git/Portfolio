@@ -10,6 +10,7 @@ export function Work() {
 
   const fedllm = projects[0]
   const healthcare = projects[1]
+  const commons = projects[2]
 
   /* ─────────────────────────────────────────────
      Scroll-triggered animations
@@ -56,16 +57,18 @@ export function Work() {
         .from('.fedllm-tech', { opacity: 0, y: 15, duration: 0.5 }, 0.5)
         .from('.fedllm-cta', { opacity: 0, y: 12, duration: 0.5 }, 0.6)
 
-      /* ── Project separator ── */
-      gsap.from('.work-separator', {
-        scaleX: 0,
-        transformOrigin: 'left center',
-        duration: 0.8,
-        scrollTrigger: {
-          trigger: '.work-separator',
-          start: 'top 88%',
-          toggleActions: 'play none none none',
-        },
+      /* ── Project separators ── */
+      gsap.utils.toArray<HTMLElement>('.work-separator').forEach((sep) => {
+        gsap.from(sep, {
+          scaleX: 0,
+          transformOrigin: 'left center',
+          duration: 0.8,
+          scrollTrigger: {
+            trigger: sep,
+            start: 'top 88%',
+            toggleActions: 'play none none none',
+          },
+        })
       })
 
       /* ── Healthcare project reveal ── */
@@ -82,6 +85,20 @@ export function Work() {
         .from('.health-desc', { opacity: 0, y: 15, duration: 0.5, stagger: 0.1 }, 0.35)
         .from('.health-tech', { opacity: 0, y: 15, duration: 0.5 }, 0.5)
         .from('.health-cta', { opacity: 0, y: 12, duration: 0.5 }, 0.6)
+
+      /* ── CommonsAI project reveal ── */
+      const commonsTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.commons-project',
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+        },
+      })
+      commonsTl
+        .from('.commons-meta', { opacity: 0, y: 20, duration: 0.5 })
+        .from('.commons-title', { opacity: 0, y: 20, duration: 0.6 }, 0.2)
+        .from('.commons-desc', { opacity: 0, y: 15, duration: 0.5, stagger: 0.1 }, 0.35)
+        .from('.commons-tech', { opacity: 0, y: 15, duration: 0.5 }, 0.5)
     }, sectionRef)
 
     return () => ctx.revert()
@@ -432,6 +449,118 @@ export function Work() {
                     →
                   </span>
                 </a>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        {/* ════════════════════════════════════════
+            Separator
+           ════════════════════════════════════════ */}
+        <div
+          className="work-separator my-24 md:my-36 lg:my-48 h-px"
+          style={{ backgroundColor: 'var(--color-surface-border)' }}
+        />
+
+        {/* ════════════════════════════════════════
+            Project 03 — CommonsAI
+           ════════════════════════════════════════ */}
+        <article id="commonsai" className="commons-project">
+          <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-8 items-start">
+
+            {/* Left: Metadata */}
+            <div className="commons-meta lg:col-span-3 mb-6 lg:mb-0">
+              <span
+                className="block font-bold text-2xl md:text-3xl lg:text-4xl tabular-nums tracking-tight"
+                style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-secondary)' }}
+              >
+                {commons.number}
+              </span>
+              <div
+                className="my-3 h-px w-10"
+                style={{ backgroundColor: 'var(--color-surface-border)' }}
+              />
+              <span
+                className="block text-base md:text-[17px] uppercase tracking-[0.15em]"
+                style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
+              >
+                {commons.category} · {commons.categoryLabel}
+              </span>
+            </div>
+
+            {/* Right: Info + Tech */}
+            <div className="lg:col-span-8 lg:col-start-5 space-y-6 lg:ml-auto w-full">
+              <div className="flex flex-col lg:items-end lg:text-right">
+                <h3
+                  className="commons-title font-bold uppercase text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.9] tracking-tighter"
+                  style={{
+                    fontFamily: 'var(--font-display)',
+                    color: 'var(--color-text-primary)',
+                  }}
+                >
+                  {commons.title}<span style={{ color: 'var(--color-accent)' }}>.</span>
+                </h3>
+                <p
+                  className="commons-desc mt-3 text-base md:text-[17px] uppercase tracking-[0.08em]"
+                  style={{
+                    fontFamily: 'var(--font-mono)',
+                    color: 'var(--color-text-muted)',
+                    lineHeight: '1.4',
+                  }}
+                >
+                  {commons.fullTitle}
+                </p>
+              </div>
+
+              <p
+                className="commons-desc text-base md:text-[18px] w-full"
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: 'var(--leading-relaxed)',
+                }}
+              >
+                {commons.description}
+              </p>
+
+              {/* Key details */}
+              <ul className="commons-desc space-y-2 pt-1 w-full">
+                {commons.details.map((detail, i) => (
+                  <li
+                    key={i}
+                    className="flex gap-3 text-base md:text-[17px]"
+                    style={{
+                      fontFamily: 'var(--font-body)',
+                      color: 'var(--color-text-secondary)',
+                      lineHeight: '1.5',
+                    }}
+                  >
+                    <span style={{ color: 'var(--color-text-muted)' }}>—</span>
+                    <span>{detail}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Technologies */}
+              <div className="commons-tech pt-2">
+                <span
+                  className="block text-base uppercase tracking-[0.15em] mb-3"
+                  style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
+                >
+                  Technologies
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  {commons.techStack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="inline-block border border-[var(--color-surface-border)] px-3.5 py-1.5 text-base uppercase tracking-[0.06em]"
+                      style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-secondary)' }}
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
 

@@ -151,7 +151,7 @@ export function About() {
                 lineHeight: 'var(--leading-relaxed)',
               }}
             >
-              My research centers on Federated Learning (FedLLM), Large Language Models, and Privacy-Preserving AI—exploring how decentralized parameter aggregation and parameter-efficient fine-tuning (PEFT/LoRA) can power collaborative intelligence without compromising client data privacy. Concurrently, I develop practical AI applications across healthcare diagnostics, multilingual query handling, and predictive traffic forecasting.
+              My research centers on Federated Learning (FedLLM), Large Language Models, and Privacy-Preserving AI—exploring how decentralized parameter aggregation and parameter-efficient fine-tuning (PEFT/LoRA) can power collaborative intelligence without compromising client data privacy. Concurrently, I develop practical AI applications across healthcare diagnostics, real-time contextual chat moderation, multilingual query handling, and predictive traffic forecasting.
             </p>
 
             <p
@@ -173,6 +173,7 @@ export function About() {
                 'Federated Learning',
                 'LLM Applications',
                 'NLP',
+                'Real-Time Systems',
                 'Software Engineering',
                 'Distributed Systems',
                 'Intelligent Systems',
