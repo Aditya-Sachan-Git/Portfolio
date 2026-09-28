@@ -181,8 +181,8 @@ export function Contact() {
 
         </div>
 
-        {/* ── New Contact Directory: 2 × 2 on Desktop, Zero Horizontal Lines ── */}
-        <div className="ct-directory grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-24 gap-y-12 md:gap-y-16 w-full">
+        {/* ── Contact Directory: 4 Columns on Desktop, Single Line ── */}
+        <div className="ct-directory grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 w-full">
           {contactDirectory.map((item) => (
             <a
               key={item.num}
@@ -207,7 +207,7 @@ export function Contact() {
                 </span>
               </div>
               <span
-                className="block text-lg md:text-xl lg:text-2xl font-medium tracking-tight transition-all duration-300 group-hover:-translate-y-1 group-hover:text-[var(--color-text-primary)] group-focus-visible:-translate-y-1 group-focus-visible:text-[var(--color-text-primary)]"
+                className="block text-base md:text-lg lg:text-base xl:text-xl font-medium tracking-tight break-words transition-all duration-300 group-hover:-translate-y-1 group-hover:text-[var(--color-text-primary)] group-focus-visible:-translate-y-1 group-focus-visible:text-[var(--color-text-primary)]"
                 style={{
                   fontFamily: 'var(--font-display)',
                   color: 'var(--color-text-secondary)',
