@@ -88,7 +88,7 @@ export function Navbar() {
                   <a
                     key={link.href}
                     href={link.href}
-                    className="group relative text-xs font-medium uppercase tracking-[0.1em] transition-colors"
+                    className="group relative text-sm font-medium uppercase tracking-[0.1em] transition-colors"
                     style={{
                       fontFamily: 'var(--font-body)',
                       color: isActive

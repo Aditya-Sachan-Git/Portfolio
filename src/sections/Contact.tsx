@@ -101,10 +101,10 @@ export function Contact() {
 
         {/* ── Section label ── */}
         <span
-          className="ct-label mb-6 md:mb-8 block text-xs md:text-[13px] uppercase tracking-[0.2em]"
+          className="ct-label mb-6 md:mb-8 block text-sm md:text-[15px] uppercase tracking-[0.2em]"
           style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
         >
-          08 / Contact
+          07 / Contact
         </span>
 
         {/* ── Headlines: Asymmetric 12-Column Composition ── */}
@@ -151,7 +151,7 @@ export function Contact() {
                 style={{ backgroundColor: 'var(--color-accent)' }}
               />
               <span
-                className="text-xs uppercase tracking-[0.2em] font-medium"
+                className="text-sm uppercase tracking-[0.2em] font-medium"
                 style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
               >
                 CONTACT / 001
@@ -160,7 +160,7 @@ export function Contact() {
 
             <div className="space-y-3">
               <span
-                className="block text-xs uppercase tracking-[0.18em]"
+                className="block text-sm uppercase tracking-[0.18em]"
                 style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
               >
                 OPEN TO
@@ -169,7 +169,7 @@ export function Contact() {
                 {['SOFTWARE ENGINEERING', 'AI / ML', 'RESEARCH', 'COLLABORATION'].map((role) => (
                   <li
                     key={role}
-                    className="text-xs md:text-sm tracking-wider font-mono"
+                    className="text-sm md:text-base tracking-wider font-mono"
                     style={{ color: 'var(--color-text-secondary)' }}
                   >
                     {role}
@@ -194,13 +194,13 @@ export function Contact() {
             >
               <div className="flex items-center gap-2.5 mb-2.5">
                 <span
-                  className="text-xs font-mono tracking-wider transition-colors duration-200 group-hover:text-[var(--color-accent)] group-focus-visible:text-[var(--color-accent)]"
+                  className="text-sm font-mono tracking-wider transition-colors duration-200 group-hover:text-[var(--color-accent)] group-focus-visible:text-[var(--color-accent)]"
                   style={{ color: 'var(--color-text-muted)' }}
                 >
                   {item.num}
                 </span>
                 <span
-                  className="text-xs md:text-[13px] font-mono uppercase tracking-[0.18em] transition-colors duration-200 group-hover:text-[var(--color-accent)] group-focus-visible:text-[var(--color-accent)]"
+                  className="text-sm md:text-[15px] font-mono uppercase tracking-[0.18em] transition-colors duration-200 group-hover:text-[var(--color-accent)] group-focus-visible:text-[var(--color-accent)]"
                   style={{ color: 'var(--color-text-muted)' }}
                 >
                   {item.label}

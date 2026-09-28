@@ -59,7 +59,7 @@ export function About() {
         {/* ── Header ── */}
         <div className="mb-16 md:mb-24 lg:mb-32">
           <span
-            className="about-label mb-4 block text-xs md:text-[13px] uppercase tracking-[0.2em]"
+            className="about-label mb-4 block text-sm md:text-[15px] uppercase tracking-[0.2em]"
             style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
           >
             04 / About
@@ -123,7 +123,7 @@ export function About() {
 
             {/* Coordinate detail */}
             <span
-              className="about-keyword mt-6 block text-xs uppercase tracking-[0.15em]"
+              className="about-keyword mt-6 block text-sm uppercase tracking-[0.15em]"
               style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
             >
               SYS / 004 · PROFILE
@@ -133,29 +133,36 @@ export function About() {
           {/* Right: Biography */}
           <div className="about-bio-wrap lg:col-span-7 lg:col-start-6 space-y-6">
             <p
-              className="about-bio text-[15px] md:text-[16px]"
+              className="about-bio text-base md:text-lg"
               style={{
                 fontFamily: 'var(--font-body)',
                 color: 'var(--color-text-primary)',
                 lineHeight: 'var(--leading-relaxed)',
               }}
             >
-              Computer Science undergraduate at VIT Chennai with hands-on
-              experience in software engineering, AI application development,
-              and enterprise software.
+              I am a Computer Science undergraduate at Vellore Institute of Technology, Chennai (B.Tech, Class of 2027), working at the intersection of machine learning research, distributed systems, and modern software engineering. My work focuses on designing intelligent architectures that are computationally efficient, mathematically principled, and built to solve high-impact operational problems.
             </p>
 
             <p
-              className="about-bio text-[14px] md:text-[15px]"
+              className="about-bio text-[15px] md:text-base"
               style={{
                 fontFamily: 'var(--font-body)',
                 color: 'var(--color-text-secondary)',
                 lineHeight: 'var(--leading-relaxed)',
               }}
             >
-              Skilled in Python, Java, C++, Git, LLM applications, NLP, and
-              machine learning, with projects spanning healthcare, forecasting,
-              and business intelligence.
+              My research centers on Federated Learning (FedLLM), Large Language Models, and Privacy-Preserving AI—exploring how decentralized parameter aggregation and parameter-efficient fine-tuning (PEFT/LoRA) can power collaborative intelligence without compromising client data privacy. Concurrently, I develop practical AI applications across healthcare diagnostics, multilingual query handling, and predictive traffic forecasting.
+            </p>
+
+            <p
+              className="about-bio text-[15px] md:text-base"
+              style={{
+                fontFamily: 'var(--font-body)',
+                color: 'var(--color-text-secondary)',
+                lineHeight: 'var(--leading-relaxed)',
+              }}
+            >
+              Through industry experience at SRF Limited, I contributed to enterprise-grade software platforms, developing business intelligence dashboards, real-time analytics pipelines, and AI-assisted information retrieval workflows. I value clean system design, rigorous debugging, and engineering resilient software in Python, Java, C++, and TypeScript.
             </p>
 
             {/* Key areas as inline tags */}
@@ -163,14 +170,16 @@ export function About() {
               {[
                 'Computer Science',
                 'AI / ML',
+                'Federated Learning',
                 'LLM Applications',
                 'NLP',
                 'Software Engineering',
+                'Distributed Systems',
                 'Intelligent Systems',
               ].map((area) => (
                 <span
                   key={area}
-                  className="inline-block border border-[var(--color-surface-border)] px-2.5 py-1 text-xs uppercase tracking-[0.05em]"
+                  className="inline-block border border-[var(--color-surface-border)] px-3 py-1.5 text-sm uppercase tracking-[0.05em]"
                   style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
                 >
                   {area}
@@ -186,7 +195,7 @@ export function About() {
         >
           <div className="h-px flex-1 max-w-24" style={{ backgroundColor: 'var(--color-surface-border)' }} />
           <span
-            className="text-xs uppercase tracking-[0.12em]"
+            className="text-sm uppercase tracking-[0.12em]"
             style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
           >
             VIT Chennai · B.Tech CS · 2027

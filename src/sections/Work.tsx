@@ -105,7 +105,7 @@ export function Work() {
            ════════════════════════════════════════ */}
         <div className="work-header mb-16 md:mb-24 lg:mb-32">
           <span
-            className="work-section-label mb-4 block text-xs md:text-[13px] uppercase tracking-[0.2em]"
+            className="work-section-label mb-4 block text-sm md:text-[15px] uppercase tracking-[0.2em]"
             style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
           >
             02 / Selected Work
@@ -128,7 +128,7 @@ export function Work() {
           </h2>
 
           <p
-            className="work-support mt-4 max-w-md text-[12px] md:text-[13px]"
+            className="work-support mt-4 max-w-md text-sm md:text-[15px]"
             style={{
               fontFamily: 'var(--font-body)',
               color: 'var(--color-text-secondary)',
@@ -163,7 +163,7 @@ export function Work() {
                 style={{ backgroundColor: 'var(--color-surface-border)' }}
               />
               <span
-                className="block text-xs md:text-[13px] uppercase tracking-[0.15em]"
+                className="block text-sm md:text-[15px] uppercase tracking-[0.15em]"
                 style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
               >
                 {fedllm.category} · {fedllm.categoryLabel}
@@ -183,7 +183,7 @@ export function Work() {
                   {fedllm.title}<span style={{ color: 'var(--color-accent)' }}>.</span>
                 </h3>
                 <p
-                  className="fedllm-info-desc mt-3 text-xs md:text-sm uppercase tracking-[0.08em]"
+                  className="fedllm-info-desc mt-3 text-sm md:text-base uppercase tracking-[0.08em]"
                   style={{
                     fontFamily: 'var(--font-mono)',
                     color: 'var(--color-text-muted)',
@@ -210,7 +210,7 @@ export function Work() {
                 {fedllm.details.map((detail, i) => (
                   <li
                     key={i}
-                    className="flex gap-3 text-xs md:text-[13px]"
+                    className="flex gap-3 text-sm md:text-[15px]"
                     style={{
                       fontFamily: 'var(--font-body)',
                       color: 'var(--color-text-secondary)',
@@ -226,7 +226,7 @@ export function Work() {
               {/* Technologies */}
               <div className="fedllm-tech pt-2">
                 <span
-                  className="block text-xs uppercase tracking-[0.15em] mb-3"
+                  className="block text-sm uppercase tracking-[0.15em] mb-3"
                   style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
                 >
                   Technologies
@@ -235,7 +235,7 @@ export function Work() {
                   {fedllm.techStack.map((tech) => (
                     <span
                       key={tech}
-                      className="inline-block border border-[var(--color-surface-border)] px-2.5 py-1 text-xs uppercase tracking-[0.06em]"
+                      className="inline-block border border-[var(--color-surface-border)] px-3 py-1.5 text-sm uppercase tracking-[0.06em]"
                       style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-secondary)' }}
                     >
                       {tech}
@@ -250,7 +250,7 @@ export function Work() {
                   href="https://github.com/Aditya-Sachan-Git/FedLLM-for-Explainable-Traffic-Prediction.git"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 text-xs md:text-sm uppercase tracking-[0.16em] font-medium group transition-colors"
+                  className="inline-flex items-center gap-3 text-sm md:text-base uppercase tracking-[0.16em] font-medium group transition-colors"
                   style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-primary)' }}
                   aria-label="View FedLLM repository on GitHub (opens in new tab)"
                 >
@@ -294,7 +294,7 @@ export function Work() {
                 style={{ backgroundColor: 'var(--color-surface-border)' }}
               />
               <span
-                className="block text-xs md:text-[13px] uppercase tracking-[0.15em]"
+                className="block text-sm md:text-[15px] uppercase tracking-[0.15em]"
                 style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
               >
                 {healthcare.category} · {healthcare.categoryLabel}
@@ -333,7 +333,7 @@ export function Work() {
                 {healthcare.details.map((detail, i) => (
                   <li
                     key={i}
-                    className="flex gap-3 text-xs md:text-[13px]"
+                    className="flex gap-3 text-sm md:text-[15px]"
                     style={{
                       fontFamily: 'var(--font-body)',
                       color: 'var(--color-text-secondary)',
@@ -349,7 +349,7 @@ export function Work() {
               {/* Technologies */}
               <div className="health-tech pt-2">
                 <span
-                  className="block text-xs uppercase tracking-[0.15em] mb-3"
+                  className="block text-sm uppercase tracking-[0.15em] mb-3"
                   style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
                 >
                   Technologies
@@ -358,7 +358,7 @@ export function Work() {
                   {healthcare.techStack.map((tech) => (
                     <span
                       key={tech}
-                      className="inline-block border border-[var(--color-surface-border)] px-2.5 py-1 text-xs uppercase tracking-[0.06em]"
+                      className="inline-block border border-[var(--color-surface-border)] px-3 py-1.5 text-sm uppercase tracking-[0.06em]"
                       style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-secondary)' }}
                     >
                       {tech}
@@ -373,7 +373,7 @@ export function Work() {
                   href="https://github.com/Aditya-Sachan-Git/AI-Powered_Multilingual_Healthcare_Assistant.git"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 text-xs md:text-sm uppercase tracking-[0.16em] font-medium group transition-colors"
+                  className="inline-flex items-center gap-3 text-sm md:text-base uppercase tracking-[0.16em] font-medium group transition-colors"
                   style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-primary)' }}
                   aria-label="View Healthcare Assistant repository on GitHub (opens in new tab)"
                 >

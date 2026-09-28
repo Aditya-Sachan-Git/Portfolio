@@ -228,7 +228,7 @@ function DesktopConstellation({
                 className="whitespace-nowrap"
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: 'clamp(0.8rem, 1.15vw, 1rem)',
+                  fontSize: 'clamp(0.875rem, 1.2vw, 1.05rem)',
                   letterSpacing: '0.04em',
                   textTransform: 'uppercase',
                   color: isAccent
@@ -249,7 +249,7 @@ function DesktopConstellation({
                 className="block mt-0.5"
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '0.8rem',
+                  fontSize: '0.875rem',
                   letterSpacing: '0.06em',
                   textTransform: 'uppercase',
                   color: 'var(--color-text-muted)',
@@ -267,16 +267,16 @@ function DesktopConstellation({
 
       {/* Decorative coordinate markers */}
       <span
-        className="skill-coord absolute top-3 right-4 text-xs tracking-wider"
+        className="skill-coord absolute top-3 right-4 text-sm tracking-wider"
         style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)', opacity: 0.3 }}
       >
         STACK / AI-ML
       </span>
       <span
-        className="skill-coord absolute bottom-3 left-4 text-xs tracking-wider"
+        className="skill-coord absolute bottom-3 left-4 text-sm tracking-wider"
         style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)', opacity: 0.3 }}
       >
-        SYS / 007
+        SYS / 006
       </span>
     </div>
   )
@@ -337,7 +337,7 @@ function MobileSkills() {
               {group.techs.map((tech) => (
                 <span
                   key={tech.id}
-                  className="inline-block border border-[var(--color-surface-border)] px-2.5 py-1 text-xs uppercase tracking-[0.05em]"
+                  className="inline-block border border-[var(--color-surface-border)] px-3 py-1.5 text-sm uppercase tracking-[0.05em]"
                   style={{
                     fontFamily: 'var(--font-mono)',
                     color:
@@ -384,7 +384,7 @@ function MobileSkills() {
           {unconnected.map((tech) => (
             <span
               key={tech.id}
-              className="inline-block border border-[var(--color-surface-border)] px-2.5 py-1 text-xs uppercase tracking-[0.05em]"
+              className="inline-block border border-[var(--color-surface-border)] px-3 py-1.5 text-sm uppercase tracking-[0.05em]"
               style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
             >
               {tech.label}
@@ -463,16 +463,16 @@ export function Skills() {
         <div className="mb-20 md:mb-28 lg:mb-32">
           <div className="flex items-center justify-between mb-4 md:mb-6">
             <span
-              className="skills-label text-xs md:text-[13px] uppercase tracking-[0.2em]"
+              className="skills-label text-sm md:text-[15px] uppercase tracking-[0.2em]"
               style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
             >
-              07 / Skills
+              06 / Skills
             </span>
             <span
-              className="skills-label hidden md:block text-xs uppercase tracking-[0.15em]"
+              className="skills-label hidden md:block text-sm uppercase tracking-[0.15em]"
               style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
             >
-              SYSTEM / 007
+              SYSTEM / 006
             </span>
           </div>
 
@@ -495,7 +495,7 @@ export function Skills() {
           </h2>
 
           <p
-            className="skills-support mt-6 max-w-lg text-[13px] md:text-[14px]"
+            className="skills-support mt-6 max-w-lg text-sm md:text-base"
             style={{
               fontFamily: 'var(--font-body)',
               color: 'var(--color-text-secondary)',
@@ -527,7 +527,7 @@ export function Skills() {
             className="font-bold uppercase tracking-wide"
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(0.75rem, 1.5vw, 1rem)',
+              fontSize: 'clamp(0.875rem, 1.5vw, 1.05rem)',
               lineHeight: 'var(--leading-normal)',
               color: 'var(--color-text-muted)',
               letterSpacing: 'var(--tracking-wide)',

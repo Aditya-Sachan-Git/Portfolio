@@ -10,7 +10,6 @@ import { Work } from '@/sections/Work'
 import { Research } from '@/sections/Research'
 import { About } from '@/sections/About'
 import { ExperienceSection } from '@/sections/Experience'
-import { EducationSection } from '@/sections/Education'
 import { Skills } from '@/sections/Skills'
 import { Contact } from '@/sections/Contact'
 
@@ -55,7 +54,6 @@ export function App() {
         <Research />
         <About />
         <ExperienceSection />
-        <EducationSection />
         <Skills />
         <Contact />
       </main>

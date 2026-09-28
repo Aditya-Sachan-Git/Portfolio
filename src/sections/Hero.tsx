@@ -104,7 +104,7 @@ export function Hero() {
         <div className="page-frame flex items-center justify-between">
           {/* Top-right coordinate */}
           <span
-            className="hero-coord hidden text-xs uppercase tracking-[0.15em] md:block"
+            className="hero-coord hidden text-sm uppercase tracking-[0.15em] md:block"
             style={{
               fontFamily: 'var(--font-mono)',
               color: 'var(--color-text-muted)',
@@ -153,7 +153,7 @@ export function Hero() {
                 </div>
                 <div className="pl-4.5">
                   <span
-                    className="text-xs md:text-[13px] uppercase tracking-[0.16em] font-medium block"
+                    className="text-sm md:text-[15px] uppercase tracking-[0.16em] font-medium block"
                     style={{
                       fontFamily: 'var(--font-mono)',
                       color: 'var(--color-text-secondary)',
@@ -230,7 +230,7 @@ export function Hero() {
                   {personal.roles.map((role) => (
                     <span
                       key={role}
-                      className="text-xs font-medium uppercase tracking-[0.15em] md:text-[13px]"
+                      className="text-sm font-medium uppercase tracking-[0.15em] md:text-[15px]"
                       style={{
                         fontFamily: 'var(--font-body)',
                         color: 'var(--color-text-secondary)',
@@ -244,7 +244,7 @@ export function Hero() {
 
               {/* ── Keywords ─────────────────────── */}
               <p
-                className="hero-keywords relative z-[4] mt-3 text-xs tracking-[0.1em] md:mt-4 md:text-[13px]"
+                className="hero-keywords relative z-[4] mt-3 text-sm tracking-[0.1em] md:mt-4 md:text-[15px]"
                 style={{
                   fontFamily: 'var(--font-mono)',
                   color: 'var(--color-text-muted)',
@@ -254,25 +254,12 @@ export function Hero() {
               </p>
 
               {/* ── CTAs ─────────────────────────── */}
-              <div className="relative z-[4] mt-8 flex flex-wrap items-center gap-4 md:mt-10 md:gap-6">
-                <a
-                  href="#work"
-                  className="hero-cta hero-cta-primary inline-flex items-center px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] md:px-6 md:py-3 md:text-sm transition-all"
-                  style={{
-                    fontFamily: 'var(--font-body)',
-                    color: 'var(--color-text-primary)',
-                    backgroundColor: 'var(--color-surface-elevated)',
-                    border: '1px solid var(--color-surface-border)',
-                  }}
-                >
-                  <span style={{ color: 'var(--color-text-primary)' }}>View My Work</span>
-                  <span aria-hidden="true" style={{ color: 'var(--color-accent)' }}>&#8195;→</span>
-                </a>
+              <div className="relative z-[4] mt-8 flex flex-wrap items-center gap-4 md:mt-10 md:gap-6"> 
                 <a
                   href={personal.resume}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hero-cta hero-cta-secondary inline-flex items-center text-xs font-medium uppercase tracking-[0.15em] md:text-sm"
+                  className="hero-cta hero-cta-secondary inline-flex items-center text-sm font-medium uppercase tracking-[0.15em] md:text-base"
                   style={{ fontFamily: 'var(--font-body)' }}
                   aria-label="Download CV (opens in new tab)"
                 >
@@ -333,7 +320,7 @@ export function Hero() {
 
               {/* Coordinate marker near portrait */}
               <span
-                className="hero-coord absolute -bottom-6 right-0 hidden text-xs uppercase tracking-[0.15em] md:block"
+                className="hero-coord absolute -bottom-6 right-0 hidden text-sm uppercase tracking-[0.15em] md:block"
                 style={{
                   fontFamily: 'var(--font-mono)',
                   color: 'var(--color-text-muted)',
@@ -350,7 +337,7 @@ export function Hero() {
       {/* ── Scroll indicator ─────────────────── */}
       <div className="hero-scroll-indicator flex flex-col items-center gap-2 pb-6 md:pb-10">
         <span
-          className="text-xs uppercase tracking-[0.2em]"
+          className="text-sm uppercase tracking-[0.2em]"
           style={{
             fontFamily: 'var(--font-mono)',
             color: 'var(--color-text-muted)',
