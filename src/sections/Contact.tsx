@@ -108,7 +108,7 @@ export function Contact() {
         </span>
 
         {/* ── Headlines: Asymmetric 12-Column Composition ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-8 lg:items-end mb-20 md:mb-28 lg:mb-36">
+        <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-8 lg:items-start mb-20 md:mb-28 lg:mb-36">
 
           {/* Left Side (Cols 1–7): Main CTA Typography */}
           <div className="lg:col-span-7">
@@ -143,9 +143,9 @@ export function Contact() {
             </p>
           </div>
 
-          {/* Right Side (Cols 9–12): Technical Contextual Block (Visually Aligned with CTA) */}
-          <div className="ct-context lg:col-span-4 lg:col-start-9 mt-12 lg:mt-0 pb-1">
-            <div className="flex items-center gap-2.5 mb-5">
+          {/* Right Side (Cols 9–12): Technical Contextual Block (Top Right End with Text-Right) */}
+          <div className="ct-context lg:col-span-4 lg:col-start-9 mt-12 lg:mt-0 pb-1 lg:self-start flex flex-col lg:items-end lg:text-right">
+            <div className="flex items-center gap-2.5 mb-5 lg:justify-end">
               <div
                 className="h-1.5 w-1.5 rounded-full shrink-0"
                 style={{ backgroundColor: 'var(--color-accent)' }}
@@ -158,7 +158,7 @@ export function Contact() {
               </span>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-3 w-full">
               <span
                 className="block text-sm uppercase tracking-[0.18em]"
                 style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
