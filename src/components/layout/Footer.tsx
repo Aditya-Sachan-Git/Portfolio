@@ -28,7 +28,7 @@ export function Footer() {
           </div>
 
           {/* Right: Simple vertical text links (Cols 7–12, aligned right on desktop) */}
-          <div className="md:col-span-6 flex flex-col md:items-end space-y-2.5">
+          {/*<div className="md:col-span-6 flex flex-col md:items-end space-y-2.5">
             <a
               href={personal.social.github}
               target="_blank"
@@ -57,7 +57,7 @@ export function Footer() {
             >
               Email
             </a>
-          </div>
+          </div>*/}
         </div>
 
         {/* Lower metadata area: Copyright (Left) & Back to top (Right) */}
@@ -66,10 +66,11 @@ export function Footer() {
 
           <button
             onClick={handleBackToTop}
-            className="group inline-flex items-center gap-2 text-sm md:text-[15px] uppercase tracking-[0.16em] text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors cursor-pointer outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] py-1"
+            className="group inline-flex items-center gap-3 text-[32px] uppercase tracking-[0.1em] text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors cursor-pointer outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] py-1"
+            style={{ fontSize: '32px', lineHeight: '1.2' }}
             aria-label="Back to top of page"
           >
-            <span className="inline-block transition-transform duration-300 group-hover:-translate-y-0.5" aria-hidden="true">
+            <span className="inline-block transition-transform duration-300 group-hover:-translate-y-1" aria-hidden="true">
               ↑
             </span>
             <span>BACK TO TOP</span>
