@@ -181,8 +181,8 @@ export function Contact() {
 
         </div>
 
-        {/* ── Contact Directory: 4 Columns on Desktop, Single Line ── */}
-        <div className="ct-directory grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 w-full">
+        {/* ── Contact Directory: Evenly Spaced Between Left & Right Ends ── */}
+        <div className="ct-directory grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-row lg:justify-between lg:items-start gap-8 lg:gap-0 w-full">
           {contactDirectory.map((item) => (
             <a
               key={item.num}
@@ -207,7 +207,7 @@ export function Contact() {
                 </span>
               </div>
               <span
-                className="block text-base md:text-lg lg:text-base xl:text-xl font-medium tracking-tight break-words transition-all duration-300 group-hover:-translate-y-1 group-hover:text-[var(--color-text-primary)] group-focus-visible:-translate-y-1 group-focus-visible:text-[var(--color-text-primary)]"
+                className="block text-base md:text-lg lg:text-base xl:text-xl font-medium tracking-tight break-words lg:whitespace-nowrap transition-all duration-300 group-hover:-translate-y-1 group-hover:text-[var(--color-text-primary)] group-focus-visible:-translate-y-1 group-focus-visible:text-[var(--color-text-primary)]"
                 style={{
                   fontFamily: 'var(--font-display)',
                   color: 'var(--color-text-secondary)',
