@@ -149,9 +149,11 @@ export function Work() {
             {/* Right side (Cols 9–12): GitHub CTA */}
             <div className="work-github-cta mt-8 lg:mt-0 lg:col-span-4 lg:col-start-9 flex flex-col lg:items-end lg:text-right">
               <span
-                className="text-base font-normal tracking-wide"
+                className="text-2xl sm:text-[28px] lg:text-[32px] font-medium tracking-tight"
                 style={{
-                  fontFamily: 'var(--font-body)',
+                  fontFamily: 'var(--font-display)',
+                  fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
+                  lineHeight: '1.15',
                   color: 'var(--color-text-secondary)',
                 }}
               >
@@ -161,13 +163,17 @@ export function Work() {
                 href={personal.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 mt-1 text-base md:text-lg font-medium text-[var(--color-text-primary)] hover:text-white transition-colors outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] focus-visible:rounded"
-                style={{ fontFamily: 'var(--font-body)' }}
+                className="group inline-flex items-center gap-2.5 mt-1 text-2xl sm:text-[28px] lg:text-[32px] font-bold tracking-tight text-[var(--color-text-primary)] hover:text-white transition-colors outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] focus-visible:rounded"
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
+                  lineHeight: '1.15',
+                }}
                 aria-label="View Aditya Sachan's GitHub profile"
               >
                 <span>my GitHub</span>
                 <span
-                  className="inline-block transition-transform duration-300 group-hover:translate-x-1.5 text-[var(--color-accent)]"
+                  className="inline-block transition-transform duration-300 group-hover:translate-x-2 text-[var(--color-accent)]"
                   aria-hidden="true"
                 >
                   →
