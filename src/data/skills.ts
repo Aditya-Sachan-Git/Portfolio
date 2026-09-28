@@ -47,8 +47,8 @@ export const systemNodes: SystemNode[] = [
     id: 'srf',
     label: 'SRF Limited / Enterprise Software + BI',
     shortLabel: 'SRF Limited',
-    x: 72,
-    y: 72,
+    x: 70,
+    y: 64,
   },
 ]
 
@@ -56,29 +56,29 @@ export const systemNodes: SystemNode[] = [
 
 export const techNodes: TechNode[] = [
   // Languages
-  { id: 'python',     label: 'Python',     category: 'Languages', x: 48, y: 22, connections: ['fedllm', 'healthcare', 'commonsai'] },
-  { id: 'javascript', label: 'JavaScript', category: 'Languages', x: 34, y: 78, connections: ['commonsai'] },
-  { id: 'java',       label: 'Java',       category: 'Languages', x: 54, y: 10, connections: [] },
-  { id: 'c',          label: 'C',          category: 'Languages', x: 64, y: 8,  connections: [] },
-  { id: 'cpp',        label: 'C++',        category: 'Languages', x: 72, y: 12, connections: [] },
+  { id: 'python',     label: 'Python',     category: 'Languages', x: 46, y: 22, connections: ['fedllm', 'healthcare', 'commonsai'] },
+  { id: 'javascript', label: 'JavaScript', category: 'Languages', x: 32, y: 80, connections: ['commonsai'] },
+  { id: 'java',       label: 'Java',       category: 'Languages', x: 56, y: 12, connections: [] },
+  { id: 'c',          label: 'C',          category: 'Languages', x: 66, y: 8,  connections: [] },
+  { id: 'cpp',        label: 'C++',        category: 'Languages', x: 74, y: 14, connections: [] },
 
   // AI / Machine Learning
   { id: 'llm-apps',    label: 'LLM Applications',       category: 'AI / ML', x: 44, y: 34, connections: ['fedllm', 'healthcare'] },
   { id: 'prompt-eng',  label: 'Prompt Engineering',      category: 'AI / ML', x: 10, y: 40, connections: ['fedllm'] },
   { id: 'nlp',         label: 'NLP',                     category: 'AI / ML', x: 80, y: 18, connections: ['healthcare', 'commonsai'] },
-  { id: 'ml',          label: 'Machine Learning',        category: 'AI / ML', x: 44, y: 8,  connections: ['fedllm', 'healthcare', 'commonsai'] },
+  { id: 'ml',          label: 'Machine Learning',        category: 'AI / ML', x: 36, y: 8,  connections: ['fedllm', 'healthcare', 'commonsai'] },
   { id: 'tsf',         label: 'Time-Series Forecasting', category: 'AI / ML', x: 10, y: 50, connections: ['fedllm'] },
-  { id: 'faiss',       label: 'FAISS',                   category: 'AI / ML', x: 38, y: 56, connections: ['commonsai'] },
-  { id: 'huggingface', label: 'Hugging Face',            category: 'AI / ML', x: 44, y: 70, connections: ['commonsai'] },
+  { id: 'faiss',       label: 'FAISS',                   category: 'AI / ML', x: 36, y: 56, connections: ['commonsai'] },
+  { id: 'huggingface', label: 'Hugging Face',            category: 'AI / ML', x: 38, y: 68, connections: ['commonsai'] },
 
   // Frameworks
   { id: 'fastapi', label: 'FastAPI',    category: 'Frameworks', x: 10, y: 60, connections: ['commonsai'] },
-  { id: 'nodejs',  label: 'Node.js',    category: 'Frameworks', x: 44, y: 60, connections: ['commonsai'] },
-  { id: 'express', label: 'Express.js', category: 'Frameworks', x: 46, y: 78, connections: ['commonsai'] },
+  { id: 'nodejs',  label: 'Node.js',    category: 'Frameworks', x: 36, y: 62, connections: ['commonsai'] },
+  { id: 'express', label: 'Express.js', category: 'Frameworks', x: 38, y: 74, connections: ['commonsai'] },
   { id: 'celery',  label: 'Celery',     category: 'Frameworks', x: 10, y: 72, connections: ['commonsai'] },
-  { id: 'flask',   label: 'Flask',      category: 'Frameworks', x: 82, y: 44, connections: [] },
-  { id: 'html5',   label: 'HTML5',      category: 'Frameworks', x: 82, y: 58, connections: [] },
-  { id: 'css3',    label: 'CSS3',       category: 'Frameworks', x: 82, y: 50, connections: [] },
+  { id: 'flask',   label: 'Flask',      category: 'Frameworks', x: 84, y: 44, connections: [] },
+  { id: 'html5',   label: 'HTML5',      category: 'Frameworks', x: 84, y: 56, connections: [] },
+  { id: 'css3',    label: 'CSS3',       category: 'Frameworks', x: 84, y: 50, connections: [] },
 
   // Developer Tools
   { id: 'docker',      label: 'Docker',           category: 'Dev Tools', x: 10, y: 82, connections: ['commonsai'] },
@@ -88,15 +88,15 @@ export const techNodes: TechNode[] = [
   { id: 'antigravity', label: 'Antigravity',      category: 'Dev Tools', x: 8,  y: 12, connections: ['fedllm'] },
 
   // Databases
-  { id: 'postgresql', label: 'PostgreSQL',    category: 'Databases', x: 36, y: 88, connections: ['commonsai'] },
+  { id: 'postgresql', label: 'PostgreSQL',    category: 'Databases', x: 32, y: 88, connections: ['commonsai'] },
   { id: 'redis',      label: 'Redis',         category: 'Databases', x: 22, y: 84, connections: ['commonsai'] },
   { id: 'mongodb',    label: 'MongoDB Atlas', category: 'Databases', x: 84, y: 36, connections: ['healthcare'] },
-  { id: 'sqlite',     label: 'SQLite',        category: 'Databases', x: 84, y: 80, connections: [] },
+  { id: 'sqlite',     label: 'SQLite',        category: 'Databases', x: 86, y: 68, connections: [] },
 
   // BI / Analytics
-  { id: 'dashboard', label: 'Dashboard Development', category: 'BI / Analytics', x: 58, y: 86, connections: ['srf'] },
-  { id: 'dataviz',   label: 'Data Visualization',   category: 'BI / Analytics', x: 74, y: 88, connections: ['srf'] },
-  { id: 'bi',        label: 'Business Intelligence', category: 'BI / Analytics', x: 86, y: 86, connections: ['srf'] },
+  { id: 'dashboard', label: 'Dashboard Development', category: 'BI / Analytics', x: 50, y: 76, connections: ['srf'] },
+  { id: 'dataviz',   label: 'Data Visualization',   category: 'BI / Analytics', x: 54, y: 88, connections: ['srf'] },
+  { id: 'bi',        label: 'Business Intelligence', category: 'BI / Analytics', x: 90, y: 78, connections: ['srf'] },
 ]
 
 /* ── Connection computation ── */
