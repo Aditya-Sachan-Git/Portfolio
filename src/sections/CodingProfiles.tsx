@@ -38,13 +38,13 @@ export function CodingProfiles() {
     <section
       ref={sectionRef}
       id="coding-profiles"
-      className="relative py-24 md:py-32 lg:py-40"
+      className="relative py-12 sm:py-16 md:py-24 lg:py-32"
     >
       <div className="page-frame">
 
         {/* ── Section Header ── */}
-        <div className="mb-16 md:mb-24 lg:mb-28">
-          <div className="flex items-center justify-between mb-4 md:mb-6">
+        <div className="mb-12 sm:mb-16 md:mb-24 lg:mb-28">
+          <div className="flex items-center justify-between mb-3 sm:mb-4 md:mb-6">
             <span
               className="cp-label text-sm md:text-[15px] uppercase tracking-[0.2em]"
               style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
@@ -75,7 +75,7 @@ export function CodingProfiles() {
           </h2>
 
           <p
-            className="cp-support mt-6 max-w-lg text-sm md:text-base"
+            className="cp-support mt-4 sm:mt-6 max-w-lg text-sm md:text-base"
             style={{
               fontFamily: 'var(--font-body)',
               color: 'var(--color-text-secondary)',
@@ -92,20 +92,20 @@ export function CodingProfiles() {
         </div>
 
         {/* ── Editorial Two-Profile Composition (12-Column Grid) ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-12 w-full">
           {codingProfiles.map((profile, index) => (
             <a
               key={profile.id}
               href={profile.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`cp-profile group block relative pt-8 pb-10 border-t border-[var(--color-surface-border)] hover:border-[var(--color-accent)] focus-visible:border-[var(--color-accent)] transition-colors duration-300 outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] focus-visible:rounded ${
+              className={`cp-profile group block relative pt-6 sm:pt-8 pb-8 sm:pb-10 border-t border-[var(--color-surface-border)] hover:border-[var(--color-accent)] focus-visible:border-[var(--color-accent)] transition-colors duration-300 outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] focus-visible:rounded ${
                 index === 0 ? 'lg:col-span-6' : 'lg:col-span-6'
               }`}
               aria-label={profile.ariaLabel}
             >
               {/* Profile Header Row: Number + Platform identifier + Cobalt marker */}
-              <div className="flex items-center justify-between mb-8">
+              <div className="flex items-center justify-between mb-5 sm:mb-8">
                 <span
                   className="text-sm md:text-base font-mono tracking-wider uppercase transition-colors duration-200 group-hover:text-[var(--color-accent)] group-focus-visible:text-[var(--color-accent)]"
                   style={{ color: 'var(--color-text-muted)' }}
@@ -142,7 +142,7 @@ export function CodingProfiles() {
 
               {/* Action Link Row */}
               <div
-                className="mt-10 flex items-center gap-3 text-sm md:text-base font-mono uppercase tracking-[0.16em] font-medium transition-colors duration-200"
+                className="mt-6 sm:mt-10 flex items-center gap-3 text-sm md:text-base font-mono uppercase tracking-[0.16em] font-medium transition-colors duration-200 min-h-[44px]"
                 style={{ color: 'var(--color-text-muted)' }}
               >
                 <span className="group-hover:text-[var(--color-text-primary)] group-focus-visible:text-[var(--color-text-primary)] transition-colors duration-200">

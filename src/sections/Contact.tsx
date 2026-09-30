@@ -95,20 +95,20 @@ export function Contact() {
     <section
       ref={sectionRef}
       id="contact"
-      className="relative pt-24 md:pt-32 lg:pt-40 pb-16 md:pb-24 lg:pb-32"
+      className="relative pt-12 sm:pt-16 md:pt-24 lg:pt-32 pb-12 sm:pb-16 md:pb-24 lg:pb-32"
     >
       <div className="page-frame">
 
         {/* ── Section label ── */}
         <span
-          className="ct-label mb-6 md:mb-8 block text-sm md:text-[15px] uppercase tracking-[0.2em]"
+          className="ct-label mb-4 sm:mb-6 md:mb-8 block text-sm md:text-[15px] uppercase tracking-[0.2em]"
           style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
         >
           08 / Contact
         </span>
 
         {/* ── Headlines: Asymmetric 12-Column Composition ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-8 lg:items-start mb-20 md:mb-28 lg:mb-36">
+        <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-8 lg:items-start mb-12 sm:mb-16 md:mb-28 lg:mb-36">
 
           {/* Left Side (Cols 1–7): Main CTA Typography */}
           <div className="lg:col-span-7">
@@ -144,8 +144,8 @@ export function Contact() {
           </div>
 
           {/* Right Side (Cols 9–12): Technical Contextual Block (Top Right End with Text-Right) */}
-          <div className="ct-context lg:col-span-4 lg:col-start-9 mt-12 lg:mt-0 pb-1 lg:self-start flex flex-col lg:items-end lg:text-right">
-            <div className="flex items-center gap-2.5 mb-5 lg:justify-end">
+          <div className="ct-context lg:col-span-4 lg:col-start-9 mt-8 sm:mt-12 lg:mt-0 pb-1 lg:self-start flex flex-col lg:items-end lg:text-right">
+            <div className="flex items-center gap-2.5 mb-4 sm:mb-5 lg:justify-end">
               <div
                 className="h-1.5 w-1.5 rounded-full shrink-0"
                 style={{ backgroundColor: 'var(--color-accent)' }}
@@ -182,17 +182,17 @@ export function Contact() {
         </div>
 
         {/* ── Contact Directory: Evenly Spaced Between Left & Right Ends ── */}
-        <div className="ct-directory grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-row lg:justify-between lg:items-start gap-8 lg:gap-0 w-full">
+        <div className="ct-directory grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-row lg:justify-between lg:items-start gap-7 sm:gap-8 lg:gap-0 w-full">
           {contactDirectory.map((item) => (
             <a
               key={item.num}
               href={item.href}
               target={item.external ? '_blank' : undefined}
               rel={item.external ? 'noopener noreferrer' : undefined}
-              className="ct-dir-item group block outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] focus-visible:rounded"
+              className="ct-dir-item group block outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] focus-visible:rounded py-1 sm:py-0 min-h-[44px]"
               aria-label={item.ariaLabel}
             >
-              <div className="flex items-center gap-2.5 mb-2.5">
+              <div className="flex items-center gap-2.5 mb-2 sm:mb-2.5">
                 <span
                   className="text-sm font-mono tracking-wider transition-colors duration-200 group-hover:text-[var(--color-accent)] group-focus-visible:text-[var(--color-accent)]"
                   style={{ color: 'var(--color-text-muted)' }}

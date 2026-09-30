@@ -2,12 +2,22 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { personal, navLinks } from '@/data/personal'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
+import { scrollToTarget, scrollToTop } from '@/lib/scroll'
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('')
   const isMobile = useMediaQuery('(max-width: 767px)')
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!href.startsWith('#')) return
+    e.preventDefault()
+    const targetId = href.replace('#', '')
+    scrollToTarget(targetId)
+    setActiveSection(targetId)
+    window.history.pushState(null, '', href)
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,6 +77,12 @@ export function Navbar() {
           {/* Logo / Name — Personal Wordmark */}
           <a
             href="#"
+            onClick={(e) => {
+              e.preventDefault()
+              scrollToTop()
+              setActiveSection('')
+              window.history.pushState(null, '', window.location.pathname)
+            }}
             className="group flex items-center gap-2 text-sm font-semibold tracking-[0.12em] uppercase transition-opacity hover:opacity-85 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)]"
             style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}
             aria-label={`${personal.name.full} — Home`}
@@ -88,6 +104,7 @@ export function Navbar() {
                   <a
                     key={link.href}
                     href={link.href}
+                    onClick={(e) => handleNavClick(e, link.href)}
                     className="group relative text-sm font-medium uppercase tracking-[0.08em] lg:tracking-[0.1em] transition-colors whitespace-nowrap"
                     style={{
                       fontFamily: 'var(--font-body)',
@@ -134,7 +151,7 @@ export function Navbar() {
           {isMobile && (
             <button
               onClick={() => setIsMobileMenuOpen(true)}
-              className="relative flex h-10 w-10 flex-col items-center justify-center gap-1.5"
+              className="relative flex h-11 w-11 flex-col items-center justify-center gap-1.5 min-h-[44px] min-w-[44px] -mr-1"
               aria-label="Open menu"
               aria-expanded={isMobileMenuOpen}
             >
@@ -162,7 +179,7 @@ export function Navbar() {
             {/* Close button */}
             <button
               onClick={closeMobileMenu}
-              className="absolute right-6 top-6 flex h-10 w-10 items-center justify-center"
+              className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center min-h-[44px] min-w-[44px]"
               aria-label="Close menu"
             >
               <span
@@ -176,16 +193,19 @@ export function Navbar() {
             </button>
 
             {/* Mobile nav links */}
-            <div className="flex flex-col items-center gap-8">
+            <div className="flex flex-col items-center gap-6 sm:gap-8">
               {navLinks.map((link, i) => (
                 <motion.a
                   key={link.href}
                   href={link.href}
-                  onClick={closeMobileMenu}
+                  onClick={(e) => {
+                    closeMobileMenu()
+                    handleNavClick(e, link.href)
+                  }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 + i * 0.05, duration: 0.4 }}
-                  className="text-3xl font-semibold uppercase tracking-[0.1em]"
+                  className="text-2xl sm:text-3xl font-semibold uppercase tracking-[0.1em] py-2 min-h-[44px] flex items-center justify-center"
                   style={{
                     fontFamily: 'var(--font-display)',
                     color: activeSection === link.href.replace('#', '')

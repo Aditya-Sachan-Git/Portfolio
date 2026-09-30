@@ -52,14 +52,14 @@ export function About() {
     <section
       ref={sectionRef}
       id="about"
-      className="relative py-24 md:py-32 lg:py-40"
+      className="relative py-12 sm:py-16 md:py-24 lg:py-32"
     >
       <div className="page-frame">
 
         {/* ── Header ── */}
-        <div className="mb-16 md:mb-24 lg:mb-32">
+        <div className="mb-12 sm:mb-16 md:mb-24 lg:mb-32">
           <span
-            className="about-label mb-4 block text-sm md:text-[15px] uppercase tracking-[0.2em]"
+            className="about-label mb-3 sm:mb-4 block text-sm md:text-[15px] uppercase tracking-[0.2em]"
             style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
           >
             04 / About
@@ -89,7 +89,7 @@ export function About() {
         </div>
 
         {/* ── Editorial composition: Keywords + Bio ── */}
-        <div className="flex flex-col lg:grid lg:grid-cols-12 lg:gap-8 gap-12 lg:items-start">
+        <div className="flex flex-col lg:grid lg:grid-cols-12 lg:gap-8 gap-10 sm:gap-12 lg:items-start">
 
           {/* Left / Center: Editorial keywords */}
           <div className="about-keywords lg:col-span-5">
@@ -131,42 +131,42 @@ export function About() {
           </div>
 
           {/* Right: Biography */}
-          <div className="about-bio-wrap lg:col-span-7 lg:col-start-6 space-y-6">
+          <div className="about-bio-wrap lg:col-span-7 lg:col-start-6 space-y-7 md:space-y-8 max-w-2xl">
             <p
               className="about-bio text-base md:text-lg"
               style={{
                 fontFamily: 'var(--font-body)',
                 color: 'var(--color-text-primary)',
-                lineHeight: 'var(--leading-relaxed)',
+                lineHeight: '1.75',
               }}
             >
               I am a Computer Science undergraduate at Vellore Institute of Technology, Chennai (B.Tech, Class of 2027), working at the intersection of machine learning research, distributed systems, and modern software engineering. My work focuses on designing intelligent architectures that are computationally efficient, mathematically principled, and built to solve high-impact operational problems.
             </p>
 
             <p
-              className="about-bio text-[15px] md:text-base"
+              className="about-bio text-base md:text-lg"
               style={{
                 fontFamily: 'var(--font-body)',
                 color: 'var(--color-text-secondary)',
-                lineHeight: 'var(--leading-relaxed)',
+                lineHeight: '1.75',
               }}
             >
               My research centers on Federated Learning (FedLLM), Large Language Models, and Privacy-Preserving AI—exploring how decentralized parameter aggregation and parameter-efficient fine-tuning (PEFT/LoRA) can power collaborative intelligence without compromising client data privacy. Concurrently, I develop practical AI applications across healthcare diagnostics, real-time contextual chat moderation, multilingual query handling, and predictive traffic forecasting.
             </p>
 
             <p
-              className="about-bio text-[15px] md:text-base"
+              className="about-bio text-base md:text-lg"
               style={{
                 fontFamily: 'var(--font-body)',
                 color: 'var(--color-text-secondary)',
-                lineHeight: 'var(--leading-relaxed)',
+                lineHeight: '1.75',
               }}
             >
               Through industry experience at SRF Limited, I contributed to enterprise-grade software platforms, developing business intelligence dashboards, real-time analytics pipelines, and AI-assisted information retrieval workflows. I value clean system design, rigorous debugging, and engineering resilient software in Python, Java, C++, and TypeScript.
             </p>
 
             {/* Key areas as inline tags */}
-            <div className="about-bio flex flex-wrap gap-2 pt-2">
+            <div className="about-bio flex flex-wrap gap-2.5 pt-4 sm:pt-6">
               {[
                 'Computer Science',
                 'AI / ML',
@@ -192,7 +192,7 @@ export function About() {
 
         {/* ── Bottom metadata ── */}
         <div
-          className="about-meta-foot mt-16 md:mt-24 flex items-center gap-4"
+          className="about-meta-foot mt-12 sm:mt-16 md:mt-24 flex items-center gap-4"
         >
           <div className="h-px flex-1 max-w-24" style={{ backgroundColor: 'var(--color-surface-border)' }} />
           <span

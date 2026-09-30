@@ -296,18 +296,18 @@ function MobileSkills() {
   }
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-7 sm:space-y-9">
       {groups.map((group) => {
         const isActive = activeSystem === null || activeSystem === group.system.id
         return (
           <div key={group.system.id} style={{ opacity: isActive ? 1 : 0.25, transition: 'opacity 0.3s ease' }}>
             {/* System header */}
             <button
-              className="w-full text-left outline-none"
+              className="w-full text-left outline-none min-h-[44px] py-1 flex items-center"
               onClick={() => toggle(group.system.id)}
               aria-expanded={activeSystem === group.system.id}
             >
-              <div className="flex items-center gap-3 mb-3">
+              <div className="flex items-center gap-3">
                 <div
                   className="h-1.5 w-1.5 rounded-full shrink-0"
                   style={{
@@ -333,7 +333,7 @@ function MobileSkills() {
             </button>
 
             {/* Connected technologies */}
-            <div className="flex flex-wrap gap-2 pl-5">
+            <div className="flex flex-wrap gap-2 pl-4 sm:pl-5 mt-3 sm:mt-3.5">
               {group.techs.map((tech) => (
                 <span
                   key={tech.id}
@@ -354,7 +354,7 @@ function MobileSkills() {
 
             {/* Separator */}
             <div
-              className="h-px mt-8"
+              className="h-px mt-6 sm:mt-8"
               style={{ backgroundColor: 'var(--color-surface-border)' }}
             />
           </div>
@@ -363,7 +363,7 @@ function MobileSkills() {
 
       {/* Unconnected / General */}
       <div style={{ opacity: activeSystem === null ? 1 : 0.25, transition: 'opacity 0.3s ease' }}>
-        <div className="flex items-center gap-3 mb-3">
+        <div className="flex items-center gap-3 min-h-[44px] py-1">
           <div
             className="h-1.5 w-1.5 rounded-full shrink-0"
             style={{ backgroundColor: 'var(--color-text-muted)' }}
@@ -380,7 +380,7 @@ function MobileSkills() {
             General
           </h3>
         </div>
-        <div className="flex flex-wrap gap-2 pl-5">
+        <div className="flex flex-wrap gap-2 pl-4 sm:pl-5 mt-3 sm:mt-3.5">
           {unconnected.map((tech) => (
             <span
               key={tech.id}
@@ -455,13 +455,13 @@ export function Skills() {
     <section
       ref={sectionRef}
       id="skills"
-      className="relative py-24 md:py-32 lg:py-40"
+      className="relative py-12 sm:py-16 md:py-24 lg:py-32"
     >
       <div className="page-frame">
 
         {/* ── Header ── */}
-        <div className="mb-20 md:mb-28 lg:mb-32">
-          <div className="flex items-center justify-between mb-4 md:mb-6">
+        <div className="mb-12 sm:mb-16 md:mb-28 lg:mb-32">
+          <div className="flex items-center justify-between mb-3 sm:mb-4 md:mb-6">
             <span
               className="skills-label text-sm md:text-[15px] uppercase tracking-[0.2em]"
               style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
@@ -480,7 +480,7 @@ export function Skills() {
             className="skills-heading font-bold uppercase"
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(2.8rem, 6.8vw, 6.2rem)',
+              fontSize: 'clamp(2.4rem, 6.8vw, 6.2rem)',
               lineHeight: '0.88',
               letterSpacing: 'var(--tracking-tighter)',
               color: 'var(--color-text-primary)',
@@ -495,7 +495,7 @@ export function Skills() {
           </h2>
 
           <p
-            className="skills-support mt-6 max-w-lg text-sm md:text-base"
+            className="skills-support mt-4 sm:mt-6 max-w-lg text-sm md:text-base"
             style={{
               fontFamily: 'var(--font-body)',
               color: 'var(--color-text-secondary)',
@@ -522,7 +522,7 @@ export function Skills() {
         </div>
 
         {/* ── End statement ── */}
-        <div className="skills-end mt-16 md:mt-24 lg:mt-32 text-center">
+        <div className="skills-end mt-12 sm:mt-16 md:mt-24 lg:mt-32 text-center">
           <p
             className="font-bold uppercase tracking-wide"
             style={{

@@ -111,20 +111,20 @@ export function Work() {
     <section
       ref={sectionRef}
       id="work"
-      className="relative py-24 md:py-32 lg:py-40"
+      className="relative py-12 sm:py-16 md:py-24 lg:py-32"
     >
       <div className="page-frame">
 
         {/* ════════════════════════════════════════
             Section Header
            ════════════════════════════════════════ */}
-        <div className="work-header mb-16 md:mb-24 lg:mb-32">
+        <div className="work-header mb-12 sm:mb-16 md:mb-24 lg:mb-32">
           <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-8 items-start">
 
             {/* Left side (Cols 1–7): Section Label + Heading + Support copy + Rule */}
             <div className="lg:col-span-7">
               <span
-                className="work-section-label mb-4 block text-base uppercase tracking-[0.2em]"
+                className="work-section-label mb-3 sm:mb-4 block text-base uppercase tracking-[0.2em]"
                 style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
               >
                 02 / Selected Work
@@ -180,7 +180,7 @@ export function Work() {
                 href={personal.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2.5 mt-1 text-2xl sm:text-[28px] lg:text-[32px] font-medium text-[var(--color-text-primary)] hover:text-white transition-colors outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] focus-visible:rounded"
+                className="group inline-flex items-center gap-2.5 mt-1 text-2xl sm:text-[28px] lg:text-[32px] font-medium text-[var(--color-text-primary)] hover:text-white transition-colors outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] focus-visible:rounded min-h-[44px]"
                 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
@@ -228,10 +228,10 @@ export function Work() {
             </div>
 
             {/* Right: Info + Tech + GitHub Action */}
-            <div className="lg:col-span-8 lg:col-start-5 space-y-6 lg:ml-auto w-full">
+            <div className="lg:col-span-8 lg:col-start-5 space-y-5 sm:space-y-6 lg:ml-auto w-full">
               <div className="flex flex-col lg:items-end lg:text-right">
                 <h3
-                  className="fedllm-info-title font-bold uppercase text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.9] tracking-tighter"
+                  className="fedllm-info-title font-bold uppercase text-[clamp(2.2rem,6vw,5.5rem)] leading-[0.9] tracking-tighter"
                   style={{
                     fontFamily: 'var(--font-display)',
                     color: 'var(--color-text-primary)',
@@ -240,7 +240,7 @@ export function Work() {
                   {fedllm.title}<span style={{ color: 'var(--color-accent)' }}>.</span>
                 </h3>
                 <p
-                  className="fedllm-info-desc mt-3 text-base md:text-[17px] uppercase tracking-[0.08em]"
+                  className="fedllm-info-desc mt-2.5 sm:mt-3 text-base md:text-[17px] uppercase tracking-[0.08em]"
                   style={{
                     fontFamily: 'var(--font-mono)',
                     color: 'var(--color-text-muted)',
@@ -263,7 +263,7 @@ export function Work() {
               </p>
 
               {/* Key details */}
-              <ul className="fedllm-info-desc space-y-2 pt-1 w-full">
+              <ul className="fedllm-info-desc space-y-2.5 sm:space-y-2 pt-1 w-full">
                 {fedllm.details.map((detail, i) => (
                   <li
                     key={i}
@@ -281,9 +281,9 @@ export function Work() {
               </ul>
 
               {/* Technologies */}
-              <div className="fedllm-tech pt-2">
+              <div className="fedllm-tech pt-3 sm:pt-4">
                 <span
-                  className="block text-base uppercase tracking-[0.15em] mb-3"
+                  className="block text-base uppercase tracking-[0.15em] mb-2.5 sm:mb-3"
                   style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
                 >
                   Technologies
@@ -302,12 +302,12 @@ export function Work() {
               </div>
 
               {/* Primary Interaction: View on GitHub */}
-              <div className="fedllm-cta pt-4">
+              <div className="fedllm-cta pt-3 sm:pt-4">
                 <a
                   href="https://github.com/Aditya-Sachan-Git/FedLLM-for-Explainable-Traffic-Prediction.git"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 text-base md:text-[17px] uppercase tracking-[0.16em] font-medium group transition-colors"
+                  className="inline-flex items-center gap-3 text-base md:text-[17px] uppercase tracking-[0.16em] font-medium group transition-colors min-h-[44px]"
                   style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-primary)' }}
                   aria-label="View FedLLM repository on GitHub (opens in new tab)"
                 >
@@ -328,7 +328,7 @@ export function Work() {
             Separator
            ════════════════════════════════════════ */}
         <div
-          className="work-separator my-24 md:my-36 lg:my-48 h-px"
+          className="work-separator my-12 sm:my-16 md:my-36 lg:my-48 h-px"
           style={{ backgroundColor: 'var(--color-surface-border)' }}
         />
 
@@ -359,10 +359,10 @@ export function Work() {
             </div>
 
             {/* Right: Info + Tech + GitHub Action */}
-            <div className="lg:col-span-8 lg:col-start-5 space-y-6 lg:ml-auto w-full">
+            <div className="lg:col-span-8 lg:col-start-5 space-y-5 sm:space-y-6 lg:ml-auto w-full">
               <div className="flex flex-col lg:items-end lg:text-right">
                 <h3
-                  className="health-title font-bold uppercase text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.9] tracking-tighter"
+                  className="health-title font-bold uppercase text-[clamp(2.2rem,6vw,5.5rem)] leading-[0.9] tracking-tighter"
                   style={{
                     fontFamily: 'var(--font-display)',
                     color: 'var(--color-text-primary)',
@@ -371,7 +371,7 @@ export function Work() {
                   {healthcare.title}<span style={{ color: 'var(--color-accent)' }}>.</span>
                 </h3>
                 <p
-                  className="health-desc mt-3 text-base md:text-[17px] uppercase tracking-[0.08em]"
+                  className="health-desc mt-2.5 sm:mt-3 text-base md:text-[17px] uppercase tracking-[0.08em]"
                   style={{
                     fontFamily: 'var(--font-mono)',
                     color: 'var(--color-text-muted)',
@@ -394,7 +394,7 @@ export function Work() {
               </p>
 
               {/* Key details */}
-              <ul className="health-desc space-y-2 pt-1 w-full">
+              <ul className="health-desc space-y-2.5 sm:space-y-2 pt-1 w-full">
                 {healthcare.details.map((detail, i) => (
                   <li
                     key={i}
@@ -412,9 +412,9 @@ export function Work() {
               </ul>
 
               {/* Technologies */}
-              <div className="health-tech pt-2">
+              <div className="health-tech pt-3 sm:pt-4">
                 <span
-                  className="block text-base uppercase tracking-[0.15em] mb-3"
+                  className="block text-base uppercase tracking-[0.15em] mb-2.5 sm:mb-3"
                   style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
                 >
                   Technologies
@@ -433,12 +433,12 @@ export function Work() {
               </div>
 
               {/* Primary Interaction: View on GitHub */}
-              <div className="health-cta pt-4">
+              <div className="health-cta pt-3 sm:pt-4">
                 <a
                   href="https://github.com/Aditya-Sachan-Git/AI-Powered_Multilingual_Healthcare_Assistant.git"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 text-base md:text-[17px] uppercase tracking-[0.16em] font-medium group transition-colors"
+                  className="inline-flex items-center gap-3 text-base md:text-[17px] uppercase tracking-[0.16em] font-medium group transition-colors min-h-[44px]"
                   style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-primary)' }}
                   aria-label="View MediLingo Pro repository on GitHub (opens in new tab)"
                 >
@@ -459,7 +459,7 @@ export function Work() {
             Separator
            ════════════════════════════════════════ */}
         <div
-          className="work-separator my-24 md:my-36 lg:my-48 h-px"
+          className="work-separator my-12 sm:my-16 md:my-36 lg:my-48 h-px"
           style={{ backgroundColor: 'var(--color-surface-border)' }}
         />
 
@@ -490,10 +490,10 @@ export function Work() {
             </div>
 
             {/* Right: Info + Tech */}
-            <div className="lg:col-span-8 lg:col-start-5 space-y-6 lg:ml-auto w-full">
+            <div className="lg:col-span-8 lg:col-start-5 space-y-5 sm:space-y-6 lg:ml-auto w-full">
               <div className="flex flex-col lg:items-end lg:text-right">
                 <h3
-                  className="commons-title font-bold uppercase text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.9] tracking-tighter"
+                  className="commons-title font-bold uppercase text-[clamp(2.2rem,6vw,5.5rem)] leading-[0.9] tracking-tighter"
                   style={{
                     fontFamily: 'var(--font-display)',
                     color: 'var(--color-text-primary)',
@@ -502,7 +502,7 @@ export function Work() {
                   {commons.title}<span style={{ color: 'var(--color-accent)' }}>.</span>
                 </h3>
                 <p
-                  className="commons-desc mt-3 text-base md:text-[17px] uppercase tracking-[0.08em]"
+                  className="commons-desc mt-2.5 sm:mt-3 text-base md:text-[17px] uppercase tracking-[0.08em]"
                   style={{
                     fontFamily: 'var(--font-mono)',
                     color: 'var(--color-text-muted)',
@@ -525,7 +525,7 @@ export function Work() {
               </p>
 
               {/* Key details */}
-              <ul className="commons-desc space-y-2 pt-1 w-full">
+              <ul className="commons-desc space-y-2.5 sm:space-y-2 pt-1 w-full">
                 {commons.details.map((detail, i) => (
                   <li
                     key={i}
@@ -543,9 +543,9 @@ export function Work() {
               </ul>
 
               {/* Technologies */}
-              <div className="commons-tech pt-2">
+              <div className="commons-tech pt-3 sm:pt-4">
                 <span
-                  className="block text-base uppercase tracking-[0.15em] mb-3"
+                  className="block text-base uppercase tracking-[0.15em] mb-2.5 sm:mb-3"
                   style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
                 >
                   Technologies

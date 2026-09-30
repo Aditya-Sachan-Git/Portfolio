@@ -26,25 +26,25 @@ export function GridBackground({ className, showCoordinates = true }: GridBackgr
       {showCoordinates && (
         <>
           <span
-            className="absolute left-4 top-4 select-none opacity-20"
+            className="hidden md:block absolute left-4 top-4 select-none opacity-20"
             style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-caption)', color: 'var(--color-text-muted)' }}
           >
             0,0
           </span>
           <span
-            className="absolute right-4 top-4 select-none opacity-20"
+            className="hidden md:block absolute right-4 top-4 select-none opacity-20"
             style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-caption)', color: 'var(--color-text-muted)' }}
           >
             1.0,0
           </span>
           <span
-            className="absolute bottom-4 left-4 select-none opacity-20"
+            className="hidden md:block absolute bottom-4 left-4 select-none opacity-20"
             style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-caption)', color: 'var(--color-text-muted)' }}
           >
             0,1.0
           </span>
           <span
-            className="absolute bottom-4 right-4 select-none opacity-20"
+            className="hidden md:block absolute bottom-4 right-4 select-none opacity-20"
             style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-caption)', color: 'var(--color-text-muted)' }}
           >
             1.0,1.0

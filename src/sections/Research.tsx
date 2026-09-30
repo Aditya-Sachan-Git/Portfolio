@@ -147,22 +147,22 @@ export function Research() {
   }, [prefersReducedMotion])
 
   const configs: LayoutConfig[] = [
-    { topic: researchTopics[0], type: 'solid', align: 'text-left', sizeClasses: 'text-[clamp(2.5rem,8vw,7rem)]', indicatorPos: 'right' },
-    { topic: researchTopics[1], type: 'outline', align: 'text-right md:pr-[5%]', sizeClasses: 'text-[clamp(2rem,6vw,5.5rem)]', indicatorPos: 'left' },
-    { topic: researchTopics[2], type: 'accent', align: 'text-center md:pl-[10%]', sizeClasses: 'text-[clamp(1.5rem,4vw,3.5rem)]', indicatorPos: 'right' },
-    { topic: researchTopics[3], type: 'solid', align: 'text-left md:pl-[15%]', sizeClasses: 'text-[clamp(2rem,6vw,5.5rem)]', indicatorPos: 'right' },
-    { topic: researchTopics[4], type: 'outline', align: 'text-right', sizeClasses: 'text-[clamp(2.5rem,8vw,7rem)]', indicatorPos: 'left' },
-    { topic: researchTopics[5], type: 'solid', align: 'text-center md:pr-[15%]', sizeClasses: 'text-[clamp(1.5rem,4vw,3.5rem)]', indicatorPos: 'right', multiline: true },
-    { topic: researchTopics[6], type: 'outline', align: 'text-left md:pl-[8%]', sizeClasses: 'text-[clamp(2rem,6vw,5.5rem)]', indicatorPos: 'right' },
-    { topic: researchTopics[7], type: 'accent', align: 'text-right md:pr-[10%]', sizeClasses: 'text-[clamp(2.2rem,6.5vw,6rem)]', indicatorPos: 'left' },
-    { topic: researchTopics[8], type: 'solid', align: 'text-center md:pl-[5%]', sizeClasses: 'text-[clamp(1.8rem,5vw,4.5rem)]', indicatorPos: 'right', multiline: true },
+    { topic: researchTopics[0], type: 'solid', align: 'text-left', sizeClasses: 'text-[clamp(2.1rem,7.5vw,7rem)]', indicatorPos: 'right' },
+    { topic: researchTopics[1], type: 'outline', align: 'text-right md:pr-[5%]', sizeClasses: 'text-[clamp(1.85rem,6vw,5.5rem)]', indicatorPos: 'left' },
+    { topic: researchTopics[2], type: 'accent', align: 'text-center md:pl-[10%]', sizeClasses: 'text-[clamp(1.4rem,4vw,3.5rem)]', indicatorPos: 'right' },
+    { topic: researchTopics[3], type: 'solid', align: 'text-left md:pl-[15%]', sizeClasses: 'text-[clamp(1.85rem,6vw,5.5rem)]', indicatorPos: 'right' },
+    { topic: researchTopics[4], type: 'outline', align: 'text-right', sizeClasses: 'text-[clamp(2.1rem,7.5vw,7rem)]', indicatorPos: 'left' },
+    { topic: researchTopics[5], type: 'solid', align: 'text-center md:pr-[15%]', sizeClasses: 'text-[clamp(1.4rem,4vw,3.5rem)]', indicatorPos: 'right', multiline: true },
+    { topic: researchTopics[6], type: 'outline', align: 'text-left md:pl-[8%]', sizeClasses: 'text-[clamp(1.85rem,6vw,5.5rem)]', indicatorPos: 'right' },
+    { topic: researchTopics[7], type: 'accent', align: 'text-right md:pr-[10%]', sizeClasses: 'text-[clamp(1.9rem,6.5vw,6rem)]', indicatorPos: 'left' },
+    { topic: researchTopics[8], type: 'solid', align: 'text-center md:pl-[5%]', sizeClasses: 'text-[clamp(1.7rem,5vw,4.5rem)]', indicatorPos: 'right', multiline: true },
   ]
 
   return (
     <section
       ref={sectionRef}
       id="research"
-      className="relative py-24 md:py-32 lg:py-40 overflow-hidden"
+      className="relative py-12 sm:py-16 md:py-24 lg:py-32 overflow-hidden"
     >
       {/* Grid Lines Background */}
       <div className="absolute inset-0 pointer-events-none z-0">
@@ -174,9 +174,9 @@ export function Research() {
 
       <div className="relative z-10 page-frame">
         {/* Header */}
-        <div className="mb-16 md:mb-24 lg:mb-32 flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+        <div className="mb-12 sm:mb-16 md:mb-24 lg:mb-32 flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-8">
           <div className="max-w-xl">
-            <div className="rs-header-el flex items-center gap-4 mb-4">
+            <div className="rs-header-el flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
               <span
                 className="text-sm md:text-[15px] uppercase tracking-[0.2em]"
                 style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
@@ -229,7 +229,7 @@ export function Research() {
         </div>
 
         {/* Typographic Canvas */}
-        <div className="flex flex-col gap-10 md:gap-14 lg:gap-16 w-full">
+        <div className="flex flex-col gap-8 sm:gap-10 md:gap-14 lg:gap-16 w-full">
           {configs.map((config) => (
             <div key={config.topic.id} className="research-item-anim w-full">
               <ResearchItem config={config} />
@@ -237,7 +237,7 @@ export function Research() {
           ))}
 
           {/* Last Row: NLP and ML */}
-          <div className="research-item-anim flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-4 md:mt-8 gap-10 md:gap-4">
+          <div className="research-item-anim flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-4 md:mt-8 gap-8 sm:gap-10 md:gap-4">
             <div className="w-full md:w-1/2">
               <ResearchItem
                 config={{

@@ -12,6 +12,7 @@ import { About } from '@/sections/About'
 import { ExperienceSection } from '@/sections/Experience'
 import { Skills } from '@/sections/Skills'
 import { CodingProfiles } from '@/sections/CodingProfiles'
+import { setLenisInstance } from '@/lib/scroll'
 import { Contact } from '@/sections/Contact'
 
 export function App() {
@@ -25,6 +26,8 @@ export function App() {
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
     })
+
+    setLenisInstance(lenis)
 
     // Sync Lenis with GSAP ScrollTrigger
     lenis.on('scroll', ScrollTrigger.update)
@@ -40,6 +43,7 @@ export function App() {
     return () => {
       cancelAnimationFrame(rafId)
       lenis.destroy()
+      setLenisInstance(null)
     }
   }, [])
 
@@ -49,7 +53,7 @@ export function App() {
       <ScrollProgress />
       <Navbar />
 
-      <main className="flex flex-col gap-20 md:gap-28 lg:gap-36">
+      <main className="flex flex-col">
         <Hero />
         <Work />
         <Research />

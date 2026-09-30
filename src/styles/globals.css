@@ -63,7 +63,7 @@
   --space-64: 16rem;    /* 256px */
 
   /* ── Layout ── */
-  --page-gutter: clamp(1.25rem, 4vw, 5rem);
+  --page-gutter: clamp(1.25rem, 6vw, 5rem);
   --max-width: 1800px;
   --content-padding: var(--page-gutter);
   --grid-columns: 12;
@@ -95,14 +95,12 @@
   margin-inline: auto;
 }
 
-/* ── Global reset & base ── */
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 }
 
 html {
@@ -110,6 +108,11 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   scroll-behavior: auto; /* Lenis handles smooth scrolling */
+  scroll-padding-top: var(--nav-height);
+}
+
+section[id] {
+  scroll-margin-top: var(--nav-height);
 }
 
 body {

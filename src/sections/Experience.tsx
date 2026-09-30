@@ -67,14 +67,14 @@ export function ExperienceSection() {
     <section
       ref={sectionRef}
       id="experience"
-      className="relative py-24 md:py-32 lg:py-40"
+      className="relative py-12 sm:py-16 md:py-24 lg:py-32"
     >
       <div className="page-frame">
 
         {/* ── Header ── */}
-        <div className="mb-16 md:mb-24 lg:mb-32">
+        <div className="mb-12 sm:mb-16 md:mb-24 lg:mb-32">
           <span
-            className="exp-label mb-4 block text-sm md:text-[15px] uppercase tracking-[0.2em]"
+            className="exp-label mb-3 sm:mb-4 block text-sm md:text-[15px] uppercase tracking-[0.2em]"
             style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
           >
             05 / Experience
@@ -106,7 +106,7 @@ export function ExperienceSection() {
           </div>
 
           {/* Cols 1–3: Year marker + Desktop spine (Left) */}
-          <div className="order-1 lg:order-1 lg:col-span-3 relative z-10 mb-8 lg:mb-0 pl-6 lg:pl-0">
+          <div className="order-1 lg:order-1 lg:col-span-3 relative z-10 mb-6 sm:mb-8 lg:mb-0 pl-7 sm:pl-8 lg:pl-0">
             <div className="exp-year flex items-center gap-3 lg:gap-4">
               <div
                 className="h-2 w-2 rounded-full shrink-0"
@@ -133,8 +133,8 @@ export function ExperienceSection() {
           </div>
 
           {/* Cols 4–9: Responsibilities UL (Centered) */}
-          <div className="order-3 lg:order-2 lg:col-span-6 lg:col-start-4 pl-6 lg:pl-0 mb-8 lg:mb-0">
-            <ul className="exp-responsibilities space-y-3.5 w-full">
+          <div className="order-3 lg:order-2 lg:col-span-6 lg:col-start-4 pl-7 sm:pl-8 lg:pl-0 mb-8 lg:mb-0">
+            <ul className="exp-responsibilities space-y-3 md:space-y-3.5 w-full">
               {entry.description.map((item, i) => (
                 <li
                   key={i}
@@ -142,7 +142,7 @@ export function ExperienceSection() {
                   style={{
                     fontFamily: 'var(--font-body)',
                     color: 'var(--color-text-secondary)',
-                    lineHeight: 'var(--leading-relaxed)',
+                    lineHeight: '1.7',
                   }}
                 >
                   <span
@@ -157,7 +157,7 @@ export function ExperienceSection() {
             </ul>
 
             {/* End marker */}
-            <div className="mt-10 flex items-center gap-4">
+            <div className="mt-8 sm:mt-10 flex items-center gap-4">
               <div
                 className="h-px flex-1 max-w-32"
                 style={{ backgroundColor: 'var(--color-surface-border)' }}
@@ -172,7 +172,7 @@ export function ExperienceSection() {
           </div>
 
           {/* Cols 10–12: Company + Role + Dates + Tags (Right End) */}
-          <div className="order-2 lg:order-3 lg:col-span-3 lg:col-start-10 pl-6 lg:pl-0 lg:ml-auto w-full mb-8 lg:mb-0 flex flex-col lg:items-end lg:text-right">
+          <div className="order-2 lg:order-3 lg:col-span-3 lg:col-start-10 pl-7 sm:pl-8 lg:pl-0 lg:ml-auto w-full mb-8 lg:mb-0 flex flex-col lg:items-end lg:text-right">
             <div className="exp-company mb-4">
               <h3
                 className="font-bold uppercase"

@@ -124,15 +124,15 @@ export function Hero() {
       </div>
 
       {/* ── Main composition ─────────────────── */}
-      <div className="flex flex-1 items-center py-10 md:py-16">
+      <div className="flex flex-1 items-center py-8 sm:py-10 md:py-16">
         <div className="page-frame">
-          <div className="relative w-full flex flex-col lg:flex-row lg:items-center justify-start gap-24 lg:gap-36 xl:gap-48">
+          <div className="relative w-full flex flex-col lg:flex-row lg:items-center justify-start gap-8 sm:gap-12 lg:gap-36 xl:gap-48">
 
             {/* Div 1: Left Headline + Identity + CTAs */}
-            <div className="relative z-[3] shrink-0">
+            <div className="relative z-[3] w-full lg:w-auto lg:shrink-0">
 
               {/* ── Primary Identity Wordmark (Bridge) ── */}
-              <div className="hero-name flex flex-col gap-1.5 mb-8 md:mb-10 lg:mb-12">
+              <div className="hero-name flex flex-col gap-1.5 mb-6 sm:mb-8 md:mb-10 lg:mb-12">
                 <div className="flex items-center gap-2.5">
                   <div
                     className="h-2 w-2 rounded-full shrink-0"
@@ -153,13 +153,13 @@ export function Hero() {
                 </div>
                 <div className="pl-4.5">
                   <span
-                    className="text-sm md:text-[15px] uppercase tracking-[0.16em] font-medium block"
+                    className="text-xs sm:text-sm md:text-[15px] uppercase tracking-[0.1em] sm:tracking-[0.16em] font-medium block"
                     style={{
                       fontFamily: 'var(--font-mono)',
                       color: 'var(--color-text-secondary)',
                     }}
                   >
-                    AI / ML RESEARCHER &nbsp;·&nbsp; SOFTWARE ENGINEER
+                    AI / ML RESEARCHER · SOFTWARE ENGINEER
                   </span>
                 </div>
               </div>
@@ -174,7 +174,7 @@ export function Hero() {
                     className="block font-bold uppercase"
                     style={{
                       fontFamily: 'var(--font-display)',
-                      fontSize: 'clamp(2rem, 5.5vw, 6rem)',
+                      fontSize: 'clamp(1.75rem, 5.5vw, 6rem)',
                       lineHeight: '1.1',
                       letterSpacing: 'var(--tracking-tight)',
                       color: 'var(--color-text-primary)',
@@ -193,7 +193,7 @@ export function Hero() {
                     className="block font-bold uppercase"
                     style={{
                       fontFamily: 'var(--font-display)',
-                      fontSize: 'clamp(2.8rem, 8.5vw, 10rem)',
+                      fontSize: 'clamp(2.2rem, 7.5vw, 10rem)',
                       lineHeight: '0.85',
                       letterSpacing: 'var(--tracking-tighter)',
                       color: 'var(--color-text-primary)',
@@ -212,7 +212,7 @@ export function Hero() {
                     className="block font-bold uppercase"
                     style={{
                       fontFamily: 'var(--font-display)',
-                      fontSize: 'clamp(2rem, 5.5vw, 6rem)',
+                      fontSize: 'clamp(1.75rem, 5.5vw, 6rem)',
                       lineHeight: '1.1',
                       letterSpacing: 'var(--tracking-tight)',
                       color: 'var(--color-text-primary)',
@@ -225,12 +225,12 @@ export function Hero() {
               </h1>
 
               {/* ── Identity ─────────────────────── */}
-              <div className="hero-identity relative z-[4] mt-8 md:mt-10 lg:mt-12">
+              <div className="hero-identity relative z-[4] mt-6 sm:mt-8 md:mt-10 lg:mt-12">
                 <div className="flex flex-col gap-0.5">
                   {personal.roles.map((role) => (
                     <span
                       key={role}
-                      className="text-sm font-medium uppercase tracking-[0.15em] md:text-[15px]"
+                      className="text-sm font-medium uppercase tracking-[0.12em] md:tracking-[0.15em] md:text-[15px]"
                       style={{
                         fontFamily: 'var(--font-body)',
                         color: 'var(--color-text-secondary)',
@@ -244,7 +244,7 @@ export function Hero() {
 
               {/* ── Keywords ─────────────────────── */}
               <p
-                className="hero-keywords relative z-[4] mt-3 text-sm tracking-[0.1em] md:mt-4 md:text-[15px]"
+                className="hero-keywords relative z-[4] mt-2.5 sm:mt-3 text-xs sm:text-sm tracking-[0.06em] sm:tracking-[0.1em] md:mt-4 md:text-[15px]"
                 style={{
                   fontFamily: 'var(--font-mono)',
                   color: 'var(--color-text-muted)',
@@ -254,12 +254,12 @@ export function Hero() {
               </p>
 
               {/* ── CTAs ─────────────────────────── */}
-              <div className="relative z-[4] mt-8 flex flex-wrap items-center gap-4 md:mt-10 md:gap-6"> 
+              <div className="relative z-[4] mt-6 sm:mt-8 flex flex-wrap items-center gap-4 md:mt-10 md:gap-6"> 
                 <a
                   href={personal.resume}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hero-cta hero-cta-secondary inline-flex items-center text-sm font-medium uppercase tracking-[0.15em] md:text-base"
+                  className="hero-cta hero-cta-secondary inline-flex items-center text-sm font-medium uppercase tracking-[0.15em] md:text-base min-h-[44px] py-2"
                   style={{ fontFamily: 'var(--font-body)' }}
                   aria-label="Download CV (opens in new tab)"
                 >
@@ -269,9 +269,9 @@ export function Hero() {
             </div>
 
             {/* Div 2: Right Portrait */}
-            <div className="relative mt-12 lg:mt-0 shrink-0 flex items-center">
+            <div className="relative shrink-0 flex items-center">
               <div
-                className="hero-portrait relative z-[2] overflow-hidden w-[70vw] sm:w-[50vw] md:w-[380px] lg:w-[340px] xl:w-[380px] max-w-[400px]"
+                className="hero-portrait relative z-[2] overflow-hidden w-[75vw] sm:w-[50vw] md:w-[380px] lg:w-[340px] xl:w-[380px] max-w-[340px] sm:max-w-[400px]"
                 style={{ clipPath: 'inset(0 0 0 0)' }}
               >
                 {/* Thin accent line — left edge */}
