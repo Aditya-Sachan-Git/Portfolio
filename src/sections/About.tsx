@@ -26,6 +26,11 @@ export function About() {
         scrollTrigger: { trigger: '.about-rule', start: 'top 88%' },
       })
 
+      gsap.from('.about-lead', {
+        opacity: 0, y: 18, duration: 0.6,
+        scrollTrigger: { trigger: '.about-heading', start: 'top 85%' },
+      })
+
       /* Editorial keywords */
       gsap.from('.about-keyword', {
         opacity: 0, y: 25, duration: 0.7, stagger: 0.12,
@@ -52,40 +57,57 @@ export function About() {
     <section
       ref={sectionRef}
       id="about"
-      className="relative py-12 sm:py-16 md:py-24 lg:py-32"
+      className="relative py-12 sm:py-16 md:py-18 lg:py-16"
     >
       <div className="page-frame">
 
-        {/* ── Header ── */}
-        <div className="mb-12 sm:mb-16 md:mb-24 lg:mb-32">
-          <span
-            className="about-label mb-3 sm:mb-4 block text-sm md:text-[15px] uppercase tracking-[0.2em]"
-            style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
-          >
-            04 / About
-          </span>
+        {/* ── Header & Intro Composition ── */}
+        <div className="mb-12 sm:mb-16 md:mb-18 lg:mb-16 flex flex-col lg:grid lg:grid-cols-12 lg:gap-8 gap-8 sm:gap-10 lg:items-end">
+          {/* Left: Section Header elements */}
+          <div className="lg:col-span-5">
+            <span
+              className="about-label mb-3 sm:mb-4 block text-sm md:text-[15px] uppercase tracking-[0.2em]"
+              style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
+            >
+              04 / About
+            </span>
 
-          <h2
-            className="about-heading uppercase"
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(2.2rem, 4.5vw, 4.2rem)',
-              lineHeight: '0.95',
-              letterSpacing: '-0.02em',
-              color: 'var(--color-text-primary)',
-              clipPath: 'inset(0 0 0 0)',
-            }}
-          >
-            <span className="font-light tracking-tight opacity-80 block text-[0.88em]">About</span>
-            <span className="font-medium tracking-tighter block">Aditya</span>
-            <span className="font-bold tracking-tighter">Sachan</span>
-            <span style={{ color: 'var(--color-accent)' }}>.</span>
-          </h2>
+            <h2
+              className="about-heading uppercase"
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: 'clamp(2.2rem, 4.5vw, 4.2rem)',
+                lineHeight: '0.95',
+                letterSpacing: '-0.02em',
+                color: 'var(--color-text-primary)',
+                clipPath: 'inset(0 0 0 0)',
+              }}
+            >
+              <span className="font-light tracking-tight opacity-80 block text-[0.88em]">About</span>
+              <span className="font-medium tracking-tighter block">Aditya</span>
+              <span className="font-bold tracking-tighter">Sachan</span>
+              <span style={{ color: 'var(--color-accent)' }}>.</span>
+            </h2>
 
-          <div
-            className="about-rule mt-6 h-px w-16"
-            style={{ backgroundColor: 'var(--color-surface-border)' }}
-          />
+            <div
+              className="about-rule mt-6 h-px w-16"
+              style={{ backgroundColor: 'var(--color-surface-border)' }}
+            />
+          </div>
+
+          {/* Right: Lead Introduction */}
+          <div className="lg:col-span-7 lg:col-start-6 max-w-2xl">
+            <p
+              className="about-lead text-base md:text-lg"
+              style={{
+                fontFamily: 'var(--font-body)',
+                color: 'var(--color-text-primary)',
+                lineHeight: '1.75',
+              }}
+            >
+              I am a Computer Science undergraduate at Vellore Institute of Technology, Chennai (B.Tech, Class of 2027), working at the intersection of machine learning research, distributed systems, and modern software engineering. My work focuses on designing intelligent architectures that are computationally efficient, mathematically principled, and built to solve high-impact operational problems.
+            </p>
+          </div>
         </div>
 
         {/* ── Editorial composition: Keywords + Bio ── */}
@@ -131,18 +153,7 @@ export function About() {
           </div>
 
           {/* Right: Biography */}
-          <div className="about-bio-wrap lg:col-span-7 lg:col-start-6 space-y-7 md:space-y-8 max-w-2xl">
-            <p
-              className="about-bio text-base md:text-lg"
-              style={{
-                fontFamily: 'var(--font-body)',
-                color: 'var(--color-text-primary)',
-                lineHeight: '1.75',
-              }}
-            >
-              I am a Computer Science undergraduate at Vellore Institute of Technology, Chennai (B.Tech, Class of 2027), working at the intersection of machine learning research, distributed systems, and modern software engineering. My work focuses on designing intelligent architectures that are computationally efficient, mathematically principled, and built to solve high-impact operational problems.
-            </p>
-
+          <div className="about-bio-wrap lg:col-span-7 lg:col-start-6 space-y-7 md:space-y-6 lg:space-y-5 xl:space-y-5 max-w-2xl">
             <p
               className="about-bio text-base md:text-lg"
               style={{
@@ -192,7 +203,7 @@ export function About() {
 
         {/* ── Bottom metadata ── */}
         <div
-          className="about-meta-foot mt-12 sm:mt-16 md:mt-24 flex items-center gap-4"
+          className="about-meta-foot mt-12 sm:mt-16 md:mt-14 lg:mt-12 flex items-center gap-4"
         >
           <div className="h-px flex-1 max-w-24" style={{ backgroundColor: 'var(--color-surface-border)' }} />
           <span

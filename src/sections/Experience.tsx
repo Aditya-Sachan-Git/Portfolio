@@ -67,12 +67,12 @@ export function ExperienceSection() {
     <section
       ref={sectionRef}
       id="experience"
-      className="relative py-12 sm:py-16 md:py-24 lg:py-32"
+      className="relative py-12 sm:py-16 md:py-18 lg:py-16"
     >
       <div className="page-frame">
 
         {/* ── Header ── */}
-        <div className="mb-12 sm:mb-16 md:mb-24 lg:mb-32">
+        <div className="mb-12 sm:mb-16 md:mb-18 lg:mb-16">
           <span
             className="exp-label mb-3 sm:mb-4 block text-sm md:text-[15px] uppercase tracking-[0.2em]"
             style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
@@ -127,7 +127,7 @@ export function ExperienceSection() {
             </div>
             {/* Desktop spine rule beneath year */}
             <div
-              className="exp-spine hidden lg:block mt-6 h-32 w-px ml-1"
+              className="exp-spine hidden lg:block mt-6 h-20 lg:h-20 w-px ml-1"
               style={{ backgroundColor: 'var(--color-surface-border)' }}
             />
           </div>

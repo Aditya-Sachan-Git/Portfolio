@@ -111,14 +111,14 @@ export function Work() {
     <section
       ref={sectionRef}
       id="work"
-      className="relative py-12 sm:py-16 md:py-24 lg:py-32"
+      className="relative py-12 sm:py-16 md:py-18 lg:py-16"
     >
       <div className="page-frame">
 
         {/* ════════════════════════════════════════
             Section Header
            ════════════════════════════════════════ */}
-        <div className="work-header mb-12 sm:mb-16 md:mb-24 lg:mb-32">
+        <div className="work-header mb-12 sm:mb-16 md:mb-18 lg:mb-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-8 items-start">
 
             {/* Left side (Cols 1–7): Section Label + Heading + Support copy + Rule */}
@@ -328,7 +328,7 @@ export function Work() {
             Separator
            ════════════════════════════════════════ */}
         <div
-          className="work-separator my-12 sm:my-16 md:my-36 lg:my-48 h-px"
+          className="work-separator my-12 sm:my-16 md:my-20 lg:my-20 xl:my-24 h-px"
           style={{ backgroundColor: 'var(--color-surface-border)' }}
         />
 
@@ -459,7 +459,7 @@ export function Work() {
             Separator
            ════════════════════════════════════════ */}
         <div
-          className="work-separator my-12 sm:my-16 md:my-36 lg:my-48 h-px"
+          className="work-separator my-12 sm:my-16 md:my-20 lg:my-20 xl:my-24 h-px"
           style={{ backgroundColor: 'var(--color-surface-border)' }}
         />
 

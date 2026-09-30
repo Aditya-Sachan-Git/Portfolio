@@ -95,20 +95,20 @@ export function Contact() {
     <section
       ref={sectionRef}
       id="contact"
-      className="relative pt-12 sm:pt-16 md:pt-24 lg:pt-32 pb-12 sm:pb-16 md:pb-24 lg:pb-32"
+      className="relative pt-12 sm:pt-16 md:pt-18 lg:pt-16 pb-12 sm:pb-16 md:pb-18 lg:pb-16"
     >
       <div className="page-frame">
 
         {/* ── Section label ── */}
         <span
-          className="ct-label mb-4 sm:mb-6 md:mb-8 block text-sm md:text-[15px] uppercase tracking-[0.2em]"
+          className="ct-label mb-4 sm:mb-6 md:mb-6 lg:mb-5 block text-sm md:text-[15px] uppercase tracking-[0.2em]"
           style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-muted)' }}
         >
           08 / Contact
         </span>
 
         {/* ── Headlines: Asymmetric 12-Column Composition ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-8 lg:items-start mb-12 sm:mb-16 md:mb-28 lg:mb-36">
+        <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-8 lg:items-start mb-12 sm:mb-16 md:mb-18 lg:mb-16">
 
           {/* Left Side (Cols 1–7): Main CTA Typography */}
           <div className="lg:col-span-7">
@@ -127,7 +127,7 @@ export function Contact() {
             </h2>
 
             <p
-              className="ct-cta mt-6 md:mt-10 font-bold uppercase tracking-tighter"
+              className="ct-cta mt-4 sm:mt-6 md:mt-6 lg:mt-6 font-bold uppercase tracking-tighter"
               style={{
                 fontFamily: 'var(--font-display)',
                 fontSize: 'clamp(2.5rem, 6.5vw, 5.5rem)',

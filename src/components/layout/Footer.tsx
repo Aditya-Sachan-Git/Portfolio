@@ -7,10 +7,10 @@ export function Footer() {
   }
 
   return (
-    <footer className="pt-12 sm:pt-16 md:pt-20 pb-16 sm:pb-20 md:pb-24 border-t border-[var(--color-surface-border)]/40">
+    <footer className="pt-12 sm:pt-16 md:pt-14 lg:pt-12 pb-16 sm:pb-20 md:pb-16 lg:pb-14 border-t border-[var(--color-surface-border)]/40">
       <div className="page-frame">
         {/* Upper row: Identity (Left) & Social Links (Right) */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-start mb-10 sm:mb-12 md:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-start mb-10 sm:mb-12 md:mb-8 lg:mb-8">
           {/* Left: Identity (Cols 1–6) */}
           <div className="md:col-span-6 space-y-2">
             <span

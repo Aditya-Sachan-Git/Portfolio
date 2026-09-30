@@ -38,12 +38,12 @@ export function CodingProfiles() {
     <section
       ref={sectionRef}
       id="coding-profiles"
-      className="relative py-12 sm:py-16 md:py-24 lg:py-32"
+      className="relative py-12 sm:py-16 md:py-18 lg:py-16"
     >
       <div className="page-frame">
 
         {/* ── Section Header ── */}
-        <div className="mb-12 sm:mb-16 md:mb-24 lg:mb-28">
+        <div className="mb-12 sm:mb-16 md:mb-16 lg:mb-14">
           <div className="flex items-center justify-between mb-3 sm:mb-4 md:mb-6">
             <span
               className="cp-label text-sm md:text-[15px] uppercase tracking-[0.2em]"
@@ -92,20 +92,20 @@ export function CodingProfiles() {
         </div>
 
         {/* ── Editorial Two-Profile Composition (12-Column Grid) ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-12 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-8 xl:gap-10 w-full">
           {codingProfiles.map((profile, index) => (
             <a
               key={profile.id}
               href={profile.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`cp-profile group block relative pt-6 sm:pt-8 pb-8 sm:pb-10 border-t border-[var(--color-surface-border)] hover:border-[var(--color-accent)] focus-visible:border-[var(--color-accent)] transition-colors duration-300 outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] focus-visible:rounded ${
+              className={`cp-profile group block relative pt-6 sm:pt-8 lg:pt-6 pb-8 sm:pb-10 lg:pb-7 border-t border-[var(--color-surface-border)] hover:border-[var(--color-accent)] focus-visible:border-[var(--color-accent)] transition-colors duration-300 outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] focus-visible:rounded ${
                 index === 0 ? 'lg:col-span-6' : 'lg:col-span-6'
               }`}
               aria-label={profile.ariaLabel}
             >
               {/* Profile Header Row: Number + Platform identifier + Cobalt marker */}
-              <div className="flex items-center justify-between mb-5 sm:mb-8">
+              <div className="flex items-center justify-between mb-5 sm:mb-8 lg:mb-5">
                 <span
                   className="text-sm md:text-base font-mono tracking-wider uppercase transition-colors duration-200 group-hover:text-[var(--color-accent)] group-focus-visible:text-[var(--color-accent)]"
                   style={{ color: 'var(--color-text-muted)' }}
@@ -142,7 +142,7 @@ export function CodingProfiles() {
 
               {/* Action Link Row */}
               <div
-                className="mt-6 sm:mt-10 flex items-center gap-3 text-sm md:text-base font-mono uppercase tracking-[0.16em] font-medium transition-colors duration-200 min-h-[44px]"
+                className="mt-6 sm:mt-10 lg:mt-6 flex items-center gap-3 text-sm md:text-base font-mono uppercase tracking-[0.16em] font-medium transition-colors duration-200 min-h-[44px]"
                 style={{ color: 'var(--color-text-muted)' }}
               >
                 <span className="group-hover:text-[var(--color-text-primary)] group-focus-visible:text-[var(--color-text-primary)] transition-colors duration-200">

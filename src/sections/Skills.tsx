@@ -107,7 +107,7 @@ function DesktopConstellation({
   })
 
   return (
-    <div className="skills-constellation relative w-full" style={{ height: 'clamp(480px, 55vw, 750px)' }}>
+    <div className="skills-constellation relative w-full" style={{ height: 'clamp(440px, 42vw, 580px)' }}>
       {/* SVG connection lines */}
       <svg
         className="absolute inset-0 w-full h-full pointer-events-none"
@@ -455,12 +455,12 @@ export function Skills() {
     <section
       ref={sectionRef}
       id="skills"
-      className="relative py-12 sm:py-16 md:py-24 lg:py-32"
+      className="relative py-12 sm:py-16 md:py-18 lg:py-16"
     >
       <div className="page-frame">
 
         {/* ── Header ── */}
-        <div className="mb-12 sm:mb-16 md:mb-28 lg:mb-32">
+        <div className="mb-12 sm:mb-16 md:mb-18 lg:mb-16">
           <div className="flex items-center justify-between mb-3 sm:mb-4 md:mb-6">
             <span
               className="skills-label text-sm md:text-[15px] uppercase tracking-[0.2em]"
@@ -522,7 +522,7 @@ export function Skills() {
         </div>
 
         {/* ── End statement ── */}
-        <div className="skills-end mt-12 sm:mt-16 md:mt-24 lg:mt-32 text-center">
+        <div className="skills-end mt-12 sm:mt-16 md:mt-16 lg:mt-14 xl:mt-16 text-center">
           <p
             className="font-bold uppercase tracking-wide"
             style={{

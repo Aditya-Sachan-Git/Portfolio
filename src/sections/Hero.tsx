@@ -100,7 +100,7 @@ export function Hero() {
       style={{ paddingTop: 'var(--nav-height)' }}
     >
       {/* ── Top metadata bar ─────────────────── */}
-      <div className="pt-6 md:pt-10 lg:pt-14">
+      <div className="pt-6 md:pt-8 lg:pt-6">
         <div className="page-frame flex items-center justify-between">
           {/* Top-right coordinate */}
           <span
@@ -117,22 +117,22 @@ export function Hero() {
         {/* Thin decorative rule */}
         <div className="page-frame">
           <div
-            className="hero-rule mt-4 h-px"
+            className="hero-rule mt-3 lg:mt-3 h-px"
             style={{ backgroundColor: 'var(--color-surface-border)' }}
           />
         </div>
       </div>
 
       {/* ── Main composition ─────────────────── */}
-      <div className="flex flex-1 items-center py-8 sm:py-10 md:py-16">
+      <div className="flex flex-1 items-center py-6 sm:py-8 md:py-10 lg:py-6 xl:py-8">
         <div className="page-frame">
-          <div className="relative w-full flex flex-col lg:flex-row lg:items-center justify-start gap-8 sm:gap-12 lg:gap-36 xl:gap-48">
+          <div className="relative w-full flex flex-col lg:flex-row lg:items-center justify-start gap-8 sm:gap-12 lg:gap-48 xl:gap-60">
 
             {/* Div 1: Left Headline + Identity + CTAs */}
             <div className="relative z-[3] w-full lg:w-auto lg:shrink-0">
 
               {/* ── Primary Identity Wordmark (Bridge) ── */}
-              <div className="hero-name flex flex-col gap-1.5 mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+              <div className="hero-name flex flex-col gap-1.5 mb-6 sm:mb-8 md:mb-8 lg:mb-5 xl:mb-6">
                 <div className="flex items-center gap-2.5">
                   <div
                     className="h-2 w-2 rounded-full shrink-0"
@@ -225,7 +225,7 @@ export function Hero() {
               </h1>
 
               {/* ── Identity ─────────────────────── */}
-              <div className="hero-identity relative z-[4] mt-6 sm:mt-8 md:mt-10 lg:mt-12">
+              <div className="hero-identity relative z-[4] mt-6 sm:mt-8 md:mt-8 lg:mt-5 xl:mt-6">
                 <div className="flex flex-col gap-0.5">
                   {personal.roles.map((role) => (
                     <span
@@ -244,7 +244,7 @@ export function Hero() {
 
               {/* ── Keywords ─────────────────────── */}
               <p
-                className="hero-keywords relative z-[4] mt-2.5 sm:mt-3 text-xs sm:text-sm tracking-[0.06em] sm:tracking-[0.1em] md:mt-4 md:text-[15px]"
+                className="hero-keywords relative z-[4] mt-2.5 sm:mt-3 text-xs sm:text-sm tracking-[0.06em] sm:tracking-[0.1em] md:mt-3 lg:mt-2.5 md:text-[15px]"
                 style={{
                   fontFamily: 'var(--font-mono)',
                   color: 'var(--color-text-muted)',
@@ -254,7 +254,7 @@ export function Hero() {
               </p>
 
               {/* ── CTAs ─────────────────────────── */}
-              <div className="relative z-[4] mt-6 sm:mt-8 flex flex-wrap items-center gap-4 md:mt-10 md:gap-6"> 
+              <div className="relative z-[4] mt-6 sm:mt-8 flex flex-wrap items-center gap-4 md:mt-8 lg:mt-5 xl:mt-6 md:gap-6"> 
                 <a
                   href={personal.resume}
                   target="_blank"
@@ -335,7 +335,7 @@ export function Hero() {
       </div>
 
       {/* ── Scroll indicator ─────────────────── */}
-      <div className="hero-scroll-indicator flex flex-col items-center gap-2 pb-6 md:pb-10">
+      <div className="hero-scroll-indicator flex flex-col items-center gap-2 pb-6 md:pb-6 lg:pb-4 xl:pb-5">
         <span
           className="text-sm uppercase tracking-[0.2em]"
           style={{
