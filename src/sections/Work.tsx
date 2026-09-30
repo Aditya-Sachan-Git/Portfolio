@@ -99,6 +99,7 @@ export function Work() {
         .from('.commons-title', { opacity: 0, y: 20, duration: 0.6 }, 0.2)
         .from('.commons-desc', { opacity: 0, y: 15, duration: 0.5, stagger: 0.1 }, 0.35)
         .from('.commons-tech', { opacity: 0, y: 15, duration: 0.5 }, 0.5)
+        .from('.commons-cta', { opacity: 0, y: 12, duration: 0.5 }, 0.6)
     }, sectionRef)
 
     return () => ctx.revert()
@@ -561,6 +562,25 @@ export function Work() {
                     </span>
                   ))}
                 </div>
+              </div>
+
+              {/* Primary Interaction: View on GitHub */}
+              <div className="commons-cta pt-3 sm:pt-4">
+                <a
+                  href={commons.links.github || "https://github.com/Aditya-Sachan-Git/AI-Powered_Real-Time_Contextual_Chat_Moderator.git"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 text-base md:text-[17px] uppercase tracking-[0.16em] font-medium group transition-colors min-h-[44px]"
+                  style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-text-primary)' }}
+                  aria-label="View CommonsAI repository on GitHub (opens in new tab)"
+                >
+                  <span className="group-hover:text-[var(--color-accent)] transition-colors">
+                    View on GitHub
+                  </span>
+                  <span className="inline-block transition-transform duration-300 group-hover:translate-x-1.5 text-[var(--color-accent)]">
+                    →
+                  </span>
+                </a>
               </div>
             </div>
 

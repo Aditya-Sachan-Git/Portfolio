@@ -101,7 +101,9 @@ export const projects: Project[] = [
       'Used Redis, PostgreSQL, and Celery for low-latency scalable processing.',
       'Supported 7 languages plus Hinglish with contextual feedback.',
     ],
-    links: {},
+    links: {
+      github: 'https://github.com/Aditya-Sachan-Git/AI-Powered_Real-Time_Contextual_Chat_Moderator.git',
+    },
     featured: true,
   },
 ]
